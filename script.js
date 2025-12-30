@@ -1,254 +1,252 @@
 /* =========================================
-   WHATSAPP FORM INTEGRATION
+   DIGITAL HUB ONLINE - MAIN SCRIPT
+   Version: 3.0
    ========================================= */
 
-function initializeContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    if (!contactForm) return;
+/* --- 1. LANGUAGE CONFIGURATION --- */
+const langConfig = {
+    en: {
+        langBtn: "नेपाली",
+        // Navbar
+        status: "Open Now • Online Service",
+        // Hero
+        headline: "All Digital Solutions.<br>One Platform.",
+        desc: "Flight tickets, SSF, Licenses, and lifetime FREE websites for businesses. Expert service at the lowest price.",
+        cta: "Start Now",
+        viewServices: "See Pricing <i class='fas fa-arrow-right'></i>",
+        // Services
+        servicesTitle: "Our Premium Services",
+        servicesSub: "Choose from our comprehensive range of digital services",
+        svc1_title: "Flight Booking",
+        svc1_desc: "Domestic & International flights at best rates.",
+        price1: "Best Rate",
+        svc2_title: "Shram Approval",
+        svc2_desc: "Online Labor Permit (Re-entry).",
+        svc3_title: "SSF Registration",
+        svc3_desc: "Social Security Fund Enrollment.",
+        svc4_title: "Website & Hosting",
+        svc4_desc: "Lifetime free for Business & Schools.",
+        svc5_title: "Driving License",
+        svc5_desc: "Form filling & exam date fix.",
+        svc6_title: "Bank Account Opening",
+        svc6_desc: "Nic Asia, Global IME & more.",
+        priceFree: "Free Help",
+        // About
+        foundedBy: "Founded & Operated By",
+        proVoice: "\"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably.\""
+    },
+    ne: {
+        langBtn: "English",
+        // Navbar
+        status: "अहिले खुला छ • अनलाइन सेवा",
+        // Hero
+        headline: "सबै डिजिटल सेवा<br>एकै ठाउँमा",
+        desc: "फ्लाइट टिकट, श्रम स्वीकृति, र व्यवसायका लागि आजीवन निःशुल्क वेबसाइट। सुपथ मूल्यमा भरपर्दो सेवा।",
+        cta: "सुरु गर्नुहोस्",
+        viewServices: "मूल्य हेर्नुहोस् <i class='fas fa-arrow-right'></i>",
+        // Services
+        servicesTitle: "हाम्रा प्रमुख सेवाहरु",
+        servicesSub: "हाम्रा विस्तृत डिजिटल सेवाहरूबाट छान्नुहोस्",
+        svc1_title: "फ्लाइट टिकट बुकिङ",
+        svc1_desc: "स्वदेशी तथा विदेशी उडानहरु सुपथ मुल्यमा।",
+        price1: "सस्तो दर",
+        svc2_title: "अनलाइन श्रम स्वीकृति",
+        svc2_desc: "वैदेशिक रोजगार पुनः श्रम स्वीकृति।",
+        svc3_title: "SSF दर्ता",
+        svc3_desc: "सामाजिक सुरक्षा कोषमा दर्ता।",
+        svc4_title: "वेबसाइट र होस्टिङ",
+        svc4_desc: "व्यवसाय र स्कूलका लागि आजीवन निःशुल्क।",
+        svc5_title: "ड्राइभिङ लाइसेन्स",
+        svc5_desc: "फारम भर्ने र मिति सार्ने काम।",
+        svc6_title: "बैंक खाता",
+        svc6_desc: "घरबाटै बैंक खाता खोल्न सहयोग।",
+        priceFree: "निःशुल्क",
+        // About
+        foundedBy: "संस्थापक तथा सञ्चालक",
+        proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ। मेरो उद्देश्य नेपालका हरेक डिजिटल सेवाहरू पारदर्शी र सस्तोमा तपाइँको हातमा पुर्याउनु हो।\""
+    }
+};
 
-    // Create success message element
-    const successMessage = document.createElement('div');
-    successMessage.className = 'form-success';
-    successMessage.innerHTML = `
-        <i class="fas fa-check-circle"></i>
-        <h4>Inquiry Sent Successfully!</h4>
-        <p>We have opened WhatsApp for you. Please send the message to complete your inquiry.</p>
-        <p><small>If WhatsApp didn't open, please send a message to +977 9810430546</small></p>
-    `;
+/* --- 2. GLOBAL STATE --- */
+let currentLang = 'en';
+const langToggle = document.getElementById('lang-toggle');
+const langText = document.getElementById('lang-text');
+
+/* --- 3. LANGUAGE TOGGLE LOGIC --- */
+function updateLanguage(lang) {
+    currentLang = lang;
     
-    // Create loading element
-    const loadingElement = document.createElement('div');
-    loadingElement.className = 'form-loading';
-    loadingElement.innerHTML = `
-        <div class="spinner"></div>
-        <p>Preparing your inquiry...</p>
-    `;
+    // Update Button Text
+    if(langText) langText.textContent = langConfig[lang].langBtn;
+    
+    // Update Elements with data-key
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (langConfig[lang][key]) {
+            el.innerHTML = langConfig[lang][key];
+        }
+    });
+}
 
-    contactForm.addEventListener('submit', async function(event) {
-        event.preventDefault();
-        
-        // Clear previous errors
-        clearErrors();
-        
-        // Get form values
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value.trim();
-        
-        // Validate form
-        let isValid = true;
-        
-        if (!name) {
-            showError('nameError', 'Please enter your name');
-            isValid = false;
+if (langToggle) {
+    langToggle.addEventListener('click', () => {
+        updateLanguage(currentLang === 'en' ? 'ne' : 'en');
+    });
+
+    langToggle.addEventListener('mouseenter', () => {
+        if(langText) langText.textContent = (currentLang === 'en') ? "English" : "नेपाली";
+        const icon = langToggle.querySelector('i');
+        if(icon) icon.style.transform = 'rotate(180deg)';
+    });
+
+    langToggle.addEventListener('mouseleave', () => {
+        if(langText) langText.textContent = langConfig[currentLang].langBtn;
+        const icon = langToggle.querySelector('i');
+        if(icon) icon.style.transform = 'rotate(0deg)';
+    });
+}
+
+/* --- 4. MOBILE MENU (HAMBURGER) --- */
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+}
+
+function closeMenu() {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+}
+
+if (hamburger) hamburger.addEventListener('click', toggleMenu);
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navMenu && navMenu.classList.contains('active')) {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            closeMenu();
         }
-        
-        if (!phone) {
-            showError('phoneError', 'Please enter your phone number');
-            isValid = false;
-        } else if (!isValidPhone(phone)) {
-            showError('phoneError', 'Please enter a valid phone number');
-            isValid = false;
+    }
+});
+
+/* --- 5. MODAL SYSTEM (Centralized) --- */
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'flex';
+        // Tiny delay for CSS transition
+        setTimeout(() => { modal.style.opacity = '1'; }, 10);
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.opacity = '0';
+        setTimeout(() => { 
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 300);
+    }
+}
+
+// Payment Specifics
+const payNameEl = document.getElementById('payServiceName');
+const payAmountEl = document.getElementById('payAmount');
+
+function openPayment(name, cost) {
+    if (payNameEl) payNameEl.textContent = name;
+    if (payAmountEl) payAmountEl.textContent = cost;
+    openModal('paymentModal');
+}
+
+function closePayment() {
+    closeModal('paymentModal');
+}
+
+// Legal Pages
+function openTerms() { openModal('termsModal'); }
+function openPrivacy() { openModal('privacyModal'); }
+function closeLegal(type) { closeModal(type + 'Modal'); }
+
+// Help Popup
+function closePopup() {
+    closeModal('helpPopup');
+    // Store in session storage so it doesn't annoy user on reload
+    sessionStorage.setItem('helpSeen', 'true');
+}
+
+/* --- 6. UTILITIES --- */
+function copyNumber(text, method) {
+    navigator.clipboard.writeText(text).then(() => {
+        // You could replace this alert with a toast notification in future
+        alert(`${method} Number Copied: ${text}`);
+    }).catch(err => {
+        alert("Copy failed. Please manually copy: " + text);
+    });
+}
+
+function showNotification(message) {
+    // Placeholder for future toast notifications
+    console.log("Notification:", message);
+}
+
+// Navbar Scroll Effect
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
+    }
+});
+
+// Reveal Animation
+function checkScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 100;
         
-        if (!service) {
-            showError('serviceError', 'Please select a service');
-            isValid = false;
+        if (elementTop < windowHeight - elementVisible) {
+            el.classList.add('active');
         }
-        
-        if (!isValid) return;
-        
-        // Show loading
-        contactForm.style.opacity = '0.5';
-        contactForm.insertAdjacentElement('afterend', loadingElement);
-        loadingElement.style.display = 'block';
-        
-        // Wait a moment for UX
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Format WhatsApp message
-        const whatsappMessage = formatWhatsAppMessage(name, phone, service, message);
-        
-        // Encode message for URL
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        
-        // Create WhatsApp URL
-        const whatsappUrl = `https://wa.me/9779810430546?text=${encodedMessage}`;
-        
-        // Hide loading
-        contactForm.style.opacity = '1';
-        loadingElement.style.display = 'none';
-        
-        // Show success message
-        contactForm.style.display = 'none';
-        contactForm.insertAdjacentElement('afterend', successMessage);
-        successMessage.style.display = 'block';
-        successMessage.classList.add('success-pulse');
-        
-        // Open WhatsApp in new tab after delay
+    });
+}
+window.addEventListener('scroll', checkScroll);
+
+/* --- 7. INITIALIZATION --- */
+window.addEventListener('load', () => {
+    // 1. Trigger reveal for hero
+    checkScroll();
+    
+    // 2. Auto-show Help Popup (after 5s, if not seen)
+    if (!sessionStorage.getItem('helpSeen')) {
         setTimeout(() => {
-            window.open(whatsappUrl, '_blank');
-            
-            // Reset form after 5 seconds
-            setTimeout(() => {
-                resetForm();
-            }, 5000);
-        }, 1500);
-        
-        // Track form submission
-        trackEvent('Form Submission', service);
-    });
-}
-
-// Format WhatsApp message
-function formatWhatsAppMessage(name, phone, service, message) {
-    const dateTime = new Date().toLocaleString('en-NP', {
-        timeZone: 'Asia/Kathmandu',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-    
-    let formattedMessage = `*NEW INQUIRY - Digital Hub Online Nepal*%0A%0A`;
-    formattedMessage += `*📅 Date:* ${dateTime}%0A`;
-    formattedMessage += `*👤 Name:* ${name}%0A`;
-    formattedMessage += `*📱 Phone:* ${phone}%0A`;
-    formattedMessage += `*🛠️ Service Needed:* ${service}%0A`;
-    
-    if (message) {
-        formattedMessage += `*💬 Message:* ${message}%0A`;
+            openModal('helpPopup');
+        }, 5000);
     }
     
-    formattedMessage += `%0A`;
-    formattedMessage += `*📍 Source:* Website Contact Form%0A`;
-    formattedMessage += `*📊 Status:* New Inquiry%0A`;
-    formattedMessage += `%0A`;
-    formattedMessage += `_Please contact this client as soon as possible._`;
-    
-    return formattedMessage;
-}
+    // 3. Initialize Contact Form
+    initializeContactForm();
+});
 
-// Validate phone number
-function isValidPhone(phone) {
-    // Accepts: 98XXXXXXXX, 97798XXXXXXXX, +97798XXXXXXXX
-    const phoneRegex = /^(?:\+?977)?98[0-9]{8}$/;
-    const cleanPhone = phone.replace(/\D/g, '');
-    return phoneRegex.test(cleanPhone);
-}
-
-// Show error message
-function showError(elementId, message) {
-    const errorElement = document.getElementById(elementId);
-    if (errorElement) {
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-        
-        // Add error class to input
-        const inputElement = document.querySelector(`#${elementId.replace('Error', '')}`);
-        if (inputElement) {
-            inputElement.classList.add('error');
-            inputElement.style.borderColor = '#f87171';
-        }
+// Close modals when clicking overlay
+window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('payment-overlay')) closePayment();
+    if (e.target.classList.contains('legal-overlay')) {
+        e.target.style.opacity = '0';
+        setTimeout(() => { 
+            e.target.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 300);
     }
-}
-
-// Clear all errors
-function clearErrors() {
-    const errorElements = document.querySelectorAll('.form-error');
-    errorElements.forEach(element => {
-        element.textContent = '';
-        element.style.display = 'none';
-    });
-    
-    // Remove error classes from inputs
-    const inputElements = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
-    inputElements.forEach(element => {
-        element.classList.remove('error');
-        element.style.borderColor = '';
-    });
-}
-
-// Reset form to initial state
-function resetForm() {
-    const contactForm = document.getElementById('contactForm');
-    const successMessage = document.querySelector('.form-success');
-    const loadingElement = document.querySelector('.form-loading');
-    
-    if (successMessage) {
-        successMessage.style.display = 'none';
-        successMessage.classList.remove('success-pulse');
-    }
-    
-    if (loadingElement) {
-        loadingElement.style.display = 'none';
-    }
-    
-    if (contactForm) {
-        contactForm.reset();
-        contactForm.style.display = 'block';
-        contactForm.style.opacity = '1';
-    }
-    
-    clearErrors();
-}
-
-// Add error styles to CSS
-const errorStyles = document.createElement('style');
-errorStyles.textContent = `
-    .form-group input.error,
-    .form-group select.error,
-    .form-group textarea.error {
-        border-color: #f87171 !important;
-        background: rgba(248, 113, 113, 0.05) !important;
-    }
-    
-    .form-group input.error:focus,
-    .form-group select.error:focus,
-    .form-group textarea.error:focus {
-        box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.1) !important;
-    }
-    
-    .form-error {
-        color: #f87171;
-        font-size: 0.85rem;
-        margin-top: 5px;
-        display: none;
-    }
-`;
-document.head.appendChild(errorStyles);
-
-// Add this to your existing initializeWebsite function
-function initializeWebsite() {
-    console.log('Digital Hub Online Nepal - Initializing...');
-    
-    // Initialize all systems
-    initializeLanguage();
-    initializeMobileMenu();
-    initializePaymentModal();
-    initializeHelpPopup();
-    initializeContactForm(); // Make sure this is called
-    initializeScrollAnimations();
-    initializeSmoothScrolling();
-    initializeAnalytics();
-    initializePerformance();
-    
-    // Show welcome message
-    setTimeout(() => {
-        showNotification('Welcome to Digital Hub Online Nepal! How can we help you today?');
-    }, 1000);
-    
-    // Force check animations on load
-    setTimeout(checkScroll, 500);
-    
-    console.log('Digital Hub Online Nepal - Initialization complete!');
-}
-
-// Initialize on page load
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeWebsite);
-} else {
-    initializeWebsite();
-}
+    if (e.target.classList.contains('popup-overlay')) closePopup();
+});
