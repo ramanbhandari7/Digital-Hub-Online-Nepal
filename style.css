@@ -345,3 +345,29 @@ body {
     .gw-icon { margin: 0; width: 35px; height: 35px; }
     .btn-copy { width: auto; }
 }
+/* Language Toggle Button with Animation Support */
+.btn-lang {
+    background: var(--dark); 
+    color: white; 
+    border: none; 
+    padding: 8px 16px; /* Slightly wider padding */
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    font-family: inherit; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; /* More gap */
+    min-width: 90px; /* Fixed width prevents jitter on text change */
+    justify-content: center; /* Center content */
+    transition: 0.3s;
+}
+
+.btn-lang i {
+    transition: transform 0.3s ease; /* Icon rotates on hover via JS */
+}
+
+.btn-lang:hover {
+    background: var(--primary); /* Blue on hover */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
