@@ -1789,7 +1789,102 @@ a {
     .testimonial-card {
         padding: 20px;
     }
+/* =========================================
+   CONNECT WITH US - SOCIAL SECTION FIX
+   ========================================= */
 
+/* If "Connect With Us" is a heading above social icons */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything horizontally */
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.social-links h4 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Center the social icons container */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centers icons horizontally */
+    align-items: center; /* Centers icons vertically */
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* If you have a specific "Connect With Us" container */
+.connect-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 0;
+    gap: 20px;
+}
+
+.connect-heading {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* If you have text and icons in same line */
+.connect-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* For footer social alignment specifically */
+.footer-col .social-links {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-col .social-links h4 {
+    text-align: left;
+    padding-left: 15px;
+    border-left: 3px solid var(--primary);
+}
+
+.footer-col .social-icons {
+    justify-content: flex-start;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .connect-section,
+    .social-links {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-col .social-links h4 {
+        text-align: center;
+        padding-left: 0;
+        border-left: none;
+        border-bottom: 2px solid var(--primary);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    
+    .footer-col .social-icons {
+        justify-content: center;
+    }
+}
     /* Footer */
     .footer-logo {
         font-size: 1.5rem;
