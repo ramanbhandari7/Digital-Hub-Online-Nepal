@@ -117,3 +117,20 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+/* ... Toggle & Payment Logic same as before ... */
+
+// ADD THIS MOBILE MENU LOGIC TO YOUR SCRIPT IF MISSING:
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+if(hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
+
+function closeMenu() {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+}
