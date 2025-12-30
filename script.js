@@ -9,14 +9,14 @@ let currentLang = 'en';
 
 const content = {
     en: {
-        // Nav & Header
+        // --- Nav & Header ---
         status: "Open Now • Online Service",
         headline: "All Digital Solutions.<br>One Platform.",
         desc: "Flight tickets, SSF, Licenses, and lifetime FREE websites for businesses. Expert service at the lowest price.",
         cta: "Start Now",
         viewServices: "See Pricing <i class='fas fa-arrow-right'></i>",
         
-        // Services
+        // --- Services ---
         servicesTitle: "Our Premium Services",
         servicesSub: "Professional solutions with transparent pricing.",
         svc1_title: "Flight Booking",
@@ -39,23 +39,23 @@ const content = {
         svc6_desc: "Nic Asia, Global IME & more.",
         priceFree: "Free Help",
         
-        // Founder & Footer
+        // --- Founder & Footer ---
         proVoice: "\"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably.\"",
         foundedBy: "Founded & Operated by",
         desc: "Your one-stop solution for all digital services in Nepal. Fast, reliable, and trusted by hundreds.",
         
-        // Button Label
+        // Button Labels (Idle State - Shows Target Language)
         langBtn: "नेपाली"
     },
     ne: {
-        // Nav & Header
+        // --- Nav & Header ---
         status: "अहिले खुला छ • अनलाइन सेवा",
         headline: "सबै डिजिटल सेवा<br>एकै ठाउँमा",
         desc: "फ्लाइट टिकट, श्रम स्वीकृति, र व्यवसायका लागि आजीवन निःशुल्क वेबसाइट। सुपथ मूल्यमा भरपर्दो सेवा।",
         cta: "सुरु गर्नुहोस्",
         viewServices: "मूल्य हेर्नुहोस् <i class='fas fa-arrow-right'></i>",
         
-        // Services
+        // --- Services ---
         servicesTitle: "हाम्रा प्रमुख सेवाहरु",
         servicesSub: "पारदर्शी मूल्य। कुनै लुकेको शुल्क छैन।",
         svc1_title: "फ्लाइट टिकट बुकिङ",
@@ -78,34 +78,57 @@ const content = {
         svc6_desc: "घरबाटै बैंक खाता खोल्न सहयोग।",
         priceFree: "निःशुल्क",
         
-        // Founder & Footer
+        // --- Founder & Footer ---
         proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ। मेरो उद्देश्य नेपालका हरेक डिजिटल सेवाहरू पारदर्शी र सस्तोमा तपाइँको हातमा पुर्याउनु हो।\"",
         foundedBy: "संस्थापक तथा सञ्चालक",
         desc: "नेपालका सबै डिजिटल सेवाहरूको लागि एक भरपर्दो गन्तव्य। छिटो र विश्वासिलो।",
         
-        // Button Label
+        // Button Labels (Idle State - Shows Target Language)
         langBtn: "English"
     }
 };
 
-langToggle.addEventListener('click', () => {
-    // 1. Toggle State
-    currentLang = currentLang === 'en' ? 'ne' : 'en';
-
-    // 2. Update Button Text
+// --- Language Function ---
+function updateContent() {
+    // 1. Update Button Text (Default State)
     if (langText) {
         langText.textContent = content[currentLang].langBtn;
     }
 
-    // 3. Update Page Content
+    // 2. Update Page Content
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (content[currentLang][key]) {
-            // Using innerHTML allows tags like <br> and <i> to work
             element.innerHTML = content[currentLang][key];
         }
     });
+}
+
+langToggle.addEventListener('click', () => {
+    // Toggle State
+    currentLang = currentLang === 'en' ? 'ne' : 'en';
+    updateContent();
 });
+
+// --- HOVER ALTERNATE LOGIC (The New Feature) ---
+// When English site -> Btn says 'Nepali'. On Hover -> Btn says 'English'
+// When Nepali site -> Btn says 'English'. On Hover -> Btn says 'Nepali'
+
+langToggle.addEventListener('mouseenter', () => {
+    // Show Current Language on Hover
+    langText.textContent = (currentLang === 'en') ? "English" : "नेपाली";
+    // Optional: Add visual rotation icon
+    const icon = langToggle.querySelector('i');
+    if(icon) icon.style.transform = 'rotate(180deg)';
+});
+
+langToggle.addEventListener('mouseleave', () => {
+    // Revert to Target Language on Leave
+    langText.textContent = content[currentLang].langBtn;
+    const icon = langToggle.querySelector('i');
+    if(icon) icon.style.transform = 'rotate(0deg)';
+});
+
 
 /* ============================
    2. POPUP MODAL LOGIC
@@ -161,7 +184,7 @@ function copyNumber(num) {
 }
 
 /* ============================
-   4. SCROLL ANIMATION
+   4. SCROLL & INTERACTION
    ============================ */
 window.addEventListener('scroll', reveal);
 
@@ -176,7 +199,7 @@ function reveal() {
         }
     }
 }
-reveal(); // Trigger on load
+reveal(); 
 
 // Close modals on outside click
 window.onclick = function(e) {
