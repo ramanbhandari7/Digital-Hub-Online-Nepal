@@ -19,27 +19,34 @@
     <!-- Background Decoration -->
     <div class="bg-shape"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar glass">
-        <div class="container flex-between">
-            <div class="brand">
+    <!-- 1. FIXED NAVBAR (Properly Aligned) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <!-- Left: Logo -->
+            <a href="#" class="brand">
                 <img src="Docs/logo.png" alt="Logo" class="nav-logo">
                 <div class="brand-text">
                     <h1>Digital Hub Online Nepal</h1>
                 </div>
-            </div>
-            
-            <div class="nav-actions">
-                <!-- Added WhatsApp & Call Buttons here -->
-                <a href="https://wa.me/9779810430546" target="_blank" class="nav-btn nav-wa">
-                    <i class="fab fa-whatsapp"></i> <span class="desktop-only">WhatsApp</span>
-                </a>
-                <a href="tel:+9779810430546" class="nav-btn nav-call">
-                    <i class="fas fa-phone-alt"></i> <span class="desktop-only">9810430546</span>
-                </a>
+            </a>
 
-                <button id="lang-toggle" class="btn-glow">
-                    <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
+            <!-- Center: Menu Links (Hidden on Mobile) -->
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Right: Action Buttons -->
+            <div class="nav-actions">
+                <a href="tel:+9779810430546" class="header-btn btn-call">
+                    <i class="fas fa-phone-alt"></i> <span>Call Now</span>
+                </a>
+                <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat">
+                    <i class="fab fa-whatsapp"></i> <span>Chat</span>
+                </a>
+                <button id="lang-toggle" class="btn-lang">
+                    <i class="fas fa-sync-alt"></i> <span>नेपाली</span>
                 </button>
             </div>
         </div>
@@ -179,76 +186,70 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h2 class="footer-logo">Digital Hub Online Nepali</h2>
+                    <h2 class="footer-logo">Digital Hub</h2>
                     <p class="footer-desc" data-key="desc">Your one-stop solution for all digital services in Nepal. Fast, reliable, and trusted by hundreds.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61576059702352" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/9779810430546" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="digitalhubonline2025@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:digitalhubonline2025@gmail.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#services">Flight Booking</a></li>
                         <li><a href="#services">Shram Approval</a></li>
-                        <li><a href="#services">SSF Registration</a></li>
                         <li><a href="#services">Web Hosting</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+9779810430546">+977 9810430546</a></li>
-                        <li><i class="fas fa-envelope"></i> info@digitalhub.com</li>
-                        <li><i class="fas fa-clock"></i> Sun - Fri: 10AM - 5PM</li>
+                        <li><i class="fas fa-envelope"></i> digitalhubonline2025@gmail.com</li>
                     </ul>
                 </div>
             </div>
         </div>
-        
         <div class="footer-bottom">
-            <div class="container">
-                <p>© 2025 Digital Hub Online Nepal. All Rights Reserved.</p>
-            </div>
+            <div class="container"><p>© 2025 Digital Hub Online Nepal. All Rights Reserved.</p></div>
         </div>
     </footer>
 
-    <!-- Side Floating Social Bar -->
+    <!-- Side Floating Socials -->
     <div class="side-social-bar">
         <a href="https://wa.me/9779810430546" target="_blank" class="side-btn whatsapp-side"><i class="fab fa-whatsapp"></i></a>
         <a href="https://m.me/ramanbhandari07" target="_blank" class="side-btn messenger-side"><i class="fab fa-facebook-messenger"></i></a>
         <a href="viber://chat?number=%2B9779810430546" class="side-btn viber-side"><i class="fab fa-viber"></i></a>
     </div>
 
-    <!-- NEW POPUP MODAL (Hidden by default) -->
+    <!-- 2. FIXED POPUP MODAL (Overlay Fix) -->
     <div id="helpPopup" class="popup-overlay">
         <div class="popup-content">
             <!-- Header -->
             <div class="popup-header">
-                <h3>Confused? Or Need Any Help</h3>
-                <i class="fas fa-times close-icon" onclick="closePopup()"></i>
+                <h3>Confused? Or Need Help?</h3>
+                <div class="close-icon-wrap" onclick="closePopup()">
+                    <i class="fas fa-times"></i>
+                </div>
             </div>
             
             <!-- Body -->
             <div class="popup-body">
                 <div class="popup-desc">
-                    <strong>Digital Hub Online</strong> is your trusted partner for fast, reliable digital services in Nepal. We help individuals and businesses with flights, registrations, licenses, and websites — all online or in person — with speed and trust.
+                    <strong>Digital Hub Online Nepal</strong> is your trusted partner for fast, reliable digital services in Nepal. We handle everything online or in-person with speed and trust.
                 </div>
-                
-                <h4 class="popup-subtitle">We are also available on <strong>Viber, Whatsapp, and Other Social Platforms</strong></h4>
+                <h4 class="popup-subtitle">Available on <strong>Viber, WhatsApp & Phone</strong></h4>
                 
                 <div class="popup-btn-grid">
                     <a href="https://wa.me/9779810430546" target="_blank" class="p-btn p-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Message us on Whatsapp
+                        <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                     <a href="viber://chat?number=%2B9779810430546" class="p-btn p-viber">
-                        <i class="fab fa-viber"></i> Message us on Viber
+                        <i class="fab fa-viber"></i> Viber
                     </a>
-                    <a href="mailto:info@digitalhub.com" class="p-btn p-email">
+                    <a href="digitalhubonline2025@gmail.com" class="p-btn p-email">
                         <i class="fas fa-envelope"></i> Email Us
                     </a>
                     <a href="tel:+9779810430546" class="p-btn p-call">
