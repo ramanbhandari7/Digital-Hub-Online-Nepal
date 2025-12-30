@@ -1,95 +1,202 @@
-/* ... [KEEP VARIABLES & BASICS SAME AS BEFORE] ... */
+/* =========================================
+   VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary: #2563EB;
+    --dark: #0f172a;
+    --accent: #F43F5E;
+    --orange: #ea580c;
+    --bg-light: #f8fafc;
+    --wa-green: #25D366;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Outfit', 'Mukta', sans-serif;
+    background: var(--bg-light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
 /* =========================================
-   NAVBAR (Align & Fix Fitting Issue)
+   1. NAVBAR STYLING (New Alignment)
    ========================================= */
 .navbar {
     position: sticky; top: 0; padding: 10px 0; z-index: 1000;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    backdrop-filter: blur(10px);
 }
 
+/* Nav Container uses Flexbox for proper spacing */
 .nav-container {
     display: flex; justify-content: space-between; align-items: center;
-    gap: 10px; /* Gap prevents overlapping */
 }
 
-/* Brand */
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
-.nav-logo { height: 45px; width: auto; }
+/* Left: Brand */
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo { height: 45px; }
 .brand-text h1 { 
-    font-size: 1.2rem; font-weight: 800; color: #0f172a; line-height: 1; white-space: nowrap; 
+    font-size: 1.2rem; font-weight: 800; color: var(--dark); line-height: 1; 
 }
 
-/* Menu (Hide earlier if screen tight) */
+/* Center: Menu Links */
 .nav-menu {
-    display: flex; list-style: none; gap: 20px;
+    display: flex; list-style: none; gap: 30px;
 }
 .nav-link {
-    text-decoration: none; color: #475569; font-weight: 600; font-size: 1rem; transition: 0.3s;
+    text-decoration: none; color: #475569; font-weight: 600; font-size: 1rem;
+    transition: 0.3s;
 }
-.nav-link:hover { color: #2563EB; }
+.nav-link:hover { color: var(--primary); }
 
-/* Right Buttons */
-.nav-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+/* Right: Actions */
+.nav-actions { display: flex; align-items: center; gap: 12px; }
 
 .header-btn {
     display: flex; align-items: center; gap: 6px;
-    padding: 8px 16px; border-radius: 50px; text-decoration: none;
-    font-weight: 600; font-size: 0.9rem; transition: 0.3s; white-space: nowrap;
+    padding: 8px 18px; border-radius: 50px; text-decoration: none;
+    font-weight: 600; font-size: 0.9rem; transition: 0.3s;
 }
 
-.btn-call { background: #ea580c; color: white; }
-.btn-call:hover { background: #c2410c; }
+/* Specific Button Colors */
+.btn-call { background: var(--orange); color: white; } /* Notary Nepal style Orange */
+.btn-call:hover { background: #c2410c; transform: translateY(-2px); }
 
-.btn-chat { background: #e9fdf0; color: #25D366; border: 1px solid #25D366; }
-.btn-chat:hover { background: #25D366; color: white; }
+.btn-chat { background: #e9fdf0; color: var(--wa-green); border: 1px solid var(--wa-green); }
+.btn-chat:hover { background: var(--wa-green); color: white; }
 
 .btn-lang {
-    background: #0f172a; color: white; border: none; padding: 8px 14px; 
-    border-radius: 5px; cursor: pointer; font-weight: 600;
-}
-
-/* RESPONSIVE FIXES (Prevents squash) */
-@media (max-width: 1024px) {
-    .brand-text { display: none; } /* Hide Brand text on medium screens */
-    .nav-menu { gap: 15px; }
-}
-
-@media (max-width: 768px) {
-    .nav-menu { display: none; } /* Hide Menu links on mobile */
-    .brand-text { display: none; } /* Hide Brand text */
-    .header-btn span { display: none; } /* Hide "Call Now" text on buttons, show only icon */
-    .header-btn { padding: 8px; width: 40px; height: 40px; justify-content: center; border-radius: 50%; }
+    background: var(--dark); color: white; border: none; padding: 8px 15px; 
+    border-radius: 5px; cursor: pointer; font-weight: 600; font-family: inherit;
+    display: flex; align-items: center; gap: 5px;
 }
 
 /* =========================================
-   POPUP OVERLAY (Centering Fix)
+   HERO & GENERAL SECTIONS
    ========================================= */
-.popup-overlay {
-    position: fixed; /* Ensures overlay covers screen */
-    top: 0; left: 0; bottom: 0; right: 0; /* Cover all corners */
-    width: 100vw; height: 100vh;
-    background: rgba(0,0,0,0.6);
-    z-index: 9999; /* Higher than Navbar (1000) */
-    display: none; /* Controlled by JS */
-    justify-content: center; align-items: center; /* Centers the modal */
-    backdrop-filter: blur(4px);
+.bg-shape {
+    position: fixed; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+    top: -150px; right: -150px; z-index: -1;
 }
 
-.popup-content {
-    background: white; width: 90%; max-width: 650px;
-    border-radius: 12px; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-    overflow: hidden; 
-    position: relative;
-    max-height: 90vh; overflow-y: auto; /* Scroll if screen is small */
+.hero { padding: 50px 0 80px; position: relative; }
+.flex-row { display: flex; align-items: center; gap: 50px; }
+
+.status-badge {
+    display: inline-flex; align-items: center; gap: 8px; background: white;
+    padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+    margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee;
 }
+.dot { height: 8px; width: 8px; background: #10b981; border-radius: 50%; }
 
-/* Rest of your existing CSS below... */
-/* [Keep Header, Hero, Services, Footer CSS from previous steps] */
+.gradient-text { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; color: var(--dark); }
+.hero p { font-size: 1.1rem; color: #64748b; margin-bottom: 30px; max-width: 500px; }
 
-.side-social-bar { position: fixed; top: 50%; right: 0; transform: translateY(-50%); display: flex; flex-direction: column; z-index: 999; }
+.hero-btns { display: flex; gap: 15px; }
+.btn-primary { 
+    background: var(--primary); color: white; padding: 12px 30px; border-radius: 6px; 
+    text-decoration: none; font-weight: 600; box-shadow: 0 5px 15px rgba(37,99,235,0.3);
+}
+.btn-text { color: var(--dark); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+
+.image-wrapper { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+.hero-image img { width: 100%; display: block; }
+
+.floating-card {
+    position: absolute; top: 20px; left: 20px;
+    background: white; padding: 10px 20px; border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-weight: bold; color: var(--dark); 
+    display: flex; align-items: center; gap: 8px; z-index: 5;
+}
+.floating-card i { color: #10b981; }
+
+/* SERVICES (Clean Cards) */
+.services { padding: 80px 0; background: #fff; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.heading-line { width: 60px; height: 4px; background: var(--primary); margin: 0 auto 15px; }
+
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+.service-box {
+    background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 30px;
+    position: relative; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between;
+    border-top: 4px solid transparent;
+}
+.service-box:hover { transform: translateY(-5px); border-top-color: var(--primary); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+.sb-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+.sb-content h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.price-badge { background: #f1f5f9; padding: 5px 12px; border-radius: 4px; font-weight: 700; font-size: 0.85rem; display: inline-block; margin-bottom: 20px; }
+.featured-box { border: 2px solid var(--primary); background: #eff6ff; }
+.ribbon { position: absolute; top: 0; right: 0; background: var(--accent); color: white; padding: 5px 15px; font-weight: bold; border-bottom-left-radius: 8px; }
+.sb-link { color: var(--primary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+
+/* FOUNDER & FOOTER */
+.proprietor-section { padding: 60px 0; background: var(--bg-light); }
+.pro-card { background: white; padding: 40px; border-radius: 12px; display: flex; gap: 40px; align-items: center; border: 1px solid #e2e8f0; }
+.pro-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; }
+.compact-container { max-width: 900px; }
+.quote-mark { font-size: 2rem; color: #cbd5e1; margin-bottom: 10px; }
+.founder-name { font-weight: 700; color: var(--primary); }
+
+.main-footer { background: #020617; color: white; padding-top: 60px; position: relative; z-index: 10; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 50px; }
+.footer-logo { font-size: 1.8rem; margin-bottom: 20px; }
+.footer-col h3 { margin-bottom: 20px; color: white; font-size: 1.2rem; }
+.footer-col ul { list-style: none; } 
+.footer-col li { margin-bottom: 10px; } 
+.footer-col a { color: #cbd5e1; text-decoration: none; }
+.social-links { display: flex; gap: 10px; }
+.social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; border-radius: 50%; color: white; text-decoration: none; }
+
+.footer-bottom { background: black; padding: 15px 0; text-align: center; color: #888; font-size: 0.9rem; }
+
+/* SIDEBAR */
+.side-social-bar { position: fixed; top: 50%; right: 0; transform: translateY(-50%); display: flex; flex-direction: column; z-index: 99; }
 .side-btn { width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; color: white; font-size: 24px; text-decoration: none; margin-bottom: 5px; }
 .whatsapp-side { background: #25D366; } .messenger-side { background: #0084FF; } .viber-side { background: #7360f2; }
-/* ... */
+
+/* =========================================
+   2. POPUP MODAL STYLING (The Fix)
+   ========================================= */
+.popup-overlay {
+    position: fixed; /* Must be fixed to stay on screen */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999; /* Ensure high Z-index to cover everything */
+    display: none; /* JS toggles to 'flex' */
+    justify-content: center; align-items: center;
+    backdrop-filter: blur(5px);
+}
+.popup-content {
+    background: white; width: 90%; max-width: 650px;
+    border-radius: 8px; box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+    overflow: hidden; animation: zoomIn 0.3s ease;
+}
+@keyframes zoomIn { from {transform: scale(0.9); opacity:0;} to {transform: scale(1); opacity:1;} }
+
+.popup-header { padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #f9fafb; }
+.close-icon-wrap { cursor: pointer; color: #888; font-size: 1.2rem; }
+.popup-body { padding: 25px; }
+.popup-desc { background: #f1f5f9; padding: 15px; border-left: 4px solid var(--primary); margin-bottom: 20px; color: #555; }
+.popup-subtitle { text-align: center; margin-bottom: 15px; color: #333; }
+.popup-btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.p-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+.p-whatsapp { background: #25D366; } .p-viber { background: #7360f2; } .p-email { background: #dc2626; } .p-call { background: var(--primary); }
+.popup-footer { padding: 15px; background: #fafafa; display: flex; justify-content: flex-end; border-top: 1px solid #eee; }
+.popup-close-btn { background: var(--orange); color: white; border: none; padding: 8px 25px; border-radius: 50px; cursor: pointer; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav-menu { display: none; } /* Hide middle menu on mobile */
+    .flex-row, .pro-card { flex-direction: column; text-align: center; }
+    .brand-text { display: none; } /* Show only logo to fit buttons */
+    .popup-btn-grid { grid-template-columns: 1fr; }
+    .nav-btn span { display: none; } /* Hide button text on mobile */
+}
