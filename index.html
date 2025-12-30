@@ -389,138 +389,260 @@
         </div>
     </section>
 
-    <!-- 6. CONTACT & FOOTER SECTION -->
-    <footer class="main-footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Company Info -->
-                <div class="footer-col">
-                    <div class="footer-brand">
-                        <h2 class="footer-logo">Digital Hub Online Nepal</h2>
-                        <p class="footer-desc" data-key="footerDesc">
-                            Your one-stop solution for all digital services in Nepal. 
-                            Fast, reliable, and trusted by hundreds.
-                        </p>
-                    </div>
-                    
-                    <!-- Contact Form -->
-                    <div class="contact-form-wrapper">
-                        <h3>Get Free Consultation</h3>
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Full Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" placeholder="Phone Number" required>
-                            </div>
-                            <div class="form-group">
-                                <select required>
-                                    <option value="">Select Service Needed</option>
-                                    <option>Flight Booking</option>
-                                    <option>Shram Approval</option>
-                                    <option>SSF Registration</option>
-                                    <option>Website & Hosting</option>
-                                    <option>Driving License</option>
-                                    <option>Bank Account Opening</option>
-                                    <option>Other Service</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Your Message / Questions" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary">
-                                <i class="fas fa-paper-plane"></i> Send Inquiry
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">All Services</a></li>
-                        <li><a href="#testimonials">Client Reviews</a></li>
-                        <li><a href="#" onclick="openTerms()">Terms of Service</a></li>
-                        <li><a href="#" onclick="openPrivacy()">Privacy Policy</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-col">
-                    <h3>Contact Information</h3>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Office Address</strong>
-                                <p>Kathmandu, Nepal</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <strong>Call Us Anytime</strong>
-                                <p><a href="tel:+9779810430546">+977 9810430546</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email Address</strong>
-                                <p><a href="mailto:digitalhubonline2025@gmail.com">digitalhubonline2025@gmail.com</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Business Hours</strong>
-                                <p>9 AM - 7 PM (NST)<br>Sunday - Friday</p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <!-- Social Links -->
-                    <div class="social-links">
-                        <h4>Connect With Us</h4>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/profile.php?id=61576059702352" target="_blank" class="social-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://wa.me/9779810430546" target="_blank" class="social-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="https://m.me/ramanbhandari07" target="_blank" class="social-icon">
-                                <i class="fab fa-facebook-messenger"></i>
-                            </a>
-                            <a href="viber://chat?number=9779810430546" class="social-icon">
-                                <i class="fab fa-viber"></i>
-                            </a>
-                            <a href="mailto:digitalhubonline2025@gmail.com" class="social-icon">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p>© 2025 Digital Hub Online Nepal. All Rights Reserved.</p>
-                    <p class="footer-notes">
-                        *Prices may vary based on service requirements. 
-                        Contact us for exact quotation.
+   <!-- 6. CONTACT & FOOTER SECTION -->
+<footer class="main-footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Company Info & Form -->
+            <div class="footer-col contact-form-col">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">Digital Hub Online Nepal</h2>
+                    <p class="footer-desc">
+                        Your one-stop solution for all digital services in Nepal. 
+                        Fast, reliable, and trusted by hundreds.
                     </p>
                 </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3><i class="fas fa-headset"></i> Get Free Consultation</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Your Full Name *" required>
+                                <div class="form-error" id="nameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="Phone Number *" required>
+                                <div class="form-error" id="phoneError"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" required>
+                                <option value="">Select Service Needed *</option>
+                                <option value="Flight Booking">Flight Booking</option>
+                                <option value="Shram Approval">Shram Approval</option>
+                                <option value="SSF Registration">SSF Registration</option>
+                                <option value="Website & Hosting">Website & Hosting</option>
+                                <option value="Driving License">Driving License</option>
+                                <option value="Bank Account">Bank Account Opening</option>
+                                <option value="Other">Other Service</option>
+                            </select>
+                            <div class="form-error" id="serviceError"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message / Questions" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send to WhatsApp
+                        </button>
+                        <p class="form-note">
+                            <i class="fas fa-lock"></i> Your information is secure. We'll contact you within 30 minutes.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col quick-links-col">
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> Quick Links</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#home" class="footer-link">
+                                <i class="fas fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="footer-link">
+                                <i class="fas fa-user"></i>
+                                <span>About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="footer-link">
+                                <i class="fas fa-concierge-bell"></i>
+                                <span>Our Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="footer-link">
+                                <i class="fas fa-star"></i>
+                                <span>Client Reviews</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link" onclick="openTerms()">
+                                <i class="fas fa-file-contract"></i>
+                                <span>Terms of Service</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link" onclick="openPrivacy()">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Privacy Policy</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Business Hours -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-clock"></i> Business Hours</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span>Sunday - Friday</span>
+                            <span>9 AM - 7 PM</span>
+                        </li>
+                        <li>
+                            <span>Saturday</span>
+                            <span>10 AM - 5 PM</span>
+                        </li>
+                        <li>
+                            <span>Emergency Support</span>
+                            <span>24/7 Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-col contact-info-col">
+                <div class="footer-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Contact Information</h3>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Office Address</strong>
+                                <p>Kathmandu, Nepal</p>
+                                <small>Serving Nationwide & International Clients</small>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Call Us Anytime</strong>
+                                <p>
+                                    <a href="tel:+9779810430546" class="phone-link">
+                                        <i class="fas fa-phone"></i> +977 9810430546
+                                    </a>
+                                </p>
+                                <small>Available on Call & WhatsApp</small>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Email Address</strong>
+                                <p>
+                                    <a href="mailto:digitalhubonline2025@gmail.com" class="email-link">
+                                        <i class="fas fa-envelope"></i> digitalhubonline2025@gmail.com
+                                    </a>
+                                </p>
+                                <small>Response within 2 hours</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="footer-section social-section">
+                    <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                    <div class="social-grid">
+                        <a href="https://wa.me/9779810430546" target="_blank" class="social-card whatsapp-card">
+                            <div class="social-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="social-info">
+                                <strong>WhatsApp</strong>
+                                <span>Instant Chat</span>
+                            </div>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61576059702352" target="_blank" class="social-card facebook-card">
+                            <div class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div class="social-info">
+                                <strong>Facebook</strong>
+                                <span>Follow Us</span>
+                            </div>
+                        </a>
+                        <a href="https://m.me/ramanbhandari07" target="_blank" class="social-card messenger-card">
+                            <div class="social-icon">
+                                <i class="fab fa-facebook-messenger"></i>
+                            </div>
+                            <div class="social-info">
+                                <strong>Messenger</strong>
+                                <span>Quick Message</span>
+                            </div>
+                        </a>
+                        <a href="viber://chat?number=9779810430546" class="social-card viber-card">
+                            <div class="social-icon">
+                                <i class="fab fa-viber"></i>
+                            </div>
+                            <div class="social-info">
+                                <strong>Viber</strong>
+                                <span>Chat on Viber</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="footer-section payment-section">
+                    <h3><i class="fas fa-credit-card"></i> Accepted Payments</h3>
+                    <div class="payment-methods">
+                        <span class="payment-method" title="eSewa">
+                            <i class="fas fa-wallet"></i>
+                        </span>
+                        <span class="payment-method" title="Khalti">
+                            <i class="fas fa-mobile-alt"></i>
+                        </span>
+                        <span class="payment-method" title="Bank Transfer">
+                            <i class="fas fa-university"></i>
+                        </span>
+                        <span class="payment-method" title="Cash">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
-
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <p>© 2025 Digital Hub Online Nepal. All Rights Reserved.</p>
+                </div>
+                <div class="footer-links-bottom">
+                    <a href="#" onclick="openTerms()">Terms of Service</a>
+                    <span class="separator">•</span>
+                    <a href="#" onclick="openPrivacy()">Privacy Policy</a>
+                    <span class="separator">•</span>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    *Prices may vary based on service requirements. Contact us for exact quotation.
+                    We are an independent service provider and not affiliated with any government agency.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
     <!-- 7. SIDE SOCIAL BAR -->
     <div class="side-social-bar">
         <a href="https://wa.me/9779810430546" target="_blank" class="side-btn whatsapp-side" 
