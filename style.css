@@ -1,8 +1,8 @@
 :root {
-    --primary: #2563EB; /* Blue */
+    --primary: #2563EB;
     --primary-dark: #1e40af;
-    --dark: #0f172a; /* Deep Navy */
-    --accent: #F43F5E; /* Red */
+    --dark: #0f172a;
+    --accent: #F43F5E;
     --gray: #64748b;
     --bg-light: #f8fafc;
     --white: #ffffff;
@@ -21,7 +21,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Shape (Subtle) */
+/* Background Shape */
 .bg-shape {
     position: fixed; width: 500px; height: 500px;
     background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(255,255,255,0) 70%);
@@ -87,7 +87,7 @@ body {
 }
 .floating-card i { color: #10b981; }
 
-/* --- NEW SERVICE CARDS (Notary Style) --- */
+/* --- SERVICES (Notary Style) --- */
 .services { padding: 80px 0; background: #fff; }
 .section-header { text-align: center; margin-bottom: 50px; }
 .section-header h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 10px; }
@@ -98,26 +98,19 @@ body {
 .service-box {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 4px solid transparent; /* Hidden top border initially */
+    border-top: 4px solid transparent; 
     padding: 30px;
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: flex; flex-direction: column; justify-content: space-between;
 }
-
 .service-box:hover {
-    border-top-color: var(--primary); /* Shows Blue top on hover */
+    border-top-color: var(--primary);
     box-shadow: 0 15px 30px rgba(0,0,0,0.08);
     transform: translateY(-5px);
 }
-
-.sb-icon {
-    font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;
-}
-
+.sb-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
 .sb-content h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--dark); }
 .sb-content p { color: var(--gray); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; }
 
@@ -132,9 +125,8 @@ body {
     font-weight: 600; color: var(--primary); text-decoration: none;
     display: inline-flex; align-items: center; gap: 8px; transition: 0.3s;
 }
-.sb-link:hover { gap: 12px; } /* Arrow moves */
+.sb-link:hover { gap: 12px; }
 
-/* Featured Box */
 .featured-box { border: 2px solid var(--primary); background: #eff6ff; }
 .ribbon {
     position: absolute; top: 0; right: 0; background: var(--accent); color: white;
@@ -159,8 +151,15 @@ body {
 .founder-info { border-top: 1px solid #e2e8f0; padding-top: 15px; }
 .founder-name { font-weight: 700; color: var(--primary); text-decoration: none; }
 
-/* --- NEW FOOTER --- */
-.main-footer { background: var(--dark); color: white; padding-top: 70px; margin-top: 40px; }
+/* --- FOOTER FIXES --- */
+.main-footer { 
+    background: #020617; /* Strong Dark Color */
+    color: white; 
+    padding-top: 70px; 
+    margin-top: 40px;
+    position: relative; /* Ensures it sits correctly */
+    z-index: 10; /* Ensures visibility above background shapes */
+}
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 50px; }
 
 .footer-logo { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; color: white; }
@@ -186,10 +185,10 @@ body {
 .contact-list li { display: flex; gap: 10px; align-items: center; color: #cbd5e1; }
 .contact-list i { color: var(--primary); }
 
-.footer-bottom { background: #020617; padding: 20px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-bottom { background: #000000; padding: 20px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
 .footer-bottom p { color: #64748b; font-size: 0.9rem; }
 
-/* --- SIDEBAR FLOATING ICONS --- */
+/* --- SIDEBAR --- */
 .side-social-bar {
     position: fixed; top: 50%; right: 0; transform: translateY(-50%);
     display: flex; flex-direction: column; z-index: 1000;
