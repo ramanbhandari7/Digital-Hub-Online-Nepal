@@ -1,4 +1,28 @@
-/* === 1. LANGUAGE TOGGLE LOGIC === */
+/* =====================================
+   1. ANIMATION TRIGGER (FIXES BLANK SCREEN)
+   ===================================== */
+function triggerAnimation() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 100; // Trigger earlier
+
+        if (elementTop < windowHeight - elementVisible) {
+            el.classList.add('active');
+        }
+    });
+}
+
+// Run immediately on load (Fixes blank hero)
+window.addEventListener('load', triggerAnimation);
+// Run on scroll
+window.addEventListener('scroll', triggerAnimation);
+
+
+/* =====================================
+   2. LANGUAGE TOGGLE (FULL DICTIONARY)
+   ===================================== */
 const langToggle = document.getElementById('lang-toggle');
 const langText = document.getElementById('lang-text');
 let currentLang = 'en';
@@ -6,83 +30,133 @@ let currentLang = 'en';
 const content = {
     en: {
         langBtn: "नेपाली",
-        // Add content mapping here...
+        // Header
         status: "Open Now • Online Service",
         headline: "All Digital Solutions.<br>One Platform.",
-        desc: "Flight tickets, SSF, Licenses, and websites. Lowest price guarantee.",
+        desc: "Flight tickets, SSF, Licenses, and lifetime FREE websites for businesses. Expert service at the lowest price.",
         cta: "Start Now",
+        viewServices: "See Pricing <i class='fas fa-arrow-right'></i>",
+        // Services
         servicesTitle: "Our Premium Services",
-        proVoice: "\"Technology should make life easier...\"",
-        foundedBy: "Founded & Operated by"
+        servicesSub: "Tap any card below to see Payment Options.",
+        svc1_title: "Flight Booking",
+        svc1_desc: "Domestic & International flights.",
+        price1: "Best Rate",
+        svc2_title: "Shram Approval",
+        svc2_desc: "Online Labor Permit (Re-entry).",
+        svc3_title: "SSF Registration",
+        svc3_desc: "Social Security Fund Enrollment.",
+        svc4_title: "Website & Hosting",
+        svc4_desc: "Lifetime free for Business & Schools.",
+        svc5_title: "Driving License",
+        svc5_desc: "Form filling & exam date fix.",
+        svc6_title: "Bank Opening",
+        svc6_desc: "Nic Asia, Global IME & more.",
+        priceFree: "Free Help",
+        // Founder & Footer
+        proVoice: "\"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably.\"",
+        foundedBy: "Founded & Operated by",
+        footerDesc: "Your one-stop solution for all digital services in Nepal. Fast, reliable, and trusted by hundreds."
     },
     ne: {
         langBtn: "English",
+        // Header
         status: "अहिले खुला छ • अनलाइन सेवा",
         headline: "सबै डिजिटल सेवा<br>एकै ठाउँमा",
-        desc: "फ्लाइट टिकट, श्रम स्वीकृति र वेबसाइट सेवाहरू।",
+        desc: "फ्लाइट टिकट, श्रम स्वीकृति, र व्यवसायका लागि आजीवन निःशुल्क वेबसाइट। सुपथ मूल्यमा भरपर्दो सेवा।",
         cta: "सुरु गर्नुहोस्",
+        viewServices: "मूल्य हेर्नुहोस् <i class='fas fa-arrow-right'></i>",
+        // Services
         servicesTitle: "हाम्रा प्रमुख सेवाहरु",
-        proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ...\"",
-        foundedBy: "संस्थापक तथा सञ्चालक"
+        servicesSub: "तपाईंको सजिलोको लागि विभिन्न भुक्तानी माध्यमहरू।",
+        svc1_title: "फ्लाइट टिकट बुकिङ",
+        svc1_desc: "स्वदेशी तथा विदेशी उडानहरु।",
+        price1: "सस्तो दर",
+        svc2_title: "अनलाइन श्रम स्वीकृति",
+        svc2_desc: "वैदेशिक रोजगार पुनः श्रम स्वीकृति।",
+        svc3_title: "SSF दर्ता",
+        svc3_desc: "सामाजिक सुरक्षा कोषमा दर्ता।",
+        svc4_title: "वेबसाइट र होस्टिङ",
+        svc4_desc: "व्यवसाय र स्कूलका लागि आजीवन निःशुल्क।",
+        svc5_title: "ड्राइभिङ लाइसेन्स",
+        svc5_desc: "फारम भर्ने र मिति सार्ने काम।",
+        svc6_title: "बैंक खाता",
+        svc6_desc: "घरबाटै बैंक खाता खोल्न सहयोग।",
+        priceFree: "निःशुल्क",
+        // Founder & Footer
+        proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ। मेरो उद्देश्य नेपालका हरेक डिजिटल सेवाहरू पारदर्शी र सस्तोमा तपाइँको हातमा पुर्याउनु हो।\"",
+        foundedBy: "संस्थापक तथा सञ्चालक",
+        footerDesc: "नेपालका सबै डिजिटल सेवाहरूको लागि एक भरपर्दो गन्तव्य। छिटो र विश्वासिलो।"
     }
 };
 
-// Toggle
-langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'ne' : 'en';
-    if(langText) langText.textContent = content[currentLang].langBtn;
-    
-    // Simple update logic loop
-    document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (content[currentLang][key]) el.innerHTML = content[currentLang][key];
+if(langToggle) {
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'en' ? 'ne' : 'en';
+        if(langText) langText.textContent = content[currentLang].langBtn;
+        
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (content[currentLang][key]) el.innerHTML = content[currentLang][key];
+        });
     });
-});
 
-// Hover Effect
-langToggle.addEventListener('mouseenter', () => {
-    langText.textContent = (currentLang === 'en') ? "English" : "नेपाली";
-    const icon = langToggle.querySelector('i');
-    if(icon) icon.style.transform = 'rotate(180deg)';
-});
-langToggle.addEventListener('mouseleave', () => {
-    langText.textContent = content[currentLang].langBtn;
-    const icon = langToggle.querySelector('i');
-    if(icon) icon.style.transform = 'rotate(0deg)';
-});
+    langToggle.addEventListener('mouseenter', () => {
+        if(langText) langText.textContent = (currentLang === 'en') ? "English" : "नेपाली";
+        const icon = langToggle.querySelector('i');
+        if(icon) icon.style.transform = 'rotate(180deg)';
+    });
+    langToggle.addEventListener('mouseleave', () => {
+        if(langText) langText.textContent = content[currentLang].langBtn;
+        const icon = langToggle.querySelector('i');
+        if(icon) icon.style.transform = 'rotate(0deg)';
+    });
+}
 
-/* === 2. MOBILE MENU === */
+/* =====================================
+   3. MOBILE MENU (HAMBURGER)
+   ===================================== */
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if(hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 function closeMenu() {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    if(hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 }
 
-/* === 3. POPUP LOGIC === */
-const popup = document.getElementById('helpPopup');
-window.onload = function() {
-    setTimeout(() => { 
-        popup.style.display = 'flex'; 
-        setTimeout(()=> popup.style.opacity = '1', 10);
-    }, 5000); 
-};
-
-function closePopup() {
-    popup.style.opacity = '0';
-    setTimeout(() => { popup.style.display = 'none'; }, 300);
-}
-
-/* === 4. PAYMENT LOGIC === */
+/* =====================================
+   4. POPUPS & PAYMENT MODAL
+   ===================================== */
+const helpPopup = document.getElementById('helpPopup');
 const paymentModal = document.getElementById('paymentModal');
 const payNameEl = document.getElementById('payServiceName');
 const payAmountEl = document.getElementById('payAmount');
+
+// Auto Popup after 5 seconds
+window.addEventListener('load', function() {
+    setTimeout(() => { 
+        if(helpPopup) {
+            helpPopup.style.display = 'flex';
+            setTimeout(()=> helpPopup.style.opacity = '1', 10);
+        }
+    }, 5000); 
+});
+
+function closePopup() {
+    if(helpPopup) {
+        helpPopup.style.opacity = '0';
+        setTimeout(() => { helpPopup.style.display = 'none'; }, 300);
+    }
+}
 
 function openPayment(name, cost) {
     if(payNameEl) payNameEl.textContent = name;
@@ -104,33 +178,8 @@ function copyNumber(num) {
     navigator.clipboard.writeText(num).then(() => { alert("Number Copied: " + num); });
 }
 
+// Click Outside to Close
 window.onclick = function(e) {
     if (e.target == paymentModal) closePayment();
-    if (e.target == popup) closePopup();
+    if (e.target == helpPopup) closePopup();
 };
-
-/* === 5. SCROLL REVEAL === */
-window.addEventListener('scroll', () => {
-    document.querySelectorAll('.reveal').forEach(el => {
-        if(el.getBoundingClientRect().top < window.innerHeight - 150) {
-            el.classList.add('active');
-        }
-    });
-});
-/* ... Toggle & Payment Logic same as before ... */
-
-// ADD THIS MOBILE MENU LOGIC TO YOUR SCRIPT IF MISSING:
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-
-if(hamburger) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-}
-
-function closeMenu() {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}
