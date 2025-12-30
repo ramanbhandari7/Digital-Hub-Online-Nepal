@@ -28,7 +28,10 @@ const content = {
         priceFree: "Free Help",
         svc7_title: "Digital Solutions for Nepal",
         svc7_desc: "Living abroad? We handle your digital paperwork in Nepal.",
+        proVoice: "\"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably.\"",
+        foundedBy: "Founded & Operated by",
         contactTitle: "Ready to Go Digital?",
+        contactSub: "Connect with us on social media or call directly.",
         langBtn: "नेपाली"
     },
     ne: {
@@ -55,7 +58,10 @@ const content = {
         priceFree: "निःशुल्क",
         svc7_title: "विदेशबाट नेपालका लागि सेवा",
         svc7_desc: "तपाईं विदेशमा, काम नेपालमा? हामी छौ नि।",
+        proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ। मेरो उद्देश्य नेपालका हरेक डिजिटल सेवाहरू पारदर्शी र सस्तोमा तपाइँको हातमा पुर्याउनु हो।\"",
+        foundedBy: "संस्थापक तथा सञ्चालक",
         contactTitle: "डिजिटल बन्न तयार हुनुहुन्छ?",
+        contactSub: "सामाजिक सञ्जालमा जोडिनुहोस् वा सिधै फोन गर्नुहोस्।",
         langBtn: "English"
     }
 };
@@ -65,7 +71,6 @@ langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'ne' : 'en';
     langText.textContent = content[currentLang].langBtn;
 
-    // Use HTML to allow <br> tags in headline
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (content[currentLang][key]) {
@@ -91,5 +96,4 @@ function reveal() {
         }
     }
 }
-// Trigger once on load
-reveal();
+reveal(); // Trigger on load
