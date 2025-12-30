@@ -66,7 +66,6 @@ const content = {
     }
 };
 
-// Language Toggle
 langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'ne' : 'en';
     langText.textContent = content[currentLang].langBtn;
@@ -79,7 +78,6 @@ langToggle.addEventListener('click', () => {
     });
 });
 
-// Scroll Animation
 window.addEventListener('scroll', reveal);
 
 function reveal() {
@@ -88,7 +86,6 @@ function reveal() {
         var windowheight = window.innerHeight;
         var revealtop = reveals[i].getBoundingClientRect().top;
         var revealpoint = 150;
-
         if (revealtop < windowheight - revealpoint) {
             reveals[i].classList.add('active');
         } else {
@@ -96,4 +93,4 @@ function reveal() {
         }
     }
 }
-reveal(); // Trigger on load
+reveal();
