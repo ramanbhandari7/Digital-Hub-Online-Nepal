@@ -1,39 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>All Kind Digital Solution | Nepal</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Kind Digital Solution – Nepal</title>
+    
+    <!-- Google Fonts for English and Nepali -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>All Kind Digital Solution</h1>
-  <p>All Digital Services in One Place | नेपालका सबै डिजिटल सेवा</p>
-</header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🇳🇵</span> All Kind Digital Solution
+        </div>
+        <button id="lang-toggle" class="btn-lang">
+            <i class="fas fa-language"></i> <span id="lang-text">नेपाली</span>
+        </button>
+    </nav>
 
-<section class="services">
-  <h2>Our Services | हामीले प्रदान गर्ने सेवाहरू</h2>
-  <ul>
-    <li>✈️ Flight Ticket Booking</li>
-    <li>📝 Online Shram Approval</li>
-    <li>🛡️ SSF Registration</li>
-    <li>🌐 FREE Website & Hosting for Life</li>
-    <li>🚘 Driving License Applications</li>
-    <li>🏦 Bank Account Opening</li>
-    <li>🌍 Digital Solutions for Nepal from Abroad</li>
-  </ul>
-</section>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 data-key="headline">All Kind Digital Solutions in One Place</h1>
+            <p data-key="subheadline">Your one-stop solution for fast, reliable & affordable digital services.</p>
+            <a href="#contact" class="btn-primary" data-key="cta">Contact Us Today</a>
+        </div>
+    </header>
 
-<section class="contact">
-  <h2>Contact Us | सम्पर्क गर्नुहोस्</h2>
-  <p>📞 Phone / WhatsApp: wa.me/9779810430546</p>
-  <p>📘 Facebook: https://www.facebook.com/profile.php?id=61576059702352</p>
-</section>
+    <!-- Trust Badges -->
+    <section class="trust-bar">
+        <div class="container">
+            <span data-key="trust1">📌 Trusted</span>
+            <span class="divider">|</span>
+            <span data-key="trust2">⚡ Quick Process</span>
+            <span class="divider">|</span>
+            <span data-key="trust3">🤝 Expert Support</span>
+        </div>
+    </section>
 
-<footer>
-  <p>© 2025 All Kind Digital Solution | Nepal</p>
-</footer>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 data-key="servicesTitle">Our Services</h2>
+            <div class="service-grid">
+                
+                <!-- Service 1 -->
+                <div class="card">
+                    <div class="icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 data-key="svc1_title">Flight Ticket Booking</h3>
+                </div>
 
+                <!-- Service 2 -->
+                <div class="card">
+                    <div class="icon"><i class="fas fa-file-signature"></i></div>
+                    <h3 data-key="svc2_title">Online Shram Approval</h3>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="card">
+                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 data-key="svc3_title">SSF Registration</h3>
+                </div>
+
+                <!-- Service 4 (Highlighted) -->
+                <div class="card highlight">
+                    <div class="badge" data-key="freeBadge">FREE FOR LIFE</div>
+                    <div class="icon"><i class="fas fa-globe"></i></div>
+                    <h3 data-key="svc4_title">Website & Hosting</h3>
+                    <p data-key="svc4_desc">For Businesses, Restaurants & Schools</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="card">
+                    <div class="icon"><i class="fas fa-car"></i></div>
+                    <h3 data-key="svc5_title">Driving License Applications</h3>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="card">
+                    <div class="icon"><i class="fas fa-university"></i></div>
+                    <h3 data-key="svc6_title">Bank Account Opening</h3>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="card wide">
+                    <div class="icon"><i class="fas fa-laptop-house"></i></div>
+                    <h3 data-key="svc7_title">Digital Solutions for Nepal — even from abroad</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="container">
+            <h2 data-key="contactTitle">Go Digital With Ease!</h2>
+            <p data-key="contactSub">Contact us today for expert support.</p>
+            
+            <div class="contact-buttons">
+                <!-- Replace # with your actual links -->
+                <a href="https://wa.me/9779810430546" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="tel:+9779810430546" class="btn-phone">
+                    <i class="fas fa-phone-alt"></i> Call Now
+                </a>
+            </div>
+            
+            <p class="copyright">© 2025 All Kind Digital Solution – Nepal 🇳🇵</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
