@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #333;
+}
+
+header {
+  background: #0056b3;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.services, .contact {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  background: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-left: 5px solid #0056b3;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
