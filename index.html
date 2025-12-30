@@ -3,48 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Hub Online Nepal </title>
-    
-    <!-- Favicon -->
+    <title>All Kind Digital Solution – Nepal</title>
     <link rel="shortcut icon" href="Docs/favicon.png" type="image/x-icon">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Mukta:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Bar (Trust Indicators) -->
-    <div class="top-bar">
-        <div class="container flex-between">
-            <div class="contact-mini">
-                <i class="fas fa-phone-alt"></i> <span>+977-9810430546</span>
-                <span class="sep">|</span>
-                <i class="fas fa-envelope"></i> <span>digitalhubonline2025@gmail.com</span>
-            </div>
-            <div class="trust-mini">
-                <span data-key="trust1"> Trusted</span>
-                <span data-key="trust2"> Quick Process</span>
-            </div>
-        </div>
-    </div>
+    <!-- Background Shapes for Visual Interest -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Navbar -->
+    <nav class="navbar glass">
         <div class="container flex-between">
             <div class="brand">
                 <img src="Docs/logo.png" alt="Logo" class="nav-logo">
                 <div class="brand-text">
-                    <h1>All Kind Of Digital Solution In Nepal & Abroad</h1>
-                    <span class="flag">🇳🇵</span>
+                    <h1>Digital Hub</h1>
+                    <span class="tagline">Nepal's #1 Solution</span>
                 </div>
             </div>
-            <button id="lang-toggle" class="btn-lang">
-                <i class="fas fa-globe"></i> <span id="lang-text">नेपाली</span>
+            <button id="lang-toggle" class="btn-glow">
+                <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
             </button>
         </div>
     </nav>
@@ -52,17 +36,37 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container flex-row">
-            <div class="hero-content">
-                <span class="badge-pill" data-key="subheadline">One-stop digital solution 💻✨</span>
-                <h1 data-key="headline">All Kind Digital Solutions in One Place</h1>
-                <p data-key="desc">Flight tickets, SSF registration, Bank accounts, and free websites for businesses. We make digital easy.</p>
+            <div class="hero-content reveal">
+                <div class="status-badge">
+                    <span class="dot"></span> <span data-key="status">Open Now • Online Service</span>
+                </div>
+                <h1 class="gradient-text" data-key="headline">All Digital Solutions.<br>One Platform.</h1>
+                <p data-key="desc">Flight tickets, SSF, Licenses, and lifetime FREE websites for businesses. Expert service at the lowest price.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+
                 <div class="hero-btns">
-                    <a href="#contact" class="btn-primary" data-key="cta">Contact Us Today</a>
-                    <a href="#services" class="btn-secondary" data-key="viewServices">View Services</a>
+                    <a href="#contact" class="btn-primary" data-key="cta">Start Now</a>
+                    <a href="#services" class="btn-text" data-key="viewServices">See Pricing <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="Docs/main.png" alt="Digital Services Nepal">
+            <div class="hero-image reveal delay-1">
+                <div class="image-wrapper">
+                    <img src="Docs/main.png" alt="Digital Services Nepal">
+                    <div class="floating-card">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Verified Service</span>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -70,94 +74,107 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-title">
-                <h2 data-key="servicesTitle">Our Premium Services</h2>
-                <div class="underline"></div>
+            <div class="section-header reveal">
+                <h2 data-key="servicesTitle">Premium Services, Local Prices</h2>
+                <p data-key="servicesSub">Transparent pricing. No hidden fees.</p>
             </div>
             
             <div class="service-grid">
                 
-                <!-- Card 1 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-plane-departure"></i></div>
-                    <h3 data-key="svc1_title">Flight Ticket Booking</h3>
-                    <p data-key="svc1_desc">Domestic & International flights at best rates.</p>
+                <!-- Service 1 -->
+                <div class="card reveal">
+                    <div class="price-tag" data-key="price1">Best Rate</div>
+                    <div class="icon-circle c1"><i class="fas fa-plane"></i></div>
+                    <h3 data-key="svc1_title">Flight Booking</h3>
+                    <p data-key="svc1_desc">Domestic & International flights.</p>
+                    <a href="#contact" class="card-link">Book Now &rarr;</a>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-passport"></i></div>
-                    <h3 data-key="svc2_title">Online Shram Approval</h3>
-                    <p data-key="svc2_desc">Hassle-free labor permit approval process.</p>
+                <!-- Service 2 -->
+                <div class="card reveal">
+                    <div class="price-tag">Rs. 500*</div>
+                    <div class="icon-circle c2"><i class="fas fa-file-contract"></i></div>
+                    <h3 data-key="svc2_title">Shram Approval</h3>
+                    <p data-key="svc2_desc">Online Labor Permit (Re-entry).</p>
+                    <a href="#contact" class="card-link">Apply Now &rarr;</a>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                <!-- Service 3 -->
+                <div class="card reveal">
+                    <div class="price-tag">Rs. 1000</div>
+                    <div class="icon-circle c3"><i class="fas fa-shield-alt"></i></div>
                     <h3 data-key="svc3_title">SSF Registration</h3>
-                    <p data-key="svc3_desc">Secure your future with Social Security Fund.</p>
+                    <p data-key="svc3_desc">Social Security Fund Enrollment.</p>
+                    <a href="#contact" class="card-link">Register &rarr;</a>
                 </div>
 
-                <!-- Card 4 (Featured) -->
-                <div class="service-card featured">
-                    <div class="ribbon"><span data-key="freeBadge">FREE</span></div>
-                    <div class="icon-box"><i class="fas fa-globe"></i></div>
+                <!-- Service 4 (Highlighted) -->
+                <div class="card highlight reveal">
+                    <div class="badge-free">100% FREE</div>
+                    <div class="price-tag strike">Rs. 15,000</div>
+                    <div class="icon-circle c4"><i class="fas fa-globe"></i></div>
                     <h3 data-key="svc4_title">Website & Hosting</h3>
-                    <p data-key="svc4_desc">Lifetime free for Businesses, Restaurants & Schools.</p>
+                    <p data-key="svc4_desc">Lifetime free for Business & Schools.</p>
+                    <a href="#contact" class="card-link">Claim Offer &rarr;</a>
                 </div>
 
-                <!-- Card 5 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-id-card"></i></div>
+                <!-- Service 5 -->
+                <div class="card reveal">
+                    <div class="price-tag">Rs. 500</div>
+                    <div class="icon-circle c5"><i class="fas fa-car"></i></div>
                     <h3 data-key="svc5_title">Driving License</h3>
-                    <p data-key="svc5_desc">Fast application & form filling assistance.</p>
+                    <p data-key="svc5_desc">Form filling & exam date fix.</p>
+                    <a href="#contact" class="card-link">Fill Form &rarr;</a>
                 </div>
 
-                <!-- Card 6 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-university"></i></div>
-                    <h3 data-key="svc6_title">Bank Account Opening</h3>
-                    <p data-key="svc6_desc">Start your banking journey from home.</p>
+                <!-- Service 6 -->
+                <div class="card reveal">
+                    <div class="price-tag" data-key="priceFree">Free Help</div>
+                    <div class="icon-circle c6"><i class="fas fa-university"></i></div>
+                    <h3 data-key="svc6_title">Bank Opening</h3>
+                    <p data-key="svc6_desc">Nic Asia, Global IME & more.</p>
+                    <a href="#contact" class="card-link">Open Account &rarr;</a>
                 </div>
                 
-                <!-- Card 7: Wide -->
-                <div class="service-card wide-card">
-                    <div class="flex-row-card">
-                        <div class="icon-box"><i class="fas fa-laptop-house"></i></div>
+                <!-- Service 7 Wide -->
+                <div class="card wide reveal">
+                    <div class="card-content">
+                        <div class="icon-circle c7"><i class="fas fa-laptop-house"></i></div>
                         <div>
-                            <h3 data-key="svc7_title">Digital Solutions for Nepal — even from abroad</h3>
-                            <p data-key="svc7_desc">Serving Nepalese worldwide with reliable digital support.</p>
+                            <h3 data-key="svc7_title">Digital Solutions for Nepal</h3>
+                            <p data-key="svc7_desc">Living abroad? We handle your digital paperwork in Nepal.</p>
                         </div>
                     </div>
+                    <a href="#contact" class="btn-white">Contact Support</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Call to Action / Footer -->
+    <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <div class="cta-box">
-                <h2 data-key="contactTitle">Go Digital With Ease!</h2>
-                <p data-key="contactSub">Expert Support | Quick Process | Trusted Service</p>
-                
-                <div class="contact-grid">
-                    <a href="https://wa.me/9779810430546" class="contact-item whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp Now</span>
+            <div class="footer-box glass reveal">
+                <h2 data-key="contactTitle">Ready to Go Digital?</h2>
+                <div class="contact-methods">
+                    <a href="tel:+9779800000000" class="c-btn phone">
+                        <i class="fas fa-phone"></i> +977 9800000000
                     </a>
-                    <a href="tel:+9779810430546" class="contact-item phone">
-                        <i class="fas fa-phone-volume"></i>
-                        <span>Call Us</span>
+                    <a href="mailto:info@digitalhub.com" class="c-btn mail">
+                        <i class="fas fa-envelope"></i> info@example.com
                     </a>
                 </div>
-            </div>
-            <div class="copyright">
-                <p>© 2025 All Kind Digital Solution – Nepal 🇳🇵</p>
+                <p class="copy">© 2025 All Kind Digital Solution 🇳🇵</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/9779800000000" class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Chat with us!</span>
+    </a>
 
     <script src="script.js"></script>
 </body>
