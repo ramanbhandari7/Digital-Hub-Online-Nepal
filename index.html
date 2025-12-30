@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="Docs/favicon.png" type="image/x-icon">
 
-    <!-- Fonts: Outfit (English) & Mukta (Nepali) -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
@@ -65,9 +65,12 @@
                     <a href="#services" class="btn-text" data-key="viewServices">See Pricing <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
+            
+            <!-- Hero Image -->
             <div class="hero-image reveal delay-1">
                 <div class="image-wrapper">
                     <img src="Docs/main.png" alt="Digital Services Nepal">
+                    <!-- Badge moved to Top Left via CSS -->
                     <div class="floating-card">
                         <i class="fas fa-check-circle"></i>
                         <span>Verified Service</span>
@@ -158,23 +161,25 @@
         </div>
     </section>
 
-    <!-- Founder Section -->
+    <!-- Founder Section (Fixed Compact Layout) -->
     <section class="proprietor-section">
-        <div class="container">
+        <div class="container compact-container">
             <div class="pro-card glass reveal">
-                <div class="pro-image-box">
-                    <img src="Docs/Pro.png" alt="Raman Bhandari" class="pro-img">
-                    <div class="verified-badge"><i class="fas fa-check"></i></div>
-                </div>
-                <div class="pro-text">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <h3 data-key="proVoice">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably."</h3>
-                    
-                    <div class="founder-info">
-                        <span data-key="foundedBy">Founded & Operated by</span>
-                        <a href="https://ramanbhandari.com.np/" target="_blank" class="founder-name">
-                            Raman Bhandari <i class="fas fa-external-link-alt"></i>
-                        </a>
+                <div class="pro-content-wrapper">
+                    <div class="pro-image-box">
+                        <img src="Docs/Pro.png" alt="Raman Bhandari" class="pro-img">
+                        <div class="verified-badge"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="pro-text">
+                        <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                        <h3 data-key="proVoice">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably."</h3>
+                        
+                        <div class="founder-info">
+                            <span data-key="foundedBy">Founded & Operated by</span>
+                            <a href="https://ramanbhandari.com.np/" target="_blank" class="founder-name">
+                                Raman Bhandari <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -201,7 +206,7 @@
 
                     <!-- Phone Button -->
                     <a href="tel:+9779810430546" class="c-btn phone">
-                        <i class="fas fa-phone-alt"></i> +977 9810430546
+                        <i class="fas fa-phone-alt"></i> +977 981 0430546
                     </a>
                 </div>
                 
@@ -210,24 +215,21 @@
         </div>
     </footer>
 
-    <!-- Floating Social Stack -->
-    <div class="floating-socials">
+    <!-- Right Side Sticky Social Bar (Fixed) -->
+    <div class="side-social-bar">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/9779810430546" target="_blank" class="side-btn whatsapp-side" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        
         <!-- Messenger -->
-        <a href="https://m.me/ramanbhandari07" target="_blank" class="float-btn messenger">
+        <a href="https://m.me/ramanbhandari07" target="_blank" class="side-btn messenger-side" title="Messenger">
             <i class="fab fa-facebook-messenger"></i>
-            <span class="tooltip">Messenger</span>
         </a>
         
         <!-- Viber -->
-        <a href="viber://chat?number=%2B9779810430546" class="float-btn viber">
+        <a href="viber://chat?number=%2B9779810430546" class="side-btn viber-side" title="Viber">
             <i class="fab fa-viber"></i>
-            <span class="tooltip">Viber</span>
-        </a>
-
-        <!-- WhatsApp -->
-        <a href="https://wa.me/9779800000000" target="_blank" class="float-btn whatsapp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="tooltip">WhatsApp</span>
         </a>
     </div>
 
