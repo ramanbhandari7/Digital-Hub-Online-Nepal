@@ -71,7 +71,7 @@ body {
 .btn-chat:hover { background: var(--wa-green); color: white; }
 
 .btn-lang {
-    background: var(--dark); color: white; border: none; padding: 8px 15px; 
+    background: blue; color: white; border: none; padding: 8px 15px; 
     border-radius: 5px; cursor: pointer; font-weight: 600; font-family: inherit;
     display: flex; align-items: center; gap: 5px;
 }
