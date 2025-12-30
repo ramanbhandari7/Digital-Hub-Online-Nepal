@@ -14,22 +14,17 @@
 </head>
 <body>
 
-    <!-- Background -->
-    <div class="bg-shape"></div>
-
-    <!-- 1. FIXED PREMIUM NAVBAR -->
+    <!-- 1. FIXED NAVBAR (Royal Blue) -->
     <nav class="navbar">
         <div class="container nav-container">
             
-            <!-- LEFT: Hamburger & Logo -->
+            <!-- Left: Hamburger & Logo -->
             <div class="nav-left">
-                <!-- Hamburger (Always Visible per request) -->
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-
                 <a href="#" class="brand">
                     <img src="Docs/logo.png" alt="Logo" class="nav-logo">
                     <div class="brand-text">
@@ -38,23 +33,21 @@
                 </a>
             </div>
 
-            <!-- CENTER: Links (Visible on Laptop) -->
+            <!-- Center: Links -->
             <ul class="nav-menu" id="nav-menu">
-                <!-- Mobile Only Header in Menu -->
-                <li class="mobile-menu-header">Menu</li>
                 <li><a href="#" class="nav-link" onclick="closeMenu()">Home</a></li>
                 <li><a href="#about" class="nav-link" onclick="closeMenu()">About Us</a></li>
                 <li><a href="#services" class="nav-link" onclick="closeMenu()">Services</a></li>
                 <li><a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a></li>
             </ul>
 
-            <!-- RIGHT: Actions -->
+            <!-- Right: Actions -->
             <div class="nav-actions">
                 <a href="tel:+9779810430546" class="header-btn btn-call">
-                    <i class="fas fa-phone-alt"></i> <span class="hide-sm">Call</span>
+                    <i class="fas fa-phone-alt"></i> <span class="btn-label">Call</span>
                 </a>
                 <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat mobile-hide">
-                    <i class="fab fa-whatsapp"></i> <span class="hide-sm">Chat</span>
+                    <i class="fab fa-whatsapp"></i> <span class="btn-label">Chat</span>
                 </a>
                 <button id="lang-toggle" class="btn-lang">
                     <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
@@ -63,8 +56,8 @@
         </div>
     </nav>
 
-    <!-- 2. HERO SECTION -->
-    <header class="hero">
+    <!-- 2. HERO SECTION (Blue Gradient Background) -->
+    <header class="hero" id="home">
         <div class="container flex-row">
             <div class="hero-content reveal">
                 <div class="status-badge">
@@ -88,38 +81,43 @@
         </div>
     </header>
 
-    <!-- 3. ABOUT US (Side by Side with Image) -->
+    <!-- 3. ABOUT SECTION (Clean White Background) -->
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-wrapper reveal">
                 <!-- Image Side -->
                 <div class="about-img-col">
-                    <img src="Docs/Pro.png" alt="Founder" class="founder-img">
+                    <div class="img-border">
+                        <img src="Docs/Pro.png" alt="Founder" class="founder-img">
+                    </div>
                     <div class="verified-badge"><i class="fas fa-check"></i></div>
                 </div>
                 
                 <!-- Text Side -->
                 <div class="about-text-col">
                     <h4 class="sub-heading" data-key="foundedBy">Founded & Operated By</h4>
-                    <h2 class="section-title">Your Digital Partner</h2>
-                    <p class="about-quote" data-key="proVoice">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably."</p>
+                    <h2 class="section-title">Your Trusted Digital Partner</h2>
+                    <div class="quote-box">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="about-quote" data-key="proVoice">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably."</p>
+                    </div>
                     
                     <div class="founder-details">
                         <h3>Raman Bhandari</h3>
-                        <p>Digital Consultant</p>
+                        <p class="role-text">Founder & Digital Consultant</p>
                     </div>
 
                     <div class="stats-row">
-                        <div class="stat"><strong>3+</strong><span>Years Exp.</span></div>
-                        <div class="stat"><strong>500+</strong><span>Clients</span></div>
-                        <div class="stat"><strong>100%</strong><span>Secure</span></div>
+                        <div class="stat-box"><strong>3+</strong><span>Years</span></div>
+                        <div class="stat-box"><strong>500+</strong><span>Clients</span></div>
+                        <div class="stat-box"><strong>100%</strong><span>Secure</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. SERVICES -->
+    <!-- 4. SERVICES SECTION (Soft Grey-Blue Background) -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header reveal">
@@ -129,7 +127,7 @@
             </div>
             
             <div class="service-grid">
-                <!-- Cards with Click to Pay -->
+                
                 <div class="service-box reveal" onclick="openPayment('Flight Booking', 'As per Ticket')">
                     <div class="sb-icon"><i class="fas fa-plane"></i></div>
                     <div class="sb-content">
@@ -190,11 +188,12 @@
                     </div>
                     <span class="sb-link">Open Account <i class="fas fa-arrow-right"></i></span>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (Dark) -->
     <footer class="main-footer" id="contact">
         <div class="container">
             <div class="footer-grid">
@@ -220,57 +219,49 @@
                     <ul class="contact-list">
                         <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+9779810430546">+977 9810430546</a></li>
-                        <li><i class="fas fa-envelope"></i> info@digitalhub.com</li>
+                        <li><i class="fas fa-envelope"></i> digitalhubonline2025@gmail.com</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom"><div class="container"><p>© 2025 Digital Hub Online Nepal.</p></div></div>
+        <div class="footer-bottom">
+            <div class="container"><p>© 2025 Digital Hub Online Nepal. All Rights Reserved.</p></div>
+        </div>
     </footer>
 
-    <!-- Side Buttons -->
+    <!-- Side Socials -->
     <div class="side-social-bar">
         <a href="https://wa.me/9779810430546" target="_blank" class="side-btn whatsapp-side"><i class="fab fa-whatsapp"></i></a>
         <a href="https://m.me/ramanbhandari07" target="_blank" class="side-btn messenger-side"><i class="fab fa-facebook-messenger"></i></a>
         <a href="viber://chat?number=9779810430546" class="side-btn viber-side"><i class="fab fa-viber"></i></a>
     </div>
 
-    <!-- Intro Popup -->
-    <div id="helpPopup" class="popup-overlay">
-        <div class="popup-content">
-            <div class="popup-header"><h3>Need Help?</h3><div class="close-icon-wrap" onclick="closePopup()"><i class="fas fa-times"></i></div></div>
-            <div class="popup-body">
-                <div class="popup-desc"><strong>Digital Hub Online</strong> is your partner for digital services.</div>
-                <div class="popup-btn-grid">
-                    <a href="https://wa.me/9779810430546" target="_blank" class="p-btn p-whatsapp">WhatsApp</a>
-                    <a href="tel:+9779810430546" class="p-btn p-call">Call Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Payment Modal (With QR) -->
+    <!-- Payment Modal (Hidden) -->
     <div id="paymentModal" class="payment-overlay">
         <div class="payment-box">
             <div class="pay-header"><h3>Make Payment</h3><span class="close-pay" onclick="closePayment()">&times;</span></div>
             <div class="pay-info"><p>Service: <strong id="payServiceName" style="color:#0f172a"></strong></p><p>Amount: <strong id="payAmount" style="color:#2563EB"></strong></p></div>
-            <div class="qr-section"><p class="pay-instruction">Scan QR to Pay Instantly:</p><div class="qr-wrapper"><img src="Docs/qr.png" alt="Payment QR" class="qr-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><p class="error-msg" style="display:none;color:red;font-size:0.8rem;">(QR Missing)</p></div></div>
+            <div class="qr-section"><p class="pay-instruction">Scan QR to Pay Instantly:</p><div class="qr-wrapper"><img src="Docs/qr.png" alt="Payment QR Code" class="qr-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><p class="error-msg" style="display:none;color:red;font-size:0.8rem;">(QR Not Found. Docs/qr.png)</p></div></div>
             <p class="pay-instruction separator"><span>OR Copy Number</span></p>
             <div class="gateway-grid">
-                <div class="gateway-card esewa">
-                    <div class="gw-icon esewa-bg"><i class="fas fa-wallet"></i></div><h4>eSewa</h4><p>9810430546</p>
-                    <button onclick="copyNumber('9810430546')" class="btn-copy">Copy ID</button>
-                </div>
-                <div class="gateway-card khalti">
-                    <div class="gw-icon khalti-bg"><i class="fas fa-file-invoice-dollar"></i></div><h4>Khalti</h4><p>9810430546</p>
-                    <button onclick="copyNumber('9810430546')" class="btn-copy">Copy ID</button>
-                </div>
-                <div class="gateway-card bank">
-                    <div class="gw-icon bank-bg"><i class="fas fa-university"></i></div><h4>Bank</h4><p>NIC Asia</p>
-                    <a href="https://wa.me/9779810430546" target="_blank" class="btn-copy" style="text-align:center;">Ask</a>
-                </div>
+                <div class="gateway-card esewa"><div class="gw-icon esewa-bg"><i class="fas fa-wallet"></i></div><h4>eSewa</h4><p>9810430546</p><button onclick="copyNumber('9810430546')" class="btn-copy">Copy</button></div>
+                <div class="gateway-card khalti"><div class="gw-icon khalti-bg"><i class="fas fa-file-invoice-dollar"></i></div><h4>Khalti</h4><p>9810430546</p><button onclick="copyNumber('9810430546')" class="btn-copy">Copy</button></div>
+                <div class="gateway-card bank"><div class="gw-icon bank-bg"><i class="fas fa-university"></i></div><h4>Bank</h4><p>Global/NIC</p><a href="https://wa.me/9779810430546?text=Bank%20Details?" target="_blank" class="btn-copy" style="text-align:center;">Ask</a></div>
             </div>
             <div class="pay-footer"><p>Send screenshot to WhatsApp.</p><a href="https://wa.me/9779810430546" class="verify-btn">Verify Payment</a></div>
+        </div>
+    </div>
+
+    <!-- Intro Popup (Hidden) -->
+    <div id="helpPopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header"><h3>Need Help?</h3><div class="close-icon-wrap" onclick="closePopup()"><i class="fas fa-times"></i></div></div>
+            <div class="popup-body">
+                <div class="popup-desc"><strong>Digital Hub Online</strong>: Flights, Licenses, Websites & More.</div>
+                <div class="popup-btn-grid">
+                    <a href="https://wa.me/9779810430546" class="p-btn p-whatsapp">WhatsApp</a><a href="tel:+9779810430546" class="p-btn p-call">Call Us</a>
+                </div>
+            </div>
         </div>
     </div>
 
