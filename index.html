@@ -249,8 +249,8 @@
         </div>
     </div>
 
-    <!-- 2. PAYMENT MODAL (New Feature) -->
-    <div id="paymentModal" class="payment-overlay" style="display:none;">
+    <!-- 2. PAYMENT MODAL -->
+    <div id="paymentModal" class="payment-overlay">
         <div class="payment-box">
             <div class="pay-header">
                 <h3>Make Payment</h3>
@@ -262,7 +262,17 @@
                 <p>Amount: <strong id="payAmount" style="color:#2563EB"></strong></p>
             </div>
 
-            <p class="pay-instruction">Choose Payment Partner:</p>
+            <!-- NEW: QR Code Section -->
+            <div class="qr-section">
+                <p class="pay-instruction">Scan QR to Pay Instantly:</p>
+                <div class="qr-wrapper">
+                    <!-- Ensure you upload Docs/qr.png -->
+                    <img src="Docs/qr.png" alt="Payment QR Code" class="qr-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <p class="error-msg" style="display:none; color:red; font-size:0.8rem;">(QR Image not found. Please upload Docs/qr.png)</p>
+                </div>
+            </div>
+
+            <p class="pay-instruction separator"><span>OR Copy Number</span></p>
 
             <div class="gateway-grid">
                 <!-- Esewa -->
@@ -291,12 +301,11 @@
             </div>
             
             <div class="pay-footer">
-                <p>Send screenshot to WhatsApp after paying.</p>
+                <p>After payment, send the screenshot to WhatsApp.</p>
                 <a href="https://wa.me/9779810430546" class="verify-btn"><i class="fab fa-whatsapp"></i> Verify Payment</a>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
     <script>
         // Inline script just for Payment modal logic to ensure it works
