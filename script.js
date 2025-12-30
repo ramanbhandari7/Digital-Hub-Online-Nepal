@@ -1,96 +1,33 @@
-const langToggle = document.getElementById('lang-toggle');
-const langText = document.getElementById('lang-text');
+/* ... existing code ... */
 
-let currentLang = 'en';
+// --- POPUP LOGIC --- //
+const popup = document.getElementById('helpPopup');
 
-const content = {
-    en: {
-        status: "Open Now • Online Service",
-        headline: "All Digital Solutions.<br>One Platform.",
-        desc: "Flight tickets, SSF, Licenses, and lifetime FREE websites for businesses. Expert service at the lowest price.",
-        cta: "Start Now",
-        viewServices: "See Pricing",
-        servicesTitle: "Premium Services, Local Prices",
-        servicesSub: "Transparent pricing. No hidden fees.",
-        svc1_title: "Flight Booking",
-        svc1_desc: "Domestic & International flights.",
-        price1: "Best Rate",
-        svc2_title: "Shram Approval",
-        svc2_desc: "Online Labor Permit (Re-entry).",
-        svc3_title: "SSF Registration",
-        svc3_desc: "Social Security Fund Enrollment.",
-        svc4_title: "Website & Hosting",
-        svc4_desc: "Lifetime free for Business & Schools.",
-        svc5_title: "Driving License",
-        svc5_desc: "Form filling & exam date fix.",
-        svc6_title: "Bank Opening",
-        svc6_desc: "Nic Asia, Global IME & more.",
-        priceFree: "Free Help",
-        svc7_title: "Digital Solutions for Nepal",
-        svc7_desc: "Living abroad? We handle your digital paperwork in Nepal.",
-        proVoice: "\"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably.\"",
-        foundedBy: "Founded & Operated by",
-        contactTitle: "Ready to Go Digital?",
-        contactSub: "Connect with us on social media or call directly.",
-        langBtn: "नेपाली"
-    },
-    ne: {
-        status: "अहिले खुला छ • अनलाइन सेवा",
-        headline: "सबै डिजिटल सेवा<br>एकै ठाउँमा",
-        desc: "फ्लाइट टिकट, श्रम स्वीकृति, र व्यवसायका लागि आजीवन निःशुल्क वेबसाइट। सुपथ मूल्यमा भरपर्दो सेवा।",
-        cta: "सुरु गर्नुहोस्",
-        viewServices: "मूल्य हेर्नुहोस्",
-        servicesTitle: "उत्कृष्ट सेवा, उचित मूल्य",
-        servicesSub: "पारदर्शी मूल्य। कुनै लुकेको शुल्क छैन।",
-        svc1_title: "फ्लाइट टिकट बुकिङ",
-        svc1_desc: "स्वदेशी तथा विदेशी उडानहरु।",
-        price1: "सस्तो दर",
-        svc2_title: "अनलाइन श्रम स्वीकृति",
-        svc2_desc: "वैदेशिक रोजगार पुनः श्रम स्वीकृति।",
-        svc3_title: "SSF दर्ता",
-        svc3_desc: "सामाजिक सुरक्षा कोषमा दर्ता।",
-        svc4_title: "वेबसाइट र होस्टिङ",
-        svc4_desc: "व्यवसाय र स्कूलका लागि आजीवन निःशुल्क।",
-        svc5_title: "ड्राइभिङ लाइसेन्स",
-        svc5_desc: "फारम भर्ने र मिति सार्ने काम।",
-        svc6_title: "बैंक खाता",
-        svc6_desc: "घरबाटै बैंक खाता खोल्न सहयोग।",
-        priceFree: "निःशुल्क",
-        svc7_title: "विदेशबाट नेपालका लागि सेवा",
-        svc7_desc: "तपाईं विदेशमा, काम नेपालमा? हामी छौ नि।",
-        proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ। मेरो उद्देश्य नेपालका हरेक डिजिटल सेवाहरू पारदर्शी र सस्तोमा तपाइँको हातमा पुर्याउनु हो।\"",
-        foundedBy: "संस्थापक तथा सञ्चालक",
-        contactTitle: "डिजिटल बन्न तयार हुनुहुन्छ?",
-        contactSub: "सामाजिक सञ्जालमा जोडिनुहोस् वा सिधै फोन गर्नुहोस्।",
-        langBtn: "English"
-    }
+function openPopup() {
+    popup.style.display = 'flex';
+    // Small delay to allow display:flex to apply before changing opacity for animation
+    setTimeout(() => {
+        popup.style.opacity = '1';
+    }, 10);
+}
+
+function closePopup() {
+    popup.style.opacity = '0';
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 300); // Wait for fade out
+}
+
+// Auto-trigger after 5 seconds (5000ms)
+window.onload = function() {
+    // Only show if user hasn't closed it recently (optional session storage logic could go here)
+    // For now, simple timer:
+    setTimeout(openPopup, 5000); 
 };
 
-langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'ne' : 'en';
-    langText.textContent = content[currentLang].langBtn;
-
-    document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (content[currentLang][key]) {
-            element.innerHTML = content[currentLang][key]; 
-        }
-    });
-});
-
-window.addEventListener('scroll', reveal);
-
-function reveal() {
-    var reveals = document.querySelectorAll('.reveal');
-    for (var i = 0; i < reveals.length; i++) {
-        var windowheight = window.innerHeight;
-        var revealtop = reveals[i].getBoundingClientRect().top;
-        var revealpoint = 150;
-        if (revealtop < windowheight - revealpoint) {
-            reveals[i].classList.add('active');
-        } else {
-            reveals[i].classList.remove('active');
-        }
+// Close when clicking outside the box
+window.onclick = function(event) {
+    if (event.target == popup) {
+        closePopup();
     }
 }
-reveal();
