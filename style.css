@@ -273,40 +273,42 @@ body {
 }
 .btn-copy:hover { background: #e5e7eb; color: #000; }
 .btn-copy:active { background: #2563EB; color: white; border-color: #2563EB; }
-/* ... [Previous CSS] ... */
-
-/* === QR CODE STYLING (Add to bottom) === */
+/* === QR CODE STYLING (Fixed) === */
 .qr-section {
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     background: #fff;
 }
 
 .qr-wrapper {
-    width: 160px; /* Adjust size of QR code */
-    height: 160px;
-    margin: 10px auto;
+    width: 180px;          /* Fixed width */
+    height: 180px;         /* Fixed height */
+    margin: 0 auto 10px;   /* Center it */
     background: #fff;
-    padding: 10px;
-    border: 1px dashed #2563EB;
-    border-radius: 8px;
-    display: flex; justify-content: center; align-items: center;
+    padding: 8px;
+    border: 2px dashed #2563EB; /* Blue dash border */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;      /* Hides anything spilling out */
 }
 
 .qr-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: contain;   /* Forces entire image to show inside box */
+    display: block;
 }
 
 .separator {
     display: flex; 
     align-items: center; 
     text-align: center; 
-    margin: 10px 20px;
+    margin: 15px 20px;
     color: #94a3b8;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 .separator::before, .separator::after {
     content: '';
@@ -316,16 +318,14 @@ body {
 .separator span {
     padding: 0 10px;
     text-transform: uppercase;
-    font-size: 0.7rem;
     letter-spacing: 1px;
 }
 
-/* Update Modal max-height to fit QR */
+/* Ensure Payment Box scrolls on small screens */
 .payment-box {
-    max-height: 90vh; /* Allows scrolling on small screens */
-    overflow-y: auto;
+    max-height: 85vh; /* 85% of screen height */
+    overflow-y: auto; /* Allow scrolling if QR makes it tall */
 }
-
 /* Footer */
 .pay-footer {
     padding: 15px; background: white; text-align: center; border-top: 1px solid #e5e7eb;
