@@ -19,51 +19,56 @@
     <!-- Background Decoration -->
     <div class="bg-shape"></div>
 
-    <!-- 1. FIXED NAVBAR -->
+    <!-- 1. PREMIUM DARK NAVBAR -->
     <nav class="navbar">
         <div class="container nav-container">
             
-            <!-- Mobile Menu Toggle -->
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <!-- Left Side: Hamburger + Logo -->
+            <div class="nav-left">
+                <!-- Hamburger (Visible on Laptop too) -->
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <a href="#" class="brand">
+                    <img src="Docs/logo.png" alt="Logo" class="nav-logo">
+                    <div class="brand-text">
+                        <h1>Digital Hub Online</h1>
+                    </div>
+                </a>
             </div>
 
-            <!-- Left: Logo -->
-            <a href="#" class="brand">
-                <img src="Docs/logo.png" alt="Logo" class="nav-logo">
-                <div class="brand-text">
-                    <h1>Digital Hub Online</h1>
+            <!-- Right Side: Links & Buttons -->
+            <div class="nav-right">
+                <!-- Menu Links (Desktop) -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#" class="nav-link" onclick="closeMenu()">Home</a></li>
+                    <li><a href="#about" class="nav-link" onclick="closeMenu()">About Us</a></li>
+                    <li><a href="#services" class="nav-link" onclick="closeMenu()">Services</a></li>
+                    <li><a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a></li>
+                </ul>
+
+                <!-- Action Buttons -->
+                <div class="nav-actions">
+                    <a href="tel:+9779810430546" class="header-btn btn-call">
+                        <i class="fas fa-phone-alt"></i> <span>Call</span>
+                    </a>
+                    
+                    <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat mobile-hide">
+                        <i class="fab fa-whatsapp"></i> <span>Chat</span>
+                    </a>
+                    
+                    <button id="lang-toggle" class="btn-lang">
+                        <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
+                    </button>
                 </div>
-            </a>
-
-            <!-- Center: Menu Links (Sliding Drawer on Mobile) -->
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#" class="nav-link" onclick="closeMenu()">Home</a></li>
-                <li><a href="#services" class="nav-link" onclick="closeMenu()">Services</a></li>
-                <li><a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a></li>
-            </ul>
-
-            <!-- Right: Action Buttons -->
-            <div class="nav-actions">
-                <a href="tel:+9779810430546" class="header-btn btn-call">
-                    <i class="fas fa-phone-alt"></i> <span>Call</span>
-                </a>
-                <!-- Hidden on very small screens to save space -->
-                <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat mobile-hide">
-                    <i class="fab fa-whatsapp"></i> <span>Chat</span>
-                </a>
-                
-                <!-- LANGUAGE BUTTON -->
-                <button id="lang-toggle" class="btn-lang">
-                    <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
-                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- 2. HERO SECTION -->
     <header class="hero">
         <div class="container flex-row">
             <div class="hero-content reveal">
@@ -88,7 +93,36 @@
         </div>
     </header>
 
-    <!-- Services Section -->
+    <!-- 3. ABOUT US SECTION (Added Here) -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-card reveal">
+                <div class="about-image">
+                    <img src="Docs/Pro.png" alt="Raman Bhandari - Proprietor">
+                    <div class="verified-badge"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="about-content">
+                    <h4 class="sub-heading" data-key="foundedBy">About Us</h4>
+                    <h2 class="section-title">Your Trusted Digital Partner</h2>
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="owner-quote" data-key="proVoice">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably."</p>
+                    
+                    <div class="founder-details">
+                        <p><strong>Raman Bhandari</strong></p>
+                        <span>Founder & Operator</span>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="astat"><strong>500+</strong> <span>Clients</span></div>
+                        <div class="astat"><strong>3 Years</strong> <span>Exp</span></div>
+                        <div class="astat"><strong>100%</strong> <span>Secure</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SERVICES SECTION -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header reveal">
@@ -170,37 +204,13 @@
         </div>
     </section>
 
-    <!-- Founder Section -->
-    <section class="proprietor-section">
-        <div class="container compact-container">
-            <div class="pro-card glass reveal">
-                <div class="pro-content-wrapper">
-                    <div class="pro-image-box">
-                        <img src="Docs/Pro.png" alt="Raman Bhandari" class="pro-img">
-                        <div class="verified-badge"><i class="fas fa-check"></i></div>
-                    </div>
-                    <div class="pro-text">
-                        <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
-                        <h3 data-key="proVoice">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably."</h3>
-                        <div class="founder-info">
-                            <span data-key="foundedBy">Founded & Operated by</span>
-                            <a href="https://ramanbhandari.com.np/" target="_blank" class="founder-name">
-                                Raman Bhandari <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="main-footer" id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h2 class="footer-logo">Digital Hub</h2>
-                    <p class="footer-desc" data-key="desc">Your one-stop solution for all digital services in Nepal. Fast, reliable, and trusted by hundreds.</p>
+                    <p class="footer-desc" data-key="footerDesc">Your one-stop solution for all digital services in Nepal. Fast, reliable, and trusted by hundreds.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61576059702352" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/9779810430546" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -237,24 +247,24 @@
         <a href="viber://chat?number=9779810430546" class="side-btn viber-side"><i class="fab fa-viber"></i></a>
     </div>
 
-    <!-- 1. INTRO POPUP -->
+    <!-- 1. POPUP HELP MODAL -->
     <div id="helpPopup" class="popup-overlay">
         <div class="popup-content">
             <div class="popup-header">
-                <h3>Confused? Need Help?</h3>
+                <h3>Confused? Or Need Help?</h3>
                 <div class="close-icon-wrap" onclick="closePopup()">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
             <div class="popup-body">
                 <div class="popup-desc">
-                    <strong>Digital Hub Online</strong> handles flights, registrations, and websites online.
+                    <strong>Digital Hub Online</strong> is your partner for digital services. We are online and ready to help.
                 </div>
                 <h4 class="popup-subtitle">Connect on Social Apps</h4>
                 
                 <div class="popup-btn-grid">
                     <a href="https://wa.me/9779810430546" target="_blank" class="p-btn p-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="https://m.me/ramanbhandari07" target="_blank" class="side-btn messenger-side"><i class="fab fa-facebook-messenger"></i></
+                    <a href="viber://chat?number=9779810430546" class="p-btn p-viber"><i class="fab fa-viber"></i> Viber</a>
                     <a href="mailto:digitalhubonline2025@gmail.com" class="p-btn p-email"><i class="fas fa-envelope"></i> Email Us</a>
                     <a href="tel:+9779810430546" class="p-btn p-call"><i class="fas fa-phone-alt"></i> Call Us</a>
                 </div>
@@ -278,11 +288,11 @@
                 <p>Amount: <strong id="payAmount" style="color:#2563EB"></strong></p>
             </div>
 
-            <!-- NEW: QR Code Section -->
+            <!-- QR Code Section -->
             <div class="qr-section">
                 <p class="pay-instruction">Scan QR to Pay Instantly:</p>
                 <div class="qr-wrapper">
-                    <!-- Ensure you upload Docs/qr.png -->
+                    <!-- Ensure Docs/qr.png exists -->
                     <img src="Docs/qr.png" alt="Payment QR Code" class="qr-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <p class="error-msg" style="display:none; color:red; font-size:0.8rem;">(QR Image not found. Please upload Docs/qr.png)</p>
                 </div>
