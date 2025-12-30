@@ -22,27 +22,43 @@
     <!-- 1. FIXED NAVBAR -->
     <nav class="navbar">
         <div class="container nav-container">
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Left: Logo -->
             <a href="#" class="brand">
                 <img src="Docs/logo.png" alt="Logo" class="nav-logo">
                 <div class="brand-text">
-                    <h1>Digital Hub Online Nepal</h1>
+                    <h1>Digital Hub Online</h1>
                 </div>
             </a>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+
+            <!-- Center: Menu Links (Sliding Drawer on Mobile) -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link" onclick="closeMenu()">Home</a></li>
+                <li><a href="#services" class="nav-link" onclick="closeMenu()">Services</a></li>
+                <li><a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a></li>
             </ul>
+
+            <!-- Right: Action Buttons -->
             <div class="nav-actions">
                 <a href="tel:+9779810430546" class="header-btn btn-call">
-                    <i class="fas fa-phone-alt"></i> <span>Call 9810430546</span>
+                    <i class="fas fa-phone-alt"></i> <span>Call</span>
                 </a>
-                <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat">
+                <!-- Hidden on very small screens to save space -->
+                <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat mobile-hide">
                     <i class="fab fa-whatsapp"></i> <span>Chat</span>
                 </a>
-               <button id="lang-toggle" class="btn-lang">
-    <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
-</button>
+                
+                <!-- LANGUAGE BUTTON -->
+                <button id="lang-toggle" class="btn-lang">
+                    <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -72,7 +88,7 @@
         </div>
     </header>
 
-    <!-- Services Section (WITH PAYMENT LINKS ADDED) -->
+    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header reveal">
@@ -221,20 +237,20 @@
         <a href="viber://chat?number=9779810430546" class="side-btn viber-side"><i class="fab fa-viber"></i></a>
     </div>
 
-    <!-- 1. POPUP MODAL (Intro/Help) -->
+    <!-- 1. INTRO POPUP -->
     <div id="helpPopup" class="popup-overlay">
         <div class="popup-content">
             <div class="popup-header">
-                <h3>Confused? Or Need Help?</h3>
+                <h3>Confused? Need Help?</h3>
                 <div class="close-icon-wrap" onclick="closePopup()">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
             <div class="popup-body">
                 <div class="popup-desc">
-                    <strong>Digital Hub Online Nepal</strong> is your trusted partner for fast, reliable digital services in Nepal. We handle everything online or in-person with speed and trust.
+                    <strong>Digital Hub Online</strong> handles flights, registrations, and websites online.
                 </div>
-                <h4 class="popup-subtitle">Available on <strong>Viber, WhatsApp & Phone</strong></h4>
+                <h4 class="popup-subtitle">Connect on Social Apps</h4>
                 
                 <div class="popup-btn-grid">
                     <a href="https://wa.me/9779810430546" target="_blank" class="p-btn p-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -301,39 +317,12 @@
             </div>
             
             <div class="pay-footer">
-                <p>After payment, send the screenshot to WhatsApp.</p>
+                <p>Send screenshot to WhatsApp after paying.</p>
                 <a href="https://wa.me/9779810430546" class="verify-btn"><i class="fab fa-whatsapp"></i> Verify Payment</a>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
-    <script>
-        // Inline script just for Payment modal logic to ensure it works
-        const paymentModal = document.getElementById('paymentModal');
-        const payNameEl = document.getElementById('payServiceName');
-        const payAmountEl = document.getElementById('payAmount');
-
-        function openPayment(name, cost) {
-            payNameEl.textContent = name;
-            payAmountEl.textContent = cost;
-            paymentModal.style.display = 'flex';
-            setTimeout(() => { paymentModal.style.opacity = '1'; }, 10);
-        }
-
-        function closePayment() {
-            paymentModal.style.opacity = '0';
-            setTimeout(() => { paymentModal.style.display = 'none'; }, 300);
-        }
-
-        function copyNumber(num) {
-            navigator.clipboard.writeText(num);
-            alert("Copied: " + num);
-        }
-
-        // Close when clicking outside
-        window.addEventListener('click', function(e) {
-            if (e.target == paymentModal) closePayment();
-        });
-    </script>
 </body>
 </html>
