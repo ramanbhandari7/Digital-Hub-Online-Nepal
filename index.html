@@ -3,119 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Kind Digital Solution – Nepal</title>
+    <title>Digital Hub Online Nepal </title>
     
-    <!-- Google Fonts for English and Nepali -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Docs/favicon.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Top Bar (Trust Indicators) -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="contact-mini">
+                <i class="fas fa-phone-alt"></i> <span>+977-9810430546</span>
+                <span class="sep">|</span>
+                <i class="fas fa-envelope"></i> <span>digitalhubonline2025@gmail.com</span>
+            </div>
+            <div class="trust-mini">
+                <span data-key="trust1"> Trusted</span>
+                <span data-key="trust2"> Quick Process</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">
-            <span class="logo-icon">🇳🇵</span> All Kind Digital Solution
+        <div class="container flex-between">
+            <div class="brand">
+                <img src="Docs/logo.png" alt="Logo" class="nav-logo">
+                <div class="brand-text">
+                    <h1>All Kind Of Digital Solution In Nepal & Abroad</h1>
+                    <span class="flag">🇳🇵</span>
+                </div>
+            </div>
+            <button id="lang-toggle" class="btn-lang">
+                <i class="fas fa-globe"></i> <span id="lang-text">नेपाली</span>
+            </button>
         </div>
-        <button id="lang-toggle" class="btn-lang">
-            <i class="fas fa-language"></i> <span id="lang-text">नेपाली</span>
-        </button>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="container">
-            <h1 data-key="headline">All Kind Digital Solutions in One Place</h1>
-            <p data-key="subheadline">Your one-stop solution for fast, reliable & affordable digital services.</p>
-            <a href="#contact" class="btn-primary" data-key="cta">Contact Us Today</a>
+        <div class="container flex-row">
+            <div class="hero-content">
+                <span class="badge-pill" data-key="subheadline">One-stop digital solution 💻✨</span>
+                <h1 data-key="headline">All Kind Digital Solutions in One Place</h1>
+                <p data-key="desc">Flight tickets, SSF registration, Bank accounts, and free websites for businesses. We make digital easy.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary" data-key="cta">Contact Us Today</a>
+                    <a href="#services" class="btn-secondary" data-key="viewServices">View Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Docs/main.png" alt="Digital Services Nepal">
+            </div>
         </div>
     </header>
-
-    <!-- Trust Badges -->
-    <section class="trust-bar">
-        <div class="container">
-            <span data-key="trust1">📌 Trusted</span>
-            <span class="divider">|</span>
-            <span data-key="trust2">⚡ Quick Process</span>
-            <span class="divider">|</span>
-            <span data-key="trust3">🤝 Expert Support</span>
-        </div>
-    </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 data-key="servicesTitle">Our Services</h2>
+            <div class="section-title">
+                <h2 data-key="servicesTitle">Our Premium Services</h2>
+                <div class="underline"></div>
+            </div>
+            
             <div class="service-grid">
                 
-                <!-- Service 1 -->
-                <div class="card">
-                    <div class="icon"><i class="fas fa-plane-departure"></i></div>
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-plane-departure"></i></div>
                     <h3 data-key="svc1_title">Flight Ticket Booking</h3>
+                    <p data-key="svc1_desc">Domestic & International flights at best rates.</p>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="card">
-                    <div class="icon"><i class="fas fa-file-signature"></i></div>
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-passport"></i></div>
                     <h3 data-key="svc2_title">Online Shram Approval</h3>
+                    <p data-key="svc2_desc">Hassle-free labor permit approval process.</p>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="card">
-                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
                     <h3 data-key="svc3_title">SSF Registration</h3>
+                    <p data-key="svc3_desc">Secure your future with Social Security Fund.</p>
                 </div>
 
-                <!-- Service 4 (Highlighted) -->
-                <div class="card highlight">
-                    <div class="badge" data-key="freeBadge">FREE FOR LIFE</div>
-                    <div class="icon"><i class="fas fa-globe"></i></div>
+                <!-- Card 4 (Featured) -->
+                <div class="service-card featured">
+                    <div class="ribbon"><span data-key="freeBadge">FREE</span></div>
+                    <div class="icon-box"><i class="fas fa-globe"></i></div>
                     <h3 data-key="svc4_title">Website & Hosting</h3>
-                    <p data-key="svc4_desc">For Businesses, Restaurants & Schools</p>
+                    <p data-key="svc4_desc">Lifetime free for Businesses, Restaurants & Schools.</p>
                 </div>
 
-                <!-- Service 5 -->
-                <div class="card">
-                    <div class="icon"><i class="fas fa-car"></i></div>
-                    <h3 data-key="svc5_title">Driving License Applications</h3>
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-id-card"></i></div>
+                    <h3 data-key="svc5_title">Driving License</h3>
+                    <p data-key="svc5_desc">Fast application & form filling assistance.</p>
                 </div>
 
-                <!-- Service 6 -->
-                <div class="card">
-                    <div class="icon"><i class="fas fa-university"></i></div>
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-university"></i></div>
                     <h3 data-key="svc6_title">Bank Account Opening</h3>
+                    <p data-key="svc6_desc">Start your banking journey from home.</p>
                 </div>
-
-                <!-- Service 7 -->
-                <div class="card wide">
-                    <div class="icon"><i class="fas fa-laptop-house"></i></div>
-                    <h3 data-key="svc7_title">Digital Solutions for Nepal — even from abroad</h3>
+                
+                <!-- Card 7: Wide -->
+                <div class="service-card wide-card">
+                    <div class="flex-row-card">
+                        <div class="icon-box"><i class="fas fa-laptop-house"></i></div>
+                        <div>
+                            <h3 data-key="svc7_title">Digital Solutions for Nepal — even from abroad</h3>
+                            <p data-key="svc7_desc">Serving Nepalese worldwide with reliable digital support.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
+    <!-- Call to Action / Footer -->
     <footer id="contact">
         <div class="container">
-            <h2 data-key="contactTitle">Go Digital With Ease!</h2>
-            <p data-key="contactSub">Contact us today for expert support.</p>
-            
-            <div class="contact-buttons">
-                <!-- Replace # with your actual links -->
-                <a href="https://wa.me/9779810430546" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="tel:+9779810430546" class="btn-phone">
-                    <i class="fas fa-phone-alt"></i> Call Now
-                </a>
+            <div class="cta-box">
+                <h2 data-key="contactTitle">Go Digital With Ease!</h2>
+                <p data-key="contactSub">Expert Support | Quick Process | Trusted Service</p>
+                
+                <div class="contact-grid">
+                    <a href="https://wa.me/9779810430546" class="contact-item whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Now</span>
+                    </a>
+                    <a href="tel:+9779810430546" class="contact-item phone">
+                        <i class="fas fa-phone-volume"></i>
+                        <span>Call Us</span>
+                    </a>
+                </div>
             </div>
-            
-            <p class="copyright">© 2025 All Kind Digital Solution – Nepal 🇳🇵</p>
+            <div class="copyright">
+                <p>© 2025 All Kind Digital Solution – Nepal 🇳🇵</p>
+            </div>
         </div>
     </footer>
 
