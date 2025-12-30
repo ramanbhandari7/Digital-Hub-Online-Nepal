@@ -6,26 +6,24 @@
     <title>Digital Hub Online Nepal</title>
     <link rel="shortcut icon" href="Docs/favicon.png" type="image/x-icon">
     
-    <!-- Fonts -->
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Background Decoration -->
+    <!-- Background -->
     <div class="bg-shape"></div>
 
-    <!-- 1. PREMIUM DARK NAVBAR -->
+    <!-- 1. FIXED PREMIUM NAVBAR -->
     <nav class="navbar">
         <div class="container nav-container">
             
-            <!-- Left Side: Hamburger + Logo -->
+            <!-- LEFT: Hamburger & Logo -->
             <div class="nav-left">
-                <!-- Hamburger (Visible on Laptop too) -->
+                <!-- Hamburger (Always Visible per request) -->
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -40,30 +38,27 @@
                 </a>
             </div>
 
-            <!-- Right Side: Links & Buttons -->
-            <div class="nav-right">
-                <!-- Menu Links (Desktop) -->
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#" class="nav-link" onclick="closeMenu()">Home</a></li>
-                    <li><a href="#about" class="nav-link" onclick="closeMenu()">About Us</a></li>
-                    <li><a href="#services" class="nav-link" onclick="closeMenu()">Services</a></li>
-                    <li><a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a></li>
-                </ul>
+            <!-- CENTER: Links (Visible on Laptop) -->
+            <ul class="nav-menu" id="nav-menu">
+                <!-- Mobile Only Header in Menu -->
+                <li class="mobile-menu-header">Menu</li>
+                <li><a href="#" class="nav-link" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" class="nav-link" onclick="closeMenu()">About Us</a></li>
+                <li><a href="#services" class="nav-link" onclick="closeMenu()">Services</a></li>
+                <li><a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a></li>
+            </ul>
 
-                <!-- Action Buttons -->
-                <div class="nav-actions">
-                    <a href="tel:+9779810430546" class="header-btn btn-call">
-                        <i class="fas fa-phone-alt"></i> <span>Call</span>
-                    </a>
-                    
-                    <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat mobile-hide">
-                        <i class="fab fa-whatsapp"></i> <span>Chat</span>
-                    </a>
-                    
-                    <button id="lang-toggle" class="btn-lang">
-                        <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
-                    </button>
-                </div>
+            <!-- RIGHT: Actions -->
+            <div class="nav-actions">
+                <a href="tel:+9779810430546" class="header-btn btn-call">
+                    <i class="fas fa-phone-alt"></i> <span class="hide-sm">Call</span>
+                </a>
+                <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat mobile-hide">
+                    <i class="fab fa-whatsapp"></i> <span class="hide-sm">Chat</span>
+                </a>
+                <button id="lang-toggle" class="btn-lang">
+                    <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -93,36 +88,38 @@
         </div>
     </header>
 
-    <!-- 3. ABOUT US SECTION (Added Here) -->
+    <!-- 3. ABOUT US (Side by Side with Image) -->
     <section class="about-section" id="about">
         <div class="container">
-            <div class="about-card reveal">
-                <div class="about-image">
-                    <img src="Docs/Pro.png" alt="Raman Bhandari - Proprietor">
+            <div class="about-wrapper reveal">
+                <!-- Image Side -->
+                <div class="about-img-col">
+                    <img src="Docs/Pro.png" alt="Founder" class="founder-img">
                     <div class="verified-badge"><i class="fas fa-check"></i></div>
                 </div>
-                <div class="about-content">
-                    <h4 class="sub-heading" data-key="foundedBy">About Us</h4>
-                    <h2 class="section-title">Your Trusted Digital Partner</h2>
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p class="owner-quote" data-key="proVoice">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably."</p>
+                
+                <!-- Text Side -->
+                <div class="about-text-col">
+                    <h4 class="sub-heading" data-key="foundedBy">Founded & Operated By</h4>
+                    <h2 class="section-title">Your Digital Partner</h2>
+                    <p class="about-quote" data-key="proVoice">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently and affordably."</p>
                     
                     <div class="founder-details">
-                        <p><strong>Raman Bhandari</strong></p>
-                        <span>Founder & Operator</span>
+                        <h3>Raman Bhandari</h3>
+                        <p>Digital Consultant</p>
                     </div>
-                    
-                    <div class="about-stats">
-                        <div class="astat"><strong>500+</strong> <span>Clients</span></div>
-                        <div class="astat"><strong>3 Years</strong> <span>Exp</span></div>
-                        <div class="astat"><strong>100%</strong> <span>Secure</span></div>
+
+                    <div class="stats-row">
+                        <div class="stat"><strong>3+</strong><span>Years Exp.</span></div>
+                        <div class="stat"><strong>500+</strong><span>Clients</span></div>
+                        <div class="stat"><strong>100%</strong><span>Secure</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. SERVICES SECTION -->
+    <!-- 4. SERVICES -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header reveal">
@@ -132,8 +129,7 @@
             </div>
             
             <div class="service-grid">
-                
-                <!-- Service 1 -->
+                <!-- Cards with Click to Pay -->
                 <div class="service-box reveal" onclick="openPayment('Flight Booking', 'As per Ticket')">
                     <div class="sb-icon"><i class="fas fa-plane"></i></div>
                     <div class="sb-content">
@@ -144,7 +140,6 @@
                     <span class="sb-link">Book Now <i class="fas fa-arrow-right"></i></span>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="service-box reveal" onclick="openPayment('Shram Approval', 'Rs. 1500')">
                     <div class="sb-icon"><i class="fas fa-file-contract"></i></div>
                     <div class="sb-content">
@@ -155,7 +150,6 @@
                     <span class="sb-link">Apply Now <i class="fas fa-arrow-right"></i></span>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="service-box reveal" onclick="openPayment('SSF Registration', 'Rs. 1500')">
                     <div class="sb-icon"><i class="fas fa-shield-alt"></i></div>
                     <div class="sb-content">
@@ -166,7 +160,6 @@
                     <span class="sb-link">Register <i class="fas fa-arrow-right"></i></span>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="service-box featured-box reveal" onclick="openPayment('Web Hosting', 'Service Charge Applicable')">
                     <div class="ribbon">FREE</div>
                     <div class="sb-icon"><i class="fas fa-globe"></i></div>
@@ -178,7 +171,6 @@
                     <span class="sb-link">Claim Offer <i class="fas fa-arrow-right"></i></span>
                 </div>
 
-                <!-- Service 5 -->
                 <div class="service-box reveal" onclick="openPayment('Driving License', 'Rs. 500')">
                     <div class="sb-icon"><i class="fas fa-car"></i></div>
                     <div class="sb-content">
@@ -189,7 +181,6 @@
                     <span class="sb-link">Fill Form <i class="fas fa-arrow-right"></i></span>
                 </div>
 
-                <!-- Service 6 -->
                 <div class="service-box reveal" onclick="openPayment('Bank Opening', 'FREE')">
                     <div class="sb-icon"><i class="fas fa-university"></i></div>
                     <div class="sb-content">
@@ -199,7 +190,6 @@
                     </div>
                     <span class="sb-link">Open Account <i class="fas fa-arrow-right"></i></span>
                 </div>
-
             </div>
         </div>
     </section>
@@ -230,106 +220,57 @@
                     <ul class="contact-list">
                         <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+9779810430546">+977 9810430546</a></li>
-                        <li><i class="fas fa-envelope"></i> digitalhubonline2025@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> info@digitalhub.com</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container"><p>© 2025 Digital Hub Online Nepal. All Rights Reserved.</p></div>
-        </div>
+        <div class="footer-bottom"><div class="container"><p>© 2025 Digital Hub Online Nepal.</p></div></div>
     </footer>
 
-    <!-- Side Floating Socials -->
+    <!-- Side Buttons -->
     <div class="side-social-bar">
         <a href="https://wa.me/9779810430546" target="_blank" class="side-btn whatsapp-side"><i class="fab fa-whatsapp"></i></a>
         <a href="https://m.me/ramanbhandari07" target="_blank" class="side-btn messenger-side"><i class="fab fa-facebook-messenger"></i></a>
         <a href="viber://chat?number=9779810430546" class="side-btn viber-side"><i class="fab fa-viber"></i></a>
     </div>
 
-    <!-- 1. POPUP HELP MODAL -->
+    <!-- Intro Popup -->
     <div id="helpPopup" class="popup-overlay">
         <div class="popup-content">
-            <div class="popup-header">
-                <h3>Confused? Or Need Help?</h3>
-                <div class="close-icon-wrap" onclick="closePopup()">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
+            <div class="popup-header"><h3>Need Help?</h3><div class="close-icon-wrap" onclick="closePopup()"><i class="fas fa-times"></i></div></div>
             <div class="popup-body">
-                <div class="popup-desc">
-                    <strong>Digital Hub Online</strong> is your partner for digital services. We are online and ready to help.
-                </div>
-                <h4 class="popup-subtitle">Connect on Social Apps</h4>
-                
+                <div class="popup-desc"><strong>Digital Hub Online</strong> is your partner for digital services.</div>
                 <div class="popup-btn-grid">
-                    <a href="https://wa.me/9779810430546" target="_blank" class="p-btn p-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="viber://chat?number=9779810430546" class="p-btn p-viber"><i class="fab fa-viber"></i> Viber</a>
-                    <a href="mailto:digitalhubonline2025@gmail.com" class="p-btn p-email"><i class="fas fa-envelope"></i> Email Us</a>
-                    <a href="tel:+9779810430546" class="p-btn p-call"><i class="fas fa-phone-alt"></i> Call Us</a>
+                    <a href="https://wa.me/9779810430546" target="_blank" class="p-btn p-whatsapp">WhatsApp</a>
+                    <a href="tel:+9779810430546" class="p-btn p-call">Call Us</a>
                 </div>
-            </div>
-            <div class="popup-footer">
-                <button class="popup-close-btn" onclick="closePopup()">Close <i class="fas fa-times"></i></button>
             </div>
         </div>
     </div>
 
-    <!-- 2. PAYMENT MODAL -->
+    <!-- Payment Modal (With QR) -->
     <div id="paymentModal" class="payment-overlay">
         <div class="payment-box">
-            <div class="pay-header">
-                <h3>Make Payment</h3>
-                <span class="close-pay" onclick="closePayment()">&times;</span>
-            </div>
-            
-            <div class="pay-info">
-                <p>Service: <strong id="payServiceName" style="color:#0f172a"></strong></p>
-                <p>Amount: <strong id="payAmount" style="color:#2563EB"></strong></p>
-            </div>
-
-            <!-- QR Code Section -->
-            <div class="qr-section">
-                <p class="pay-instruction">Scan QR to Pay Instantly:</p>
-                <div class="qr-wrapper">
-                    <!-- Ensure Docs/qr.png exists -->
-                    <img src="Docs/qr.png" alt="Payment QR Code" class="qr-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p class="error-msg" style="display:none; color:red; font-size:0.8rem;">(QR Image not found. Please upload Docs/qr.png)</p>
-                </div>
-            </div>
-
+            <div class="pay-header"><h3>Make Payment</h3><span class="close-pay" onclick="closePayment()">&times;</span></div>
+            <div class="pay-info"><p>Service: <strong id="payServiceName" style="color:#0f172a"></strong></p><p>Amount: <strong id="payAmount" style="color:#2563EB"></strong></p></div>
+            <div class="qr-section"><p class="pay-instruction">Scan QR to Pay Instantly:</p><div class="qr-wrapper"><img src="Docs/qr.png" alt="Payment QR" class="qr-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><p class="error-msg" style="display:none;color:red;font-size:0.8rem;">(QR Missing)</p></div></div>
             <p class="pay-instruction separator"><span>OR Copy Number</span></p>
-
             <div class="gateway-grid">
-                <!-- Esewa -->
                 <div class="gateway-card esewa">
-                    <div class="gw-icon esewa-bg"><i class="fas fa-wallet"></i></div>
-                    <h4>eSewa</h4>
-                    <p>9810430546</p>
+                    <div class="gw-icon esewa-bg"><i class="fas fa-wallet"></i></div><h4>eSewa</h4><p>9810430546</p>
                     <button onclick="copyNumber('9810430546')" class="btn-copy">Copy ID</button>
                 </div>
-
-                <!-- Khalti -->
                 <div class="gateway-card khalti">
-                    <div class="gw-icon khalti-bg"><i class="fas fa-file-invoice-dollar"></i></div>
-                    <h4>Khalti</h4>
-                    <p>9810430546</p>
+                    <div class="gw-icon khalti-bg"><i class="fas fa-file-invoice-dollar"></i></div><h4>Khalti</h4><p>9810430546</p>
                     <button onclick="copyNumber('9810430546')" class="btn-copy">Copy ID</button>
                 </div>
-
-                <!-- Bank -->
                 <div class="gateway-card bank">
-                    <div class="gw-icon bank-bg"><i class="fas fa-university"></i></div>
-                    <h4>Bank Transfer</h4>
-                    <p>Global / NIC</p>
-                    <a href="https://wa.me/9779810430546?text=I%20need%20bank%20details" target="_blank" class="btn-copy" style="text-align:center;">Message</a>
+                    <div class="gw-icon bank-bg"><i class="fas fa-university"></i></div><h4>Bank</h4><p>NIC Asia</p>
+                    <a href="https://wa.me/9779810430546" target="_blank" class="btn-copy" style="text-align:center;">Ask</a>
                 </div>
             </div>
-            
-            <div class="pay-footer">
-                <p>Send screenshot to WhatsApp after paying.</p>
-                <a href="https://wa.me/9779810430546" class="verify-btn"><i class="fab fa-whatsapp"></i> Verify Payment</a>
-            </div>
+            <div class="pay-footer"><p>Send screenshot to WhatsApp.</p><a href="https://wa.me/9779810430546" class="verify-btn">Verify Payment</a></div>
         </div>
     </div>
 
