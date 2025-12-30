@@ -1,27 +1,5 @@
 /* =====================================
-   1. ANIMATION TRIGGER (FIXES BLANK SCREEN)
-   ===================================== */
-function triggerAnimation() {
-    const reveals = document.querySelectorAll('.reveal');
-    reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const elementVisible = 100; // Trigger earlier
-
-        if (elementTop < windowHeight - elementVisible) {
-            el.classList.add('active');
-        }
-    });
-}
-
-// Run immediately on load (Fixes blank hero)
-window.addEventListener('load', triggerAnimation);
-// Run on scroll
-window.addEventListener('scroll', triggerAnimation);
-
-
-/* =====================================
-   2. LANGUAGE TOGGLE (FULL DICTIONARY)
+   1. LANGUAGE TOGGLE (FULL DICTIONARY)
    ===================================== */
 const langToggle = document.getElementById('lang-toggle');
 const langText = document.getElementById('lang-text');
@@ -90,7 +68,8 @@ const content = {
     }
 };
 
-if(langToggle) {
+// Toggle Language Logic
+if (langToggle) {
     langToggle.addEventListener('click', () => {
         currentLang = currentLang === 'en' ? 'ne' : 'en';
         if(langText) langText.textContent = content[currentLang].langBtn;
@@ -101,6 +80,7 @@ if(langToggle) {
         });
     });
 
+    // Hover Animation
     langToggle.addEventListener('mouseenter', () => {
         if(langText) langText.textContent = (currentLang === 'en') ? "English" : "नेपाली";
         const icon = langToggle.querySelector('i');
@@ -114,7 +94,7 @@ if(langToggle) {
 }
 
 /* =====================================
-   3. MOBILE MENU (HAMBURGER)
+   2. MOBILE MENU (HAMBURGER)
    ===================================== */
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -134,14 +114,11 @@ function closeMenu() {
 }
 
 /* =====================================
-   4. POPUPS & PAYMENT MODAL
+   3. AUTO POPUP (HELP)
    ===================================== */
 const helpPopup = document.getElementById('helpPopup');
-const paymentModal = document.getElementById('paymentModal');
-const payNameEl = document.getElementById('payServiceName');
-const payAmountEl = document.getElementById('payAmount');
 
-// Auto Popup after 5 seconds
+// Triggers 5 seconds after page loads
 window.addEventListener('load', function() {
     setTimeout(() => { 
         if(helpPopup) {
@@ -158,15 +135,33 @@ function closePopup() {
     }
 }
 
+/* =====================================
+   4. PAYMENT MODAL LOGIC (THIS FIXED YOUR ISSUE)
+   ===================================== */
+const paymentModal = document.getElementById('paymentModal');
+const payNameEl = document.getElementById('payServiceName');
+const payAmountEl = document.getElementById('payAmount');
+
+// 1. Opens the modal
 function openPayment(name, cost) {
+    // Prevent default anchor clicks
+    if(event) event.preventDefault();
+
+    // Set Text
     if(payNameEl) payNameEl.textContent = name;
     if(payAmountEl) payAmountEl.textContent = cost;
+    
+    // Show Modal
     if(paymentModal) {
         paymentModal.style.display = 'flex';
+        // Add tiny delay for fade-in effect
         setTimeout(()=> paymentModal.style.opacity = '1', 10);
+    } else {
+        console.error("Payment Modal ID not found in HTML");
     }
 }
 
+// 2. Closes the modal
 function closePayment() {
     if(paymentModal) {
         paymentModal.style.opacity = '0';
@@ -174,12 +169,36 @@ function closePayment() {
     }
 }
 
+// 3. Copies text (Bank/Phone Number)
 function copyNumber(num) {
-    navigator.clipboard.writeText(num).then(() => { alert("Number Copied: " + num); });
+    navigator.clipboard.writeText(num).then(() => {
+        alert("Number Copied: " + num);
+    }).catch(err => {
+        alert("Copy failed manually copy: " + num);
+    });
 }
 
-// Click Outside to Close
+/* =====================================
+   5. GENERAL UX (Click outside & Scroll)
+   ===================================== */
+// Close modals when clicking background overlay
 window.onclick = function(e) {
     if (e.target == paymentModal) closePayment();
     if (e.target == helpPopup) closePopup();
 };
+
+// Scroll Reveal Animation Trigger
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.reveal').forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add('active');
+        }
+    });
+});
+
+// Force check animation on load (Prevents blank white page)
+window.addEventListener('load', () => {
+    document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('active');
+    });
+});
