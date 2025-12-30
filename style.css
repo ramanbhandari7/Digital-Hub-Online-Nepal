@@ -23,7 +23,7 @@ body {
 
 /* Background Shapes */
 .bg-shape {
-    position: fixed; /* Fixed so they don't scroll weirdly */
+    position: fixed;
     border-radius: 50%;
     filter: blur(80px);
     z-index: -1;
@@ -33,7 +33,7 @@ body {
 
 /* Utilities */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.compact-container { max-width: 900px; } /* New utility for organized look */
+.compact-container { max-width: 900px; } /* Ensures founder section isn't too wide */
 .flex-between { display: flex; justify-content: space-between; align-items: center; }
 .flex-row { display: flex; align-items: center; gap: 50px; }
 
@@ -44,7 +44,7 @@ body {
     border-bottom: 1px solid var(--glass-border);
 }
 .brand { display: flex; align-items: center; gap: 12px; }
-.nav-logo { height: 45px; }
+.nav-logo { height: 50px; }
 .brand-text h1 { font-size: 1.1rem; font-weight: 800; color: var(--dark); line-height: 1.1; }
 .tagline { font-size: 0.7rem; color: var(--primary); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
 
@@ -83,15 +83,15 @@ body {
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.5); }
 .btn-text { color: var(--dark); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
-/* Image Wrapper & Fix for Overlap */
+/* Image Wrapper & BADGE FIX */
 .image-wrapper { position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
 .hero-image img { width: 100%; display: block; transition: 0.5s; }
 .hero-image:hover img { transform: scale(1.02); }
 
 .floating-card {
     position: absolute; 
-    top: 20px; /* Moved to TOP */
-    left: 20px; /* Moved to LEFT to avoid right-side flag */
+    top: 20px; /* Top */
+    left: 20px; /* Left - No Overlap with flag */
     background: white; padding: 10px 20px; border-radius: 50px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     display: flex; align-items: center; gap: 8px;
@@ -141,7 +141,7 @@ body {
 .badge-free {
     position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
     background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px;
-    font-size: 0.75rem; font-weight: 800;
+    font-size: 0.75rem; font-weight: 800; white-space: nowrap;
 }
 .wide { grid-column: 1 / -1; background: linear-gradient(to right, #1e293b, #0f172a); color: white; display: flex; justify-content: space-between; align-items: center; }
 .wide .card-content { display: flex; align-items: center; gap: 20px; }
@@ -149,7 +149,7 @@ body {
 .wide p { color: #94a3b8; margin: 0; }
 .btn-white { background: white; color: var(--dark); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; }
 
-/* Proprietor Section (Fixed Organization) */
+/* Proprietor Section (Compact & Organized) */
 .proprietor-section { padding: 40px 0 80px; }
 .pro-card {
     background: white; padding: 40px; border-radius: 24px;
@@ -193,7 +193,7 @@ body {
 .c-btn:hover { transform: translateY(-3px); filter: brightness(1.05); }
 .copy { color: #94a3b8; font-size: 0.9rem; margin-top: 20px; }
 
-/* Side Floating Bar (New) */
+/* RIGHT SIDE SOCIAL BAR (Sticky) */
 .side-social-bar {
     position: fixed; top: 50%; right: 0; transform: translateY(-50%);
     display: flex; flex-direction: column; z-index: 1000;
@@ -212,6 +212,10 @@ body {
 .messenger-side { background: #0084FF; }
 .viber-side { background: var(--viber-purple); }
 
+/* Animation Classes */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .flex-row { flex-direction: column; text-align: center; }
@@ -219,7 +223,7 @@ body {
     .hero-stats { justify-content: center; }
     .image-wrapper { margin-top: 30px; }
     
-    /* Move Badge for mobile */
+    /* Verified Badge on Mobile */
     .floating-card { top: auto; bottom: 10px; left: 50%; transform: translateX(-50%); width: max-content; }
     
     .wide { flex-direction: column; text-align: center; padding: 30px; }
@@ -229,12 +233,11 @@ body {
     .pro-content-wrapper { flex-direction: column; text-align: center; gap: 20px; }
     .pro-card { padding: 30px 20px; }
     
-    /* Stack footer buttons */
+    /* Footer Buttons Stack */
     .contact-methods { flex-direction: column; align-items: center; }
     .c-btn { width: 100%; max-width: 320px; }
     
-    /* Adjust Side bar for mobile so it doesn't block content */
+    /* Side Bar Mobile Position */
     .side-social-bar { top: auto; bottom: 20px; right: 10px; flex-direction: column-reverse; transform: none; }
     .side-btn { width: 45px; height: 45px; border-radius: 50%; margin-right: 0; margin-bottom: 10px; }
-    .side-btn:hover { width: 45px; transform: scale(1.1); }
 }
