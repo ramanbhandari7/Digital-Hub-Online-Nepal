@@ -23,7 +23,7 @@ ul { list-style: none; padding: 0; }
 .navbar.scrolled { padding: 10px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
 .nav-logo { height: 40px; width: auto; }
 
-/* ENSURE NAV ITEMS ARE ROW ON DESKTOP */
+/* NAV ITEMS ROW ON DESKTOP */
 @media (min-width: 769px) {
     .nav-menu { display: flex; flex-direction: row; }
 }
@@ -49,7 +49,7 @@ ul { list-style: none; padding: 0; }
 .custom-btn { background: var(--gradient); border: none; padding: 12px 30px; border-radius: 50px; color: white; font-weight: 600; transition: var(--transition); }
 .custom-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3); color: white; }
 
-/* --- SERVICES & CARDS --- */
+/* --- SERVICES --- */
 .heading-line { width: 60px; height: 4px; background: var(--gradient); margin: 10px auto; }
 .service-card-bg { background: white; border-radius: 15px; border: none; transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
 .service-card-bg:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
@@ -59,11 +59,49 @@ ul { list-style: none; padding: 0; }
 .price-badge { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
 .sb-link { color: var(--secondary); font-size: 0.9rem; font-weight: 600; }
 
-/* --- ABOUT --- */
+/* --- ABOUT SECTION (FIXED IMAGE SIZE) --- */
 .about-section { padding: 100px 0; background: #f8f9fa; }
-.img-border { border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
-.founder-img { width: 100%; display: block; }
-.founder-verified { position: absolute; bottom: 20px; left: 20px; background: white; padding: 8px 15px; border-radius: 8px; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+.about-wrapper { display: flex; align-items: center; gap: 50px; }
+
+/* Center the image column and constrain size */
+.about-img-col {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-border {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* NEW: Limit the width on desktop */
+    max-width: 400px; 
+    width: 100%;
+}
+
+.founder-img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+}
+
+.founder-verified {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.about-text-col { flex: 1.2; }
 .quote-box { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 30px; font-style: italic; color: #666; }
 .founder-details { background: white; padding: 25px; border-radius: 15px; border-left: 5px solid var(--primary); margin: 20px 0; }
 
@@ -83,7 +121,7 @@ ul { list-style: none; padding: 0; }
 .contact-list a { color: #adb5bd; transition: 0.3s; }
 .contact-list a:hover { color: var(--accent); }
 
-/* --- SOCIAL SIDE BY SIDE --- */
+/* SOCIAL SIDE BY SIDE */
 .social-icons { display: flex; gap: 10px; margin-top: 20px; flex-direction: row; }
 .social-icon { width: 36px; height: 36px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; transition: 0.3s; }
 .social-icon:hover { background: var(--primary); transform: translateY(-3px); }
@@ -92,7 +130,7 @@ ul { list-style: none; padding: 0; }
 /* --- FIXED BLINKING WHATSAPP --- */
 .floating-whatsapp {
     position: fixed;
-    bottom: 30px; left: 30px; /* Left side by default, easy to reach with thumb on mobile */
+    bottom: 30px; left: 30px;
     background: #25D366; color: white;
     width: 60px; height: 60px;
     border-radius: 50%;
@@ -111,7 +149,7 @@ ul { list-style: none; padding: 0; }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* --- MODALS FIXED --- */
+/* --- MODALS --- */
 .payment-overlay, .profile-overlay, .legal-overlay, .popup-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.85); z-index: 9999;
@@ -161,4 +199,7 @@ ul { list-style: none; padding: 0; }
     .hero { text-align: center; padding-top: 120px; }
     .gradient-text { font-size: 2.5rem; }
     .profile-header { flex-direction: column; text-align: center; }
+    /* Mobile Founder Image Full Width */
+    .about-wrapper { flex-direction: column; }
+    .img-border { max-width: 100%; } 
 }
