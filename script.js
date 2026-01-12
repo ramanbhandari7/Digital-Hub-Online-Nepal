@@ -1,13 +1,13 @@
 /* =========================================
    DIGITAL HUB ONLINE - MAIN SCRIPT
-   Version: 3.2 (Final Fixes)
+   Version: 3.3 (Legal Text & Socials Fixed)
    ========================================= */
 
 /* --- 1. CONFIGURATION --- */
 const langConfig = {
     en: {
         langBtn: "नेपाली",
-        // Content mapping for language toggle
+        // Content mapping
         status: "Open Now • Online Service",
         headline: "Digital Solutions &<br>Personal Expertise.",
         desc: "Flight tickets, SSF, Licenses, and Websites. Combining efficiency, data precision, and 10+ years of logistics experience into one platform.",
@@ -15,7 +15,12 @@ const langConfig = {
         servicesTitle: "Our Premium Services",
         servicesSub: "Choose from our comprehensive range of digital services",
         foundedBy: "Founded & Operated By",
-        proVoice: "\"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably.\""
+        proVoice: "\"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably.\"",
+        // Services
+        svc1_title: "Flight Booking", svc1_desc: "Domestic & International flights at best rates.", price1: "Best Rate",
+        svc2_title: "Shram Approval", svc2_desc: "Online Labor Permit (Re-entry) processing.",
+        svc3_title: "SSF Registration", svc3_desc: "Social Security Fund Enrollment.",
+        svc5_title: "Driving License", svc5_desc: "Form filling & exam date fixing."
     },
     ne: {
         langBtn: "English",
@@ -26,7 +31,12 @@ const langConfig = {
         servicesTitle: "हाम्रा प्रमुख सेवाहरु",
         servicesSub: "हाम्रा विस्तृत डिजिटल सेवाहरूबाट छान्नुहोस्",
         foundedBy: "संस्थापक तथा सञ्चालक",
-        proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ। मेरो उद्देश्य नेपालका हरेक डिजिटल सेवाहरू पारदर्शी र सस्तोमा तपाइँको हातमा पुर्याउनु हो।\""
+        proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ। मेरो उद्देश्य नेपालका हरेक डिजिटल सेवाहरू पारदर्शी र सस्तोमा तपाइँको हातमा पुर्याउनु हो।\"",
+        // Services
+        svc1_title: "फ्लाइट टिकट बुकिङ", svc1_desc: "स्वदेशी तथा विदेशी उडानहरु सुपथ मुल्यमा।", price1: "सस्तो दर",
+        svc2_title: "अनलाइन श्रम स्वीकृति", svc2_desc: "वैदेशिक रोजगार पुनः श्रम स्वीकृति।",
+        svc3_title: "SSF दर्ता", svc3_desc: "सामाजिक सुरक्षा कोषमा दर्ता.",
+        svc5_title: "ड्राइभिङ लाइसेन्स", svc5_desc: "फारम भर्ने र मिति सार्ने काम।"
     }
 };
 
@@ -37,16 +47,15 @@ function updateLanguage(lang) {
     currentLang = lang;
     const langBtnText = document.getElementById('lang-text');
     if (langBtnText) langBtnText.textContent = langConfig[lang].langBtn;
-
     document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
-        if (langConfig[lang][key]) {
-            el.innerHTML = langConfig[lang][key];
-        }
+        if (langConfig[lang][key]) el.innerHTML = langConfig[lang][key];
     });
 }
 const langToggle = document.getElementById('lang-toggle');
 if (langToggle) langToggle.addEventListener('click', () => updateLanguage(currentLang === 'en' ? 'ne' : 'en'));
+const langToggleMobile = document.getElementById('lang-toggle-mobile');
+if (langToggleMobile) langToggleMobile.addEventListener('click', () => updateLanguage(currentLang === 'en' ? 'ne' : 'en'));
 
 /* --- 3. MOBILE NAV --- */
 const hamburger = document.getElementById('hamburger');
@@ -67,7 +76,7 @@ function openModal(id) {
     const modal = document.getElementById(id);
     if (modal) {
         modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Stop background scrolling
+        document.body.style.overflow = 'hidden';
     }
 }
 function closeModal(id) {
