@@ -1,13 +1,12 @@
 /* =========================================
    DIGITAL HUB ONLINE - MAIN SCRIPT
-   Version: 3.3 (Legal Text & Socials Fixed)
+   Version: 3.4 (Fixed Contact Form)
    ========================================= */
 
 /* --- 1. CONFIGURATION --- */
 const langConfig = {
     en: {
         langBtn: "नेपाली",
-        // Content mapping
         status: "Open Now • Online Service",
         headline: "Digital Solutions &<br>Personal Expertise.",
         desc: "Flight tickets, SSF, Licenses, and Websites. Combining efficiency, data precision, and 10+ years of logistics experience into one platform.",
@@ -16,7 +15,6 @@ const langConfig = {
         servicesSub: "Choose from our comprehensive range of digital services",
         foundedBy: "Founded & Operated By",
         proVoice: "\"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably.\"",
-        // Services
         svc1_title: "Flight Booking", svc1_desc: "Domestic & International flights at best rates.", price1: "Best Rate",
         svc2_title: "Shram Approval", svc2_desc: "Online Labor Permit (Re-entry) processing.",
         svc3_title: "SSF Registration", svc3_desc: "Social Security Fund Enrollment.",
@@ -32,7 +30,6 @@ const langConfig = {
         servicesSub: "हाम्रा विस्तृत डिजिटल सेवाहरूबाट छान्नुहोस्",
         foundedBy: "संस्थापक तथा सञ्चालक",
         proVoice: "\"प्रविधिले जीवन सजिलो बनाउनुपर्छ। मेरो उद्देश्य नेपालका हरेक डिजिटल सेवाहरू पारदर्शी र सस्तोमा तपाइँको हातमा पुर्याउनु हो।\"",
-        // Services
         svc1_title: "फ्लाइट टिकट बुकिङ", svc1_desc: "स्वदेशी तथा विदेशी उडानहरु सुपथ मुल्यमा।", price1: "सस्तो दर",
         svc2_title: "अनलाइन श्रम स्वीकृति", svc2_desc: "वैदेशिक रोजगार पुनः श्रम स्वीकृति।",
         svc3_title: "SSF दर्ता", svc3_desc: "सामाजिक सुरक्षा कोषमा दर्ता.",
@@ -95,34 +92,28 @@ window.onclick = function(e) {
     if (e.target.classList.contains('popup-overlay')) closeModal('helpPopup');
 };
 
-// Functions called by HTML buttons
 function openPayment(name, cost) {
     document.getElementById('payServiceName').innerText = name;
     document.getElementById('payAmount').innerText = cost;
     openModal('paymentModal');
 }
 function closePayment() { closeModal('paymentModal'); }
-
 function openProfile() { openModal('profileModal'); }
 function closeProfile() { closeModal('profileModal'); }
-
 function openTerms() { openModal('termsModal'); }
 function openPrivacy() { openModal('privacyModal'); }
 function closeLegal(type) { closeModal(type + 'Modal'); }
-
 function closePopup() { 
     closeModal('helpPopup'); 
     sessionStorage.setItem('helpSeen', 'true');
 }
 
-/* --- 5. HELPER FUNCTIONS --- */
 function copyNumber(text, method) {
     navigator.clipboard.writeText(text).then(() => alert(method + " Number Copied!")).catch(() => alert("Copy failed"));
 }
 
-/* --- 6. INITIALIZATION --- */
+/* --- 5. INITIALIZATION & SCROLL --- */
 window.addEventListener('load', () => {
-    // Reveal Animations
     const reveals = document.querySelectorAll('.reveal');
     const checkScroll = () => {
         reveals.forEach(el => {
@@ -132,16 +123,37 @@ window.addEventListener('load', () => {
     window.addEventListener('scroll', checkScroll);
     checkScroll();
 
-    // Auto Helper Popup
     if (!sessionStorage.getItem('helpSeen')) {
         setTimeout(() => openModal('helpPopup'), 5000);
     }
     
-    // Navbar Scroll BG
     window.addEventListener('scroll', () => {
         const nav = document.querySelector('.navbar');
         if (window.scrollY > 50) nav.classList.add('scrolled');
         else nav.classList.remove('scrolled');
     });
 });
-window.open(`https://wa.me/9779810430546?text=Inquiry from Website: ${input.value}`, '_blank');
+
+/* --- 6. CONTACT FORM LOGIC (FIXED) --- */
+// Selecting the form by ID
+const footerForm = document.getElementById('contactFormFooter');
+
+if (footerForm) {
+    footerForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevents page reload
+        
+        // Use a more specific selector to find the input inside the form
+        const phoneInput = this.querySelector('input[type="text"]');
+        
+        if (phoneInput && phoneInput.value.trim() !== "") {
+            const phoneNumber = phoneInput.value;
+            // Create the WhatsApp URL
+            const url = `https://wa.me/9779810430546?text=Hello, I need a callback. My number is: ${phoneNumber}`;
+            
+            // Open in new tab (Desktop) or App (Mobile)
+            window.open(url, '_blank');
+        } else {
+            alert("Please enter a valid phone number.");
+        }
+    });
+}
