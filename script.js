@@ -144,3 +144,4 @@ window.addEventListener('load', () => {
         else nav.classList.remove('scrolled');
     });
 });
+window.open(`https://wa.me/9779810430546?text=Inquiry from Website: ${input.value}`, '_blank');
