@@ -3,190 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Hub Online Nepal - All Digital Services in One Platform</title>
-    <meta name="description" content="Flight tickets, SSF, Licenses, and lifetime FREE websites for businesses in Nepal. Expert service at the lowest price.">
-    <meta name="keywords" content="Digital Nepal, Flight Booking, SSF Registration, Shram Approval, Website Nepal, Online Services Nepal">
+    <title>Digital Hub Online Nepal | Founded by Raman Bhandari</title>
+    <meta name="description" content="One-stop digital services in Nepal (Flight tickets, SSF, Websites) founded by Raman Bhandari, Data Specialist & Digital Consultant.">
+    <meta name="keywords" content="Digital Nepal, Raman Bhandari, Flight Booking, SSF, Web Hosting, Inventory Strategist">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="Docs/favicon.png" type="image/x-icon">
     
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Styles -->
+    <!-- External CSS Link -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Trust Badges -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
 
-    <!-- 1. FIXED NAVBAR -->
+    <!-- 1. NAVBAR -->
     <nav class="navbar">
-        <div class="container nav-container">
-            
-            <!-- Left: Hamburger & Logo -->
-            <div class="nav-left">
+        <div class="container nav-container d-flex justify-content-between align-items-center">
+            <div class="nav-left d-flex align-items-center gap-3">
                 <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </div>
-                <a href="#" class="brand">
-                    <img src="Docs/logo.png" alt="Digital Hub Online Nepal Logo" class="nav-logo">
+                <a href="#" class="brand text-decoration-none">
+                    <!-- Logo Image Placeholder -->
+                    <img src="Docs/logo.png" alt="Logo" class="nav-logo" onerror="this.style.display='none'">
                     <div class="brand-text">
-                        <h1>Digital Hub Online Nepal</h1>
-                        <p class="tagline">Nepal's Trusted Digital Partner</p>
+                        <h1>Digital Hub Online</h1>
+                        <p class="tagline">Founded by Raman Bhandari</p>
                     </div>
                 </a>
             </div>
 
-            <!-- Center: Navigation Links -->
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" class="nav-link" onclick="closeMenu()">About Us</a></li>
+                <li><a href="#about" class="nav-link" onclick="closeMenu()">About Founder</a></li>
                 <li><a href="#services" class="nav-link" onclick="closeMenu()">Services</a></li>
-                <li><a href="#testimonials" class="nav-link" onclick="closeMenu()">Testimonials</a></li>
+                <li><a href="#testimonials" class="nav-link" onclick="closeMenu()">Reviews</a></li>
                 <li><a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a></li>
             </ul>
 
-            <!-- Right: Action Buttons -->
-            <div class="nav-actions">
+            <div class="nav-actions d-none d-md-flex">
                 <a href="tel:+9779810430546" class="header-btn btn-call">
-                    <i class="fas fa-phone-alt"></i> <span class="btn-label">Call Now</span>
+                    <i class="fas fa-phone-alt"></i> Call Now
                 </a>
-                <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat mobile-hide">
-                    <i class="fab fa-whatsapp"></i> <span class="btn-label">WhatsApp</span>
+                <a href="https://wa.me/9779810430546" target="_blank" class="header-btn btn-chat">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
-                <button id="lang-toggle" class="btn-lang">
-                    <i class="fas fa-sync-alt"></i> <span id="lang-text">नेपाली</span>
-                </button>
             </div>
         </div>
     </nav>
 
     <!-- 2. HERO SECTION -->
     <header class="hero" id="home">
-        <div class="container flex-row">
-            <div class="hero-content reveal">
-                <div class="trust-badges">
-                    <span class="status-badge">
-                        <span class="dot"></span> <span data-key="status">Open Now • Online Service</span>
-                    </span>
-                    <span class="trust-badge">
-                        <i class="fas fa-shield-alt"></i> <span>100% Secure & Verified</span>
-                    </span>
-                </div>
-                
-                <h1 class="gradient-text" data-key="headline">All Digital Solutions.<br>One Platform.</h1>
-                <p data-key="desc">Flight tickets, SSF, Licenses, and lifetime FREE websites for businesses. Expert service at the lowest price.</p>
-                
-                <div class="hero-btns">
-                    <a href="#contact" class="btn-primary" data-key="cta">
-                        <i class="fas fa-rocket"></i> Start Now
-                    </a>
-                    <a href="#services" class="btn-text" data-key="viewServices">
-                        See Pricing <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="trust-logos">
-                    <div class="trust-logo">
-                        <i class="fas fa-check-circle"></i>
-                        <span>5000+ Happy Clients</span>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 hero-content reveal">
+                    <div class="trust-badges mb-3">
+                        <span class="status-badge">
+                            <span class="dot"></span> Open Now • Online Service
+                        </span>
+                        <span class="ms-2 text-success fw-bold"><i class="fas fa-shield-alt"></i> 100% Verified</span>
                     </div>
-                    <div class="trust-logo">
-                        <i class="fas fa-clock"></i>
-                        <span>24/7 Support</span>
+                    
+                    <h1 class="gradient-text">Digital Solutions &<br>Personal Expertise.</h1>
+                    <p class="lead text-muted">Flight tickets, SSF, Licenses, and Websites. Combining efficiency, data precision, and 10+ years of logistics experience into one platform.</p>
+                    
+                    <div class="hero-btns mt-4">
+                        <a href="#services" class="btn-primary custom-btn me-3">
+                            <i class="fas fa-rocket"></i> Our Services
+                        </a>
+                        <button onclick="openProfile()" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold">
+                             Who is Raman? <i class="fas fa-user ms-2"></i>
+                        </button>
                     </div>
-                    <div class="trust-logo">
-                        <i class="fas fa-rupee-sign"></i>
-                        <span>Lowest Price</span>
+                    
+                    <div class="trust-logos mt-5 d-flex gap-4">
+                        <div class="trust-logo"><i class="fas fa-check-circle text-primary"></i> 5000+ Clients</div>
+                        <div class="trust-logo"><i class="fas fa-clock text-primary"></i> 24/7 Support</div>
+                        <div class="trust-logo"><i class="fas fa-rupee-sign text-primary"></i> Lowest Price</div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="hero-image reveal delay-1">
-                <div class="image-wrapper">
-                    <img src="Docs/main.png" alt="Digital Services Nepal - All in One Platform">
-                    <div class="floating-card">
-                        <i class="fas fa-award"></i> <span>Nepal's Most Trusted Digital Hub</span>
-                    </div>
+                
+                <div class="col-lg-5 hero-image reveal delay-1 d-none d-lg-block">
+                    <img src="Docs/main.png" alt="Digital Services" class="img-fluid" onerror="this.src='https://source.unsplash.com/random/600x600/?technology'">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- 3. ABOUT SECTION -->
+    <!-- 3. ABOUT SECTION (MERGED FOUNDER PROFILE) -->
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-wrapper reveal">
                 <!-- Image Side -->
                 <div class="about-img-col">
                     <div class="img-border">
-                        <img src="Docs/Pro.png" alt="Raman Bhandari - Founder & Digital Consultant" class="founder-img">
+                        <!-- Profile Image -->
+                        <img src="Docs/Pro.png" onerror="this.src='assets/profile.jpg'" alt="Raman Bhandari" class="founder-img">
                         <div class="founder-verified">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Verified Consultant</span>
-                        </div>
-                    </div>
-                    <div class="partner-badges">
-                        <div class="partner-badge">
-                            <i class="fas fa-handshake"></i>
-                            <span>100% Trusted Partner</span>
+                            <i class="fas fa-check-circle"></i> Verified Consultant
                         </div>
                     </div>
                 </div>
                 
                 <!-- Text Side -->
                 <div class="about-text-col">
-                    <h4 class="sub-heading" data-key="foundedBy">Founded & Operated By</h4>
-                    <h2 class="section-title">Your Trusted Digital Partner in Nepal</h2>
+                    <h4 class="text-primary text-uppercase mb-2 fw-bold">Founded & Operated By</h4>
+                    <h2 class="section-title mb-4">Raman Bhandari</h2>
                     
                     <div class="quote-box">
                         <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="about-quote" data-key="proVoice">
-                            "Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably."
-                        </p>
+                        <p class="about-quote">"Technology should make life easier. My mission is to bring every digital service in Nepal to your fingertips—transparently, reliably, and affordably."</p>
                     </div>
                     
-                    <div class="founder-details">
-                        <h3>Raman Bhandari</h3>
-                        <p class="role-text">Founder & Digital Consultant</p>
-                        <p class="founder-bio">10+ years experience in digital services, serving 5000+ clients across Nepal and abroad.</p>
+                    <div class="founder-details shadow-sm">
+                        <h3>Inventory Strategist & Digital Specialist</h3>
+                        <p class="mb-2">With a foundation in <strong>Logistics, Data Analysis, and Web Technology</strong>.</p>
+                        <p class="small text-muted mb-0">Experience: Al Baker Group (Storekeeper) & Al Baironi (Data Clerk) | Doha, Qatar</p>
                     </div>
 
-                    <div class="stats-row">
-                        <div class="stat-box">
-                            <strong>10+</strong>
-                            <span>Years Experience</span>
-                        </div>
-                        <div class="stat-box">
-                            <strong>5000+</strong>
-                            <span>Happy Clients</span>
-                        </div>
-                        <div class="stat-box">
-                            <strong>100%</strong>
-                            <span>Success Rate</span>
-                        </div>
-                        <div class="stat-box">
-                            <strong>24/7</strong>
-                            <span>Customer Support</span>
-                        </div>
+                    <div class="stats-row mt-4">
+                        <div class="stat-box"><strong>10+</strong><span>Years Exp.</span></div>
+                        <div class="stat-box"><strong>5000+</strong><span>Happy Clients</span></div>
+                        <div class="stat-box"><strong>100%</strong><span>Success Rate</span></div>
                     </div>
                     
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn-primary">
-                            <i class="fas fa-calendar-alt"></i> Book Consultation
-                        </a>
-                        <a href="tel:+9779810430546" class="btn-outline">
-                            <i class="fas fa-phone"></i> Call Now
-                        </a>
+                    <div class="mt-4">
+                        <button onclick="openProfile()" class="btn-primary custom-btn">
+                            <i class="fas fa-book-open"></i> Read Full Biography
+                        </button>
                     </div>
                 </div>
             </div>
@@ -194,35 +146,26 @@
     </section>
 
     <!-- 4. SERVICES SECTION -->
-    <section class="services" id="services">
+    <section class="services py-5" id="services">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 data-key="servicesTitle">Our Premium Services</h2>
+            <div class="section-header reveal text-center mb-5">
+                <h2>Our Premium Services</h2>
                 <div class="heading-line"></div>
-                <p data-key="servicesSub">Choose from our comprehensive range of digital services</p>
+                <p>Choose from our comprehensive range of digital services</p>
             </div>
             
             <div class="row g-4">
                 <!-- Flight Booking -->
                 <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg" onclick="openPayment('Flight Booking', 'Best Rate')">
-                        <div class="service-badge popular">Most Popular</div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-plane fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">Flight Booking</h5>
-                            <p class="card-text">
-                                Domestic & International flights at best rates with instant e-ticket delivery.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> Best Price Guarantee</span>
-                                <span><i class="fas fa-check"></i> Instant E-Ticket</span>
-                                <span><i class="fas fa-check"></i> 24/7 Support</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
+                    <div class="card h-100 p-3 shadow-sm service-card-bg" onclick="openPayment('Flight Booking', 'Best Rate')">
+                        <div class="service-badge">POPULAR</div>
+                        <div class="card-body text-center d-flex flex-column">
+                            <div class="icon-box"><i class="fas fa-plane fa-3x"></i></div>
+                            <h5 class="fw-bold mt-3">Flight Booking</h5>
+                            <p class="text-muted small">Domestic & International flights at best rates with instant e-tickets.</p>
+                            <div class="service-footer mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
                                 <span class="price-badge">Best Rate</span>
-                                <span class="sb-link">Book Now <i class="fas fa-arrow-right"></i></span>
+                                <span class="sb-link">Book <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </div>
@@ -230,47 +173,14 @@
 
                 <!-- Shram Approval -->
                 <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg" onclick="openPayment('Shram Approval', 'Rs. 1500')">
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-file-contract fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">Shram Approval</h5>
-                            <p class="card-text">
-                                Online Labor Permit (Re-entry) processing with expert guidance.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> Fast Processing</span>
-                                <span><i class="fas fa-check"></i> Document Guidance</span>
-                                <span><i class="fas fa-check"></i> Status Updates</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
+                    <div class="card h-100 p-3 shadow-sm service-card-bg" onclick="openPayment('Shram Approval', 'Rs. 1500')">
+                        <div class="card-body text-center d-flex flex-column">
+                            <div class="icon-box"><i class="fas fa-file-contract fa-3x"></i></div>
+                            <h5 class="fw-bold mt-3">Shram Approval</h5>
+                            <p class="text-muted small">Online Labor Permit (Re-entry) processing with document guidance.</p>
+                            <div class="service-footer mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
                                 <span class="price-badge">Rs. 1500*</span>
-                                <span class="sb-link">Apply Now <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SSF Registration -->
-                <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg" onclick="openPayment('SSF Registration', 'Rs. 1500')">
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-shield-alt fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">SSF Registration</h5>
-                            <p class="card-text">
-                                Social Security Fund Enrollment for both employers and employees.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> Complete Process</span>
-                                <span><i class="fas fa-check"></i> Employer & Employee</span>
-                                <span><i class="fas fa-check"></i> Follow-up Support</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
-                                <span class="price-badge">Rs. 1500</span>
-                                <span class="sb-link">Register <i class="fas fa-arrow-right"></i></span>
+                                <span class="sb-link">Apply <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </div>
@@ -278,144 +188,60 @@
 
                 <!-- Website & Hosting -->
                 <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg featured" onclick="openPayment('Web Hosting', 'Service Charge Applicable')">
+                    <div class="card h-100 p-3 shadow-sm service-card-bg featured" onclick="openPayment('Web Hosting', 'Applicable')">
                         <div class="ribbon">FREE Hosting</div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-globe fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">Website & Hosting</h5>
-                            <p class="card-text">
-                                Lifetime free hosting for Business & Schools with custom design.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> Lifetime Free Hosting</span>
-                                <span><i class="fas fa-check"></i> Custom Design</span>
-                                <span><i class="fas fa-check"></i> Free Training</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
-                                <span class="price-badge strike">Rs. 50,000</span>
-                                <span class="sb-link">Claim Offer <i class="fas fa-arrow-right"></i></span>
+                        <div class="card-body text-center d-flex flex-column">
+                            <div class="icon-box"><i class="fas fa-globe fa-3x"></i></div>
+                            <h5 class="fw-bold mt-3">Website & Hosting</h5>
+                            <p class="text-muted small">Lifetime free hosting for Businesses & Schools with custom design.</p>
+                            <div class="service-footer mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="price-badge text-decoration-line-through text-muted small">Rs. 50k</span>
+                                <span class="sb-link">Claim <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Driving License -->
+                <!-- SSF Registration -->
                 <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg" onclick="openPayment('Driving License', 'Rs. 500')">
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-car fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">Driving License</h5>
-                            <p class="card-text">
-                                Form filling & exam date fixing services for new and renewal licenses.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> Form Assistance</span>
-                                <span><i class="fas fa-check"></i> Date Fixing</span>
-                                <span><i class="fas fa-check"></i> Renewal Help</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
-                                <span class="price-badge">Rs. 500</span>
-                                <span class="sb-link">Fill Form <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bank Opening -->
-                <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg" onclick="openPayment('Bank Opening', 'FREE')">
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-university fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">Bank Account Opening</h5>
-                            <p class="card-text">
-                                Nic Asia, Global IME & more with zero balance options available.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> Home Service</span>
-                                <span><i class="fas fa-check"></i> Multiple Banks</span>
-                                <span><i class="fas fa-check"></i> Zero Balance*</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
-                                <span class="price-badge">Free Help</span>
-                                <span class="sb-link">Open Account <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Card: VFS Date Booking -->
-                <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg" onclick="openPayment('VFS Date Booking', 'Service Charge')">
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-calendar-check fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">VFS Date Booking</h5>
-                            <p class="card-text">
-                                Secure your visa appointment slots easily for various countries.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> Multiple Countries</span>
-                                <span><i class="fas fa-check"></i> Fast Slot Booking</span>
-                                <span><i class="fas fa-check"></i> Expert Guidance</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
-                                <span class="price-badge">Service Charge</span>
-                                <span class="sb-link">Book Now <i class="fas fa-arrow-right"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card: Attested Police Report -->
-                <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg" onclick="openPayment('Attested Police Report', 'Rs. 1500')">
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-file-signature fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">Attested Police Report</h5>
-                            <p class="card-text">
-                                Get your Police Clearance Certificate attested quickly for foreign employment.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> Fast Processing</span>
-                                <span><i class="fas fa-check"></i> Document Guidance</span>
-                                <span><i class="fas fa-check"></i> 100% Genuine</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
+                    <div class="card h-100 p-3 shadow-sm service-card-bg" onclick="openPayment('SSF Registration', 'Rs. 1500')">
+                        <div class="card-body text-center d-flex flex-column">
+                            <div class="icon-box"><i class="fas fa-shield-alt fa-3x"></i></div>
+                            <h5 class="fw-bold mt-3">SSF Registration</h5>
+                            <p class="text-muted small">Social Security Fund Enrollment for companies and employees.</p>
+                             <div class="service-footer mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
                                 <span class="price-badge">Rs. 1500</span>
-                                <span class="sb-link">Get Details <i class="fas fa-arrow-right"></i></span>
+                                <span class="sb-link">Register <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Professional CV & Cover Letter -->
+                <!-- CV Writing -->
                 <div class="col-md-4 col-sm-6 reveal">
-                    <div class="card h-100 text-center p-3 shadow-lg service-card-bg" onclick="openPayment('Professional CV & Cover Letter', 'Rs. 1000')">
-                        <div class="card-body d-flex flex-column">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-user-tie fa-3x"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold">Professional CV & Cover Letter</h5>
-                            <p class="card-text">
-                                High-quality Resume writing including EuroPass standard formats.
-                            </p>
-                            <div class="features">
-                                <span><i class="fas fa-check"></i> EuroPass Format</span>
-                                <span><i class="fas fa-check"></i> ATS Friendly</span>
-                                <span><i class="fas fa-check"></i> Job Specific</span>
-                            </div>
-                            <div class="service-footer mt-auto pt-3">
+                    <div class="card h-100 p-3 shadow-sm service-card-bg" onclick="openPayment('Professional CV', 'Rs. 1000')">
+                        <div class="card-body text-center d-flex flex-column">
+                            <div class="icon-box"><i class="fas fa-user-tie fa-3x"></i></div>
+                            <h5 class="fw-bold mt-3">Professional CV</h5>
+                            <p class="text-muted small">EuroPass standard formats & ATS friendly resume writing.</p>
+                             <div class="service-footer mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
                                 <span class="price-badge">Rs. 1000</span>
-                                <span class="sb-link">Order CV <i class="fas fa-arrow-right"></i></span>
+                                <span class="sb-link">Order <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Licenses -->
+                 <div class="col-md-4 col-sm-6 reveal">
+                    <div class="card h-100 p-3 shadow-sm service-card-bg" onclick="openPayment('Driving License', 'Rs. 500')">
+                        <div class="card-body text-center d-flex flex-column">
+                            <div class="icon-box"><i class="fas fa-car fa-3x"></i></div>
+                            <h5 class="fw-bold mt-3">Driving License</h5>
+                            <p class="text-muted small">Form filling & exam date fixing services for new/renewal.</p>
+                             <div class="service-footer mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="price-badge">Rs. 500</span>
+                                <span class="sb-link">Book <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     </div>
@@ -424,442 +250,275 @@
         </div>
     </section>
 
-    <!-- 5. TESTIMONIALS SECTION -->
-    <section class="testimonials-section" id="testimonials">
+    <!-- 5. TESTIMONIALS -->
+    <section class="testimonials-section py-5 bg-light" id="testimonials">
         <div class="container">
-            <div class="section-header reveal">
+            <div class="section-header reveal text-center mb-5">
                 <h2>Trusted by 5000+ Clients</h2>
                 <div class="heading-line"></div>
-                <p>What our customers say about our services</p>
+                <p>Real stories from our happy customers.</p>
             </div>
             
             <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
+                <!-- 1 -->
                 <div class="testimonial-card reveal">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Got my Shram Approval in just 2 days! Digital Hub saved me weeks of hassle. 
-                        Very professional service and excellent communication throughout."
-                    </p>
-                   <div class="client-info">
-    <div class="client-avatar">
-        <img src="Docs/Chhitij.png" alt="Chhitij Chamlagai">
-    </div>
-    <div class="client-details">
-        <h4>Chhitij Chamlagai</h4>
-        <p class="client-location">Jhapa, Now in Doha, Qatar</p>
-                        <p class="client-service">Shram Approval Service</p>
-                    </div>
-     </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card reveal">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "Free website for my school with lifetime hosting! They even trained our staff. 
-                        Exceptional value and ongoing support. Highly recommended!"
-                    </p>
+                    <p class="small fst-italic">"Got my Shram Approval in just 2 days! Raman saved me weeks of hassle. Very professional service and excellent communication throughout."</p>
                     <div class="client-info">
                         <div class="client-avatar">
-                            <img src="https://ui-avatars.com/api/?name=Sarita+Poudel&background=10B981&color=fff" alt="Sarita Poudel">
+                            <img src="Docs/Chhitij.png" onerror="this.src='https://ui-avatars.com/api/?name=CC'" alt="Client">
                         </div>
                         <div class="client-details">
-                            <h4>Sarita Poudel</h4>
-                            <p class="client-location">Kathmandu, Nepal</p>
-                            <p class="client-service">Website & Hosting</p>
+                            <h6 class="mb-0">Chhitij Chamlagai</h6>
+                            <span class="small text-muted">Jhapa / Doha, Qatar</span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Testimonial 3 -->
+                <!-- 2 -->
                 <div class="testimonial-card reveal">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "SSF registration was confusing until I found Digital Hub. 
-                        They handled everything online and kept me updated at every step. Great service!"
-                    </p>
+                    <p class="small fst-italic">"Free website for my school with lifetime hosting! They even trained our staff. Exceptional value and ongoing support. Highly recommended!"</p>
                     <div class="client-info">
                         <div class="client-avatar">
-                            <img src="https://ui-avatars.com/api/?name=Mohan+Basnet&background=8B5CF6&color=fff" alt="Mohan Basnet">
+                            <img src="https://ui-avatars.com/api/?name=SP" alt="Client">
                         </div>
                         <div class="client-details">
-                            <h4>Mohan Basnet</h4>
-                            <p class="client-location">Pokhara, Nepal</p>
-                            <p class="client-service">SSF Registration</p>
+                            <h6 class="mb-0">Sarita Poudel</h6>
+                            <span class="small text-muted">Kathmandu, Nepal</span>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="more-testimonials">
-                <a href="https://wa.me/9779810430546?text=I'd%20like%20to%20see%20more%20reviews" 
-                   target="_blank" class="btn-outline">
-                    <i class="fab fa-whatsapp"></i> See More Reviews on WhatsApp
-                </a>
+                <!-- 3 -->
+                <div class="testimonial-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p class="small fst-italic">"SSF registration was confusing until I found Digital Hub. They handled everything online and kept me updated. Great service!"</p>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://ui-avatars.com/api/?name=MB" alt="Client">
+                        </div>
+                        <div class="client-details">
+                            <h6 class="mb-0">Mohan Basnet</h6>
+                            <span class="small text-muted">Pokhara, Nepal</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. CONTACT & FOOTER SECTION -->
+    <!-- 6. FOOTER -->
     <footer class="main-footer" id="contact">
         <div class="container">
             <div class="footer-grid">
-                <!-- Company Info -->
+                <!-- Brand & Form -->
                 <div class="footer-col">
-                    <div class="footer-brand">
-                        <h2 class="footer-logo">Digital Hub Online Nepal</h2>
-                        <p class="footer-desc" data-key="footerDesc">
-                            Your one-stop solution for all digital services in Nepal. 
-                            Fast, reliable, and trusted by hundreds.
-                        </p>
-                    </div>
+                    <h2>Digital Hub Online</h2>
+                    <p class="small text-white-50">Bridging efficiency with digital precision. Your trusted partner for all online services in Nepal.</p>
                     
-                    <!-- Contact Form -->
-                    <div class="contact-form-wrapper">
-                        <h3>Get Free Consultation</h3>
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Full Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" placeholder="Phone Number" required>
-                            </div>
-                            <div class="form-group">
-                                <select required>
-                                    <option value="">Select Service Needed</option>
-                                    <option>Flight Booking</option>
-                                    <option>Shram Approval</option>
-                                    <option>SSF Registration</option>
-                                    <option>Website & Hosting</option>
-                                    <option>Driving License</option>
-                                    <option>Bank Account Opening</option>
-                                    <option>VFS Date Booking</option>
-                                    <option>Attested Police Report</option>
-                                    <option>Professional CV & Cover Letter</option>
-                                    <option>Other Service</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Your Message / Questions" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary">
-                                <i class="fas fa-paper-plane"></i> Send Inquiry
-                            </button>
-                        </form>
-                    </div>
+                    <form class="mt-3 contact-form" onsubmit="event.preventDefault(); window.open('https://wa.me/9779810430546?text=Inquiry from Website: ' + this.querySelector('input').value, '_blank')">
+                        <input type="text" class="form-control mb-2" placeholder="Your Phone Number" required>
+                        <button class="btn btn-primary w-100 btn-sm">Request Callback</button>
+                    </form>
                 </div>
 
-                <!-- Quick Links -->
+                <!-- Contact -->
                 <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">All Services</a></li>
-                        <li><a href="#testimonials">Client Reviews</a></li>
-                        <li><a href="#" onclick="openTerms()">Terms of Service</a></li>
-                        <li><a href="#" onclick="openPrivacy()">Privacy Policy</a></li>
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list list-unstyled">
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+9779810430546">+977 9810430546</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:digitalhubonline2025@gmail.com">digitalhubonline2025@gmail.com</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/9779810430546">Chat on WhatsApp</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal (Kerabari 6 Dangi)</li>
                     </ul>
                 </div>
 
-                <!-- Contact Info -->
+                <!-- Social -->
                 <div class="footer-col">
-                    <h3>Contact Information</h3>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Office Address</strong>
-                                <p>Kathmandu, Nepal</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <strong>Call Us Anytime</strong>
-                                <p><a href="tel:+9779810430546">+977 9810430546</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email Address</strong>
-                                <p><a href="mailto:digitalhubonline2025@gmail.com">digitalhubonline2025@gmail.com</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Business Hours</strong>
-                                <p>9 AM - 7 PM (NST)<br>Sunday - Friday</p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <!-- Social Links -->
-                    <div class="social-links">
-                        <h4>Connect With Us</h4>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/profile.php?id=61576059702352" target="_blank" class="social-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://wa.me/9779810430546" target="_blank" class="social-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="https://m.me/ramanbhandari07" target="_blank" class="social-icon">
-                                <i class="fab fa-facebook-messenger"></i>
-                            </a>
-                            <a href="viber://chat?number=9779810430546" class="social-icon">
-                                <i class="fab fa-viber"></i>
-                            </a>
-                            <a href="mailto:digitalhubonline2025@gmail.com" class="social-icon">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61576059702352" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/raman-bhandari-942554247/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/@ramanbhandari007" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/ramanbhandari1991" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
+                    <p class="mt-4 small fst-italic">“Strive not to be a success, but rather to be of value.” – Albert Einstein</p>
                 </div>
             </div>
         </div>
-        
-        <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p>© 2025 Digital Hub Online Nepal. All Rights Reserved.</p>
-                    <p class="footer-notes">
-                        *Prices may vary based on service requirements. 
-                        Contact us for exact quotation.
-                    </p>
-                </div>
-            </div>
+            <p>© 2025 Digital Hub Online Nepal | Raman Bhandari. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- 7. SIDE SOCIAL BAR -->
-    <div class="side-social-bar">
-        <a href="https://wa.me/9779810430546" target="_blank" class="side-btn whatsapp-side" 
-           title="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="tooltip">Chat Now</span>
-        </a>
-        <a href="tel:+9779810430546" class="side-btn call-side" title="Call Us">
-            <i class="fas fa-phone-alt"></i>
-            <span class="tooltip">Call Now</span>
-        </a>
-        <a href="https://m.me/ramanbhandari07" target="_blank" class="side-btn messenger-side" 
-           title="Message on Messenger">
-            <i class="fab fa-facebook-messenger"></i>
-            <span class="tooltip">Messenger</span>
-        </a>
+    <!-- --- MODALS --- -->
+
+    <!-- FOUNDER PROFILE MODAL (Personal Details) -->
+    <div id="profileModal" class="profile-overlay">
+        <div class="profile-box">
+            <span class="close-profile" onclick="closeProfile()">&times;</span>
+            
+            <div class="profile-header">
+                <img src="Docs/Pro.png" onerror="this.src='https://ui-avatars.com/api/?name=RB'" alt="Raman" class="profile-avatar-lg">
+                <div>
+                    <h2 class="mb-0">Raman Bhandari</h2>
+                    <p class="text-primary fw-bold mb-0">Inventory Strategist & Web Enthusiast</p>
+                    <div class="d-flex gap-2 mt-2">
+                        <a href="https://www.linkedin.com/in/raman-bhandari-942554247/" target="_blank" class="text-muted"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="mailto:ramanbhandari7@outlook.com" class="text-muted"><i class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-body">
+                <h5 class="fw-bold"><i class="fas fa-user-circle"></i> Who Am I?</h5>
+                <p class="small text-muted">My journey into the world of procurement, logistics, and web technology has been driven by a relentless curiosity. I believe in the power of digital precision to transform complex challenges into streamlined processes.</p>
+                
+                <h5 class="fw-bold mt-4"><i class="fas fa-briefcase"></i> Professional Experience</h5>
+                <div class="exp-item">
+                    <strong>Data Entry & Inventory Clerk</strong><br>
+                    <span class="text-primary">Al Baironi Trading & Distribution, Doha Qatar</span><br>
+                    <span class="small text-muted">Jan 2024 – Present</span>
+                </div>
+                <div class="exp-item">
+                    <strong>Storekeeper</strong><br>
+                    <span class="text-primary">Al Baker Group, Doha Qatar</span><br>
+                    <span class="small text-muted">Sep 2015 – Sep 2023</span>
+                </div>
+
+                <h5 class="fw-bold mt-4"><i class="fas fa-heart"></i> Beyond Work</h5>
+                <p class="small text-muted">When I'm not managing data or building websites, I enjoy creating vlogs and volunteering for events like the FIFA World Cup.</p>
+                
+                <div class="text-center mt-4 border-top pt-3">
+                    <a href="https://www.tiktok.com/@ramanbhandari007" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill">
+                        <i class="fab fa-tiktok"></i> Watch Vlogs
+                    </a>
+                    <a href="https://www.youtube.com/@ramanbhandari" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill ms-2">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- 8. PAYMENT MODAL -->
+    <!-- PAYMENT MODAL -->
     <div id="paymentModal" class="payment-overlay">
         <div class="payment-box">
-            <div class="pay-header">
+            <span class="close-pay" onclick="closePayment()">&times;</span>
+            <div class="pay-header mb-3 pb-2 border-bottom">
                 <h3><i class="fas fa-credit-card"></i> Make Payment</h3>
-                <span class="close-pay" onclick="closePayment()">&times;</span>
-            </div>
-            <div class="pay-info">
-                <p>Service: <strong id="payServiceName"></strong></p>
-                <p>Amount: <strong id="payAmount"></strong></p>
-                <p class="pay-note">*After payment, send screenshot on WhatsApp for confirmation</p>
             </div>
             
-            <div class="qr-section">
-                <p class="pay-instruction">Scan QR to Pay Instantly:</p>
-                <div class="qr-wrapper">
-                    <img src="Docs/qr.png" alt="Payment QR Code" class="qr-img" 
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p class="error-msg" style="display:none;">
-                        <i class="fas fa-exclamation-circle"></i> QR Code not loaded
-                    </p>
+            <div class="bg-light p-3 rounded mb-3">
+                <p class="mb-1">Service: <strong id="payServiceName">...</strong></p>
+                <p class="mb-0">Amount: <strong id="payAmount" class="text-primary">...</strong></p>
+            </div>
+            
+            <!-- QR Section -->
+            <div class="text-center mb-3">
+                <p class="small text-muted mb-2">Scan QR to Pay Instantly:</p>
+                <div class="qr-wrapper text-center">
+                    <img src="Docs/qr.png" alt="Scan QR" class="img-fluid" style="max-width: 150px; border: 1px solid #ddd; padding: 5px;">
                 </div>
             </div>
             
-            <p class="pay-instruction separator"><span>OR Copy Number</span></p>
+            <div class="text-center my-2 position-relative">
+                <span class="bg-white px-2 text-muted small position-relative" style="z-index:1">OR Copy Number</span>
+                <hr style="margin-top: -10px;">
+            </div>
             
+            <!-- Gateways -->
             <div class="gateway-grid">
-                <!-- eSewa -->
-                <div class="gateway-card esewa">
-                    <div class="gw-icon esewa-bg">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <h4>eSewa</h4>
-                    <p class="gateway-number">9810430546</p>
-                    <button onclick="copyNumber('9810430546', 'eSewa')" class="btn-copy">
-                        <i class="fas fa-copy"></i> Copy
-                    </button>
+                <div class="gateway-card" onclick="copyToClip('9810430546')">
+                    <i class="fas fa-wallet text-success fa-2x mb-2"></i>
+                    <h6>eSewa</h6>
+                    <small>9810430546</small>
                 </div>
-                
-                <!-- Khalti -->
-                <div class="gateway-card khalti">
-                    <div class="gw-icon khalti-bg">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <h4>Khalti</h4>
-                    <p class="gateway-number">9810430546</p>
-                    <button onclick="copyNumber('9810430546', 'Khalti')" class="btn-copy">
-                        <i class="fas fa-copy"></i> Copy
-                    </button>
+                <div class="gateway-card" onclick="copyToClip('9810430546')">
+                    <i class="fas fa-file-invoice-dollar text-primary fa-2x mb-2"></i>
+                    <h6>Khalti</h6>
+                    <small>9810430546</small>
                 </div>
-                
-                <!-- Bank Transfer -->
-                <div class="gateway-card bank">
-                    <div class="gw-icon bank-bg">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <h4>Bank Transfer</h4>
-                    <p class="gateway-number">Global/NIC</p>
-                    <a href="https://wa.me/9779810430546?text=Need%20bank%20details%20for%20transfer" 
-                       target="_blank" class="btn-copy">
-                        <i class="fas fa-info-circle"></i> Get Details
+                <div class="gateway-card">
+                    <a href="https://wa.me/9779810430546?text=Need%20bank%20details%20for%20transfer" target="_blank" class="text-dark text-decoration-none">
+                        <i class="fas fa-university text-warning fa-2x mb-2"></i>
+                        <h6>Bank</h6>
+                        <small>Get Info</small>
                     </a>
                 </div>
             </div>
             
-            <div class="pay-footer">
-                <p><i class="fas fa-info-circle"></i> Send payment screenshot to WhatsApp</p>
-                <a href="https://wa.me/9779810430546" target="_blank" class="verify-btn">
-                    <i class="fab fa-whatsapp"></i> Verify Payment on WhatsApp
+            <div class="pay-footer mt-3">
+                <a href="https://wa.me/9779810430546" target="_blank" class="btn btn-success w-100">
+                    <i class="fab fa-whatsapp"></i> Verify Payment
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- 9. LEGAL MODALS -->
-    <!-- Terms of Service -->
-    <div id="termsModal" class="legal-overlay">
-        <div class="legal-box">
-            <div class="legal-header">
-                <h3><i class="fas fa-file-contract"></i> Terms of Service</h3>
-                <span class="close-legal" onclick="closeLegal('terms')">&times;</span>
-            </div>
-            <div class="legal-content">
-                <div class="legal-section">
-                    <h4>1. Service Agreement</h4>
-                    <p>By using our services, you agree to provide accurate information and documents required for processing.</p>
-                </div>
-                
-                <div class="legal-section">
-                    <h4>2. Payment Terms</h4>
-                    <p>Service fees are non-refundable once processing has begun. All payments are to be made in advance unless otherwise agreed.</p>
-                </div>
-                
-                <div class="legal-section">
-                    <h4>3. Service Timeline</h4>
-                    <p>We provide estimated timelines but are not liable for delays caused by government offices or third-party systems.</p>
-                </div>
-                
-                <div class="legal-section">
-                    <h4>4. Client Responsibilities</h4>
-                    <p>Clients must provide accurate information. We are not responsible for issues arising from incorrect information provided.</p>
-                </div>
-                
-                <div class="legal-section">
-                    <h4>5. Contact Information</h4>
-                    <p>For any disputes or concerns, contact us at:<br>
-                    <strong>Email:</strong> digitalhubonline2025@gmail.com<br>
-                    <strong>Phone:</strong> +977 9810430546</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Privacy Policy -->
-    <div id="privacyModal" class="legal-overlay">
-        <div class="legal-box">
-            <div class="legal-header">
-                <h3><i class="fas fa-user-shield"></i> Privacy Policy</h3>
-                <span class="close-legal" onclick="closeLegal('privacy')">&times;</span>
-            </div>
-            <div class="legal-content">
-                <div class="legal-section">
-                    <h4>1. Information Collection</h4>
-                    <p>We collect only necessary information required to provide our services: name, contact details, and required documents.</p>
-                </div>
-                
-                <div class="legal-section">
-                    <h4>2. Data Protection</h4>
-                    <p>Your personal information is stored securely and never shared with third parties without your consent, except as required by law.</p>
-                </div>
-                
-                <div class="legal-section">
-                    <h4>3. Payment Security</h4>
-                    <p>All payments are processed through secure payment gateways (eSewa, Khalti). We do not store your payment card details.</p>
-                </div>
-                
-                <div class="legal-section">
-                    <h4>4. Data Retention</h4>
-                    <p>We retain client information for 2 years for service continuity and legal compliance, after which it is securely deleted.</p>
-                </div>
-                
-                <div class="legal-section">
-                    <h4>5. Your Rights</h4>
-                    <p>You have the right to access, correct, or delete your personal information. Contact us for any privacy concerns.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 10. HELP POPUP -->
-    <div id="helpPopup" class="popup-overlay">
-        <div class="popup-content">
-            <div class="popup-header">
-                <h3><i class="fas fa-headset"></i> Need Help?</h3>
-                <div class="close-icon-wrap" onclick="closePopup()">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-            <div class="popup-body">
-                <div class="popup-desc">
-                    <strong>Digital Hub Online Nepal</strong> provides complete digital services:
-                    <ul>
-                        <li>Shram Approval & Labor Permits</li>
-                        <li>SSF Registration & NOC Services</li>
-                        <li>Flight Tickets (Domestic/International)</li>
-                        <li>Website Development & Hosting</li>
-                        <li>All Government Licenses</li>
-                        <li>VFS Appointment Booking</li>
-                        <li>Police Report Attestation</li>
-                        <li>Professional CV Writing</li>
-                    </ul>
-                </div>
-                <div class="popup-btn-grid">
-                    <a href="https://wa.me/9779810430546" target="_blank" class="p-btn p-whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Now
-                    </a>
-                    <a href="tel:+9779810430546" class="p-btn p-call">
-                        <i class="fas fa-phone-alt"></i> Call Instantly
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
+    <!-- JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
     <script>
-        // Animation for reveal elements
+        // Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+
+        // Scroll Reveal Animation
+        window.addEventListener('scroll', reveal);
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            
-            for (var i = 0; i < reveals.length; i++) {
+            var reveals = document.querySelectorAll('.reveal');
+            for(var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
                 var elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+                if(elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
                 }
             }
         }
-        
-        window.addEventListener("scroll", reveal);
-        // Call reveal on page load
-        window.addEventListener("load", reveal);
+        reveal(); // Trigger on load
+
+        // Payment Modal
+        function openPayment(service, price) {
+            document.getElementById('payServiceName').innerText = service;
+            document.getElementById('payAmount').innerText = price;
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+        function closePayment() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        // Profile Modal
+        function openProfile() {
+            document.getElementById('profileModal').style.display = 'flex';
+        }
+        function closeProfile() {
+            document.getElementById('profileModal').style.display = 'none';
+        }
+
+        // Copy to Clipboard
+        function copyToClip(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Number ' + text + ' copied to clipboard!');
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        // Close outside click
+        window.onclick = function(event) {
+            if (event.target.className === 'payment-overlay') closePayment();
+            if (event.target.className === 'profile-overlay') closeProfile();
+        }
     </script>
 </body>
 </html>
