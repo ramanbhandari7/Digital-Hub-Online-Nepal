@@ -31,7 +31,12 @@ a { text-decoration: none; } ul { list-style: none; padding: 0; }
 .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* --- HERO --- */
-.hero { padding: 140px 0 80px; background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('https://source.unsplash.com/random/1920x1080/?technology') no-repeat center/cover; }
+/* FIX #9: Replaced deprecated Unsplash random URL with a reliable subtle pattern */
+.hero {
+    padding: 140px 0 80px;
+    background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+                linear-gradient(135deg, #e8f0fe 0%, #f3e8ff 100%);
+}
 .status-badge { background: #e8f5e9; color: #2e7d32; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
 .dot { height: 8px; width: 8px; background-color: #2e7d32; border-radius: 50%; display: inline-block; margin-right: 5px; }
 .gradient-text { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
@@ -70,7 +75,12 @@ a { text-decoration: none; } ul { list-style: none; padding: 0; }
 .main-footer { background: var(--dark); color: white; padding: 80px 0 0; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 50px; }
 .footer-col h2 { color: white; font-size: 1.5rem; margin-bottom: 15px; }
-.contact-list a { color: #adb5bd; transition: 0.3s; } .contact-list a:hover { color: var(--accent); }
+
+/* FIX #10: Added margin-bottom to contact list items so they don't appear cramped */
+.contact-list li { margin-bottom: 10px; }
+.contact-list a { color: #adb5bd; transition: 0.3s; }
+.contact-list a:hover { color: var(--accent); }
+
 /* Social Row */
 .social-icons { display: flex; gap: 10px; margin-top: 20px; flex-direction: row; }
 .social-icon { width: 36px; height: 36px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; transition: 0.3s; }
@@ -79,7 +89,7 @@ a { text-decoration: none; } ul { list-style: none; padding: 0; }
 
 /* --- FIXED BLINKING WHATSAPP (RIGHT) --- */
 .floating-whatsapp {
-    position: fixed; bottom: 20px; right: 20px; /* Switched to RIGHT */
+    position: fixed; bottom: 20px; right: 20px;
     background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center; font-size: 35px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999; animation: pulse 2s infinite; cursor: pointer;
@@ -88,13 +98,27 @@ a { text-decoration: none; } ul { list-style: none; padding: 0; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
 /* --- MODALS & UTILS --- */
-.payment-overlay, .profile-overlay, .legal-overlay, .popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; display: none; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(5px); }
-.payment-box, .profile-box, .legal-box, .popup-box { background: white; padding: 30px; border-radius: 20px; width: 100%; max-width: 500px; max-height: 90vh; overflow-y: auto; position: relative; animation: fadeIn 0.3s ease; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-.profile-box { max-width: 800px; } .legal-box { max-width: 700px; } .popup-box { max-width: 350px; }
+.payment-overlay, .profile-overlay, .legal-overlay, .popup-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); z-index: 10000; display: none;
+    justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(5px);
+}
+.payment-box, .profile-box, .legal-box, .popup-box {
+    background: white; padding: 30px; border-radius: 20px; width: 100%;
+    max-width: 500px; max-height: 90vh; overflow-y: auto; position: relative;
+    animation: fadeIn 0.3s ease; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.profile-box { max-width: 800px; }
+.legal-box { max-width: 700px; }
+.popup-box { max-width: 350px; }
 .legal-content p { font-size: 0.95rem; line-height: 1.6; border-bottom: 1px solid #eee; padding-bottom: 10px; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-.close-btn-wrapper { position: absolute; top: 15px; right: 15px; width: 35px; height: 35px; background: #ffebeb; color: #dc3545; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; z-index: 100; }
+.close-btn-wrapper {
+    position: absolute; top: 15px; right: 15px; width: 35px; height: 35px;
+    background: #ffebeb; color: #dc3545; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; z-index: 100;
+}
 .close-btn-wrapper:hover { background: #dc3545; color: white; transform: rotate(90deg); }
 .gateway-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 20px 0; }
 .gateway-card { border: 1px solid #eee; padding: 15px; text-align: center; border-radius: 10px; cursor: pointer; transition: var(--transition); }
@@ -102,15 +126,23 @@ a { text-decoration: none; } ul { list-style: none; padding: 0; }
 .profile-header { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
 .profile-avatar-lg { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); }
 .exp-item { margin-bottom: 15px; padding-left: 15px; border-left: 3px solid var(--accent); background: #fff8f5; padding: 10px; border-radius: 0 10px 10px 0; }
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; } .reveal.active { opacity: 1; transform: translateY(0); } .delay-1 { transition-delay: 0.2s; }
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.2s; }
 
 /* MOBILE RESPONSIVE TWEAKS */
 @media (max-width: 768px) {
     .hamburger { display: block; }
-    .nav-menu { position: fixed; left: -100%; top: 60px; flex-direction: column; background: white; width: 100%; text-align: center; padding: 30px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); transition: 0.3s; }
+    /* FIX #8: Added z-index to mobile nav menu so it sits above other content but below modals */
+    .nav-menu {
+        position: fixed; left: -100%; top: 60px; flex-direction: column;
+        background: white; width: 100%; text-align: center; padding: 30px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1); transition: 0.3s;
+        z-index: 999; /* Below modals (10000) but above page content */
+    }
     .nav-menu.active { left: 0; }
     /* Fix Hero Overlap */
-    .hero { text-align: center; padding-top: 140px; } 
+    .hero { text-align: center; padding-top: 140px; }
     .gradient-text { font-size: 2.5rem; }
     .about-wrapper { flex-direction: column; }
     .profile-header { flex-direction: column; text-align: center; }
