@@ -3,38 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Digital Hub Online Nepal | Flight Tickets, SSF, Shram, Licenses | Raman Bhandari</title>
+    <title>Digital Hub Online Nepal | Raman Bhandari | Flight Tickets | SSF | Shram | Licenses</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Digital Hub Online Nepal - Fast flight tickets, SSF registration, Shram approval, driving license, VFS appointments & professional websites. Founded by Raman Bhandari. Call +977 9810430546">
+    <meta name="description" content="Digital Hub Online Nepal - Fast flight tickets, SSF registration, Shram approval, driving license, VFS appointments & professional websites. By Raman Bhandari. Call +977 9810430546">
     <meta name="keywords" content="flight tickets Nepal, SSF registration, Shram approval, driving license Nepal, VFS appointment, Digital Hub Online, Raman Bhandari">
     <meta name="author" content="Raman Bhandari">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Digital Hub Online Nepal | Raman Bhandari">
-    <meta property="og:description" content="Flight tickets, SSF, Shram Approval, Driving License & Websites. 5000+ clients served">
-    <meta property="og:image" content="Docs/main.png">
-    <meta property="og:url" content="https://ramanbhandari.com.np/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Digital Hub Online Nepal",
-        "description": "Digital services platform offering flight tickets, SSF registration, Shram approval, driving licenses and professional websites.",
-        "url": "https://ramanbhandari.com.np/",
-        "telephone": "+9779810430546",
-        "email": "digitalhubonline2025@gmail.com",
-        "founder": {"@type": "Person", "name": "Raman Bhandari"}
-    }
-    </script>
-
     <link rel="icon" type="image/x-icon" href="Docs/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -45,42 +23,72 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #0a0c10;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f0c1f;
             color: #ffffff;
-            line-height: 1.5;
             overflow-x: hidden;
         }
 
-        /* Modern Glassmorphism & Gradients */
-        .gradient-bg {
+        /* Animated Gradient Background */
+        .animated-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -2;
-            background: radial-gradient(circle at 20% 50%, rgba(13, 110, 253, 0.15), transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(102, 16, 242, 0.12), transparent 60%),
-                        #0a0c10;
+            background: linear-gradient(-45deg, #0f0c1f, #1a1a3e, #0d1b2a, #1b263b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
         }
 
-        /* Navbar - Modern Blur */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Navbar - Glassmorphism */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             padding: 1rem 0;
-            transition: all 0.3s ease;
-            background: rgba(10, 12, 16, 0.8);
+            background: rgba(15, 12, 31, 0.7);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
         }
 
         .navbar.scrolled {
             padding: 0.7rem 0;
-            background: rgba(10, 12, 16, 0.95);
+            background: rgba(15, 12, 31, 0.95);
         }
 
         .container {
@@ -106,12 +114,13 @@
             height: 45px;
             width: auto;
             border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .brand-text h1 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #fff, #a0a0ff);
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #a855f7, #3b82f6);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -119,41 +128,34 @@
 
         .tagline {
             font-size: 0.7rem;
-            color: #888;
+            color: #aaa;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .nav-link {
             color: #e0e0e0;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 1rem;
             transition: 0.2s;
         }
 
         .nav-link:hover {
-            color: #0d6efd;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            color: #a855f7;
         }
 
         .btn-call {
-            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
             padding: 0.6rem 1.4rem;
             border-radius: 40px;
             color: white;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
             transition: 0.2s;
             display: inline-flex;
             align-items: center;
@@ -162,26 +164,7 @@
 
         .btn-call:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(13,110,253,0.3);
-        }
-
-        .btn-lang-toggle {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 0.6rem 1.2rem;
-            border-radius: 40px;
-            color: white;
-            cursor: pointer;
-            font-weight: 500;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-lang-toggle:hover {
-            background: rgba(13,110,253,0.2);
-            border-color: rgba(13,110,253,0.3);
+            box-shadow: 0 4px 20px rgba(59,130,246,0.4);
         }
 
         .hamburger {
@@ -209,37 +192,28 @@
         .hero .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
         }
 
-        .badge {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(13,110,253,0.15);
-            border: 1px solid rgba(13,110,253,0.3);
+            background: rgba(168,85,247,0.2);
+            border: 1px solid rgba(168,85,247,0.4);
             padding: 0.4rem 1rem;
             border-radius: 50px;
             font-size: 0.8rem;
-            color: #0d6efd;
             margin-bottom: 1.5rem;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            display: inline-block;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff, #a5b4fc, #c084fc);
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #ffffff, #c084fc, #60a5fa);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -247,7 +221,7 @@
 
         .hero-desc {
             font-size: 1.1rem;
-            color: #a0a0a0;
+            color: #ccc;
             margin-bottom: 2rem;
         }
 
@@ -259,7 +233,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
             padding: 0.9rem 2rem;
             border-radius: 50px;
             color: white;
@@ -275,24 +249,23 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(13,110,253,0.3);
+            box-shadow: 0 10px 25px rgba(59,130,246,0.3);
         }
 
         .btn-outline {
-            border: 1.5px solid rgba(255,255,255,0.2);
+            background: transparent;
+            border: 2px solid rgba(168,85,247,0.6);
             padding: 0.9rem 2rem;
             border-radius: 50px;
             color: white;
             text-decoration: none;
             font-weight: 600;
             transition: 0.2s;
-            background: transparent;
-            cursor: pointer;
         }
 
         .btn-outline:hover {
-            border-color: #0d6efd;
-            background: rgba(13,110,253,0.1);
+            background: rgba(168,85,247,0.2);
+            border-color: #a855f7;
         }
 
         .stats {
@@ -300,15 +273,10 @@
             gap: 2rem;
         }
 
-        .stat {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat-number {
-            font-size: 1.8rem;
+        .stat h3 {
+            font-size: 2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #0d6efd, #a5b4fc);
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -316,19 +284,19 @@
 
         .hero-image img {
             width: 100%;
-            border-radius: 32px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             border: 1px solid rgba(255,255,255,0.1);
         }
 
         /* Section Styles */
         section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 3rem;
         }
 
         .section-header h2 {
@@ -338,24 +306,24 @@
         }
 
         .section-header p {
-            color: #a0a0a0;
+            color: #aaa;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .glow-line {
+        .gradient-line {
             width: 80px;
             height: 3px;
-            background: linear-gradient(90deg, #0d6efd, #6610f2, #fd7e14);
+            background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
             margin: 1rem auto;
             border-radius: 3px;
         }
 
-        /* About Section */
+        /* About Section - Glassmorphic */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
         }
 
@@ -365,54 +333,43 @@
 
         .about-image img {
             width: 100%;
-            border-radius: 32px;
-            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            border: 2px solid rgba(168,85,247,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        .verified {
+        .verified-badge {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.7);
             backdrop-filter: blur(10px);
             padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
+            border-radius: 40px;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .about-content h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .quote {
-            font-size: 1.2rem;
-            color: #a5b4fc;
-            font-style: italic;
-            margin-bottom: 2rem;
+            font-size: 0.8rem;
         }
 
         .exp-list {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin: 1.5rem 0;
         }
 
         .exp-item {
             display: flex;
             align-items: center;
             gap: 1rem;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.05);
             padding: 1rem;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Services Grid */
+        /* Services Grid - Colorful Cards */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -420,53 +377,58 @@
         }
 
         .service-card {
-            background: rgba(18, 20, 26, 0.8);
+            background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 28px;
-            padding: 2rem;
+            padding: 1.8rem;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(13,110,253,0.4);
-            box-shadow: 0 20px 35px -15px rgba(0,0,0,0.5);
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(168,85,247,0.5);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.3);
         }
 
         .service-icon {
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, rgba(13,110,253,0.2), rgba(102,16,242,0.2));
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(168,85,247,0.2));
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(13,110,253,0.3);
+            border: 1px solid rgba(168,85,247,0.3);
         }
 
-        .service-card h4 {
+        .service-card h3 {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
         }
 
         .service-card p {
-            color: #a0a0a0;
+            color: #bbb;
             margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
-        .price {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #0d6efd;
-            margin: 1rem 0;
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0.8rem 0;
         }
 
         .service-link {
-            color: #0d6efd;
+            color: #a855f7;
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -477,33 +439,27 @@
         /* Testimonials */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
         .testimonial-card {
-            background: rgba(18, 20, 26, 0.8);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.05);
             border-radius: 24px;
-            padding: 2rem;
+            padding: 1.8rem;
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
         .stars {
             color: #fbbf24;
             margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .testimonial-card p {
-            color: #d0d0d0;
-            margin-bottom: 1.5rem;
-            font-style: italic;
         }
 
         .client-info {
             display: flex;
             align-items: center;
             gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .client-info img {
@@ -511,73 +467,77 @@
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #0d6efd;
+            border: 2px solid #a855f7;
         }
 
-        /* Contact Section */
+        /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .contact-card {
-            background: rgba(18, 20, 26, 0.8);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.05);
             border-radius: 28px;
             padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
             padding: 1rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .contact-item i {
-            font-size: 1.5rem;
-            color: #0d6efd;
+            width: 40px;
+            height: 40px;
+            background: rgba(168,85,247,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a855f7;
         }
 
-        .form-group input {
+        .form-group input, .form-group textarea {
             width: 100%;
             padding: 1rem;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 16px;
             color: white;
             margin-bottom: 1rem;
+            font-family: inherit;
         }
 
-        .form-group input:focus {
+        .form-group input:focus, .form-group textarea:focus {
             outline: none;
-            border-color: #0d6efd;
+            border-color: #a855f7;
         }
 
         /* Footer */
         .footer {
             border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 3rem 0 2rem;
-            background: #080a0e;
+            padding: 3rem 0 1.5rem;
+            background: rgba(0,0,0,0.3);
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
 
         .footer-links a {
             display: block;
-            color: #a0a0a0;
+            color: #aaa;
             text-decoration: none;
-            margin-bottom: 0.6rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
         }
 
         .social-links {
@@ -589,7 +549,7 @@
         .social-links a {
             width: 38px;
             height: 38px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -599,20 +559,26 @@
         }
 
         .social-links a:hover {
-            background: #0d6efd;
+            background: #a855f7;
+            transform: translateY(-3px);
         }
 
-        /* WhatsApp Float Button with Blinking Animation */
+        /* WhatsApp Float with Blink */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            z-index: 1000;
+            z-index: 100;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            animation: blink 1.5s ease-in-out infinite;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
         .whatsapp-button {
@@ -625,48 +591,23 @@
             justify-content: center;
             font-size: 2rem;
             color: white;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: 0.2s;
             text-decoration: none;
         }
 
-        .whatsapp-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-        }
-
         .whatsapp-text {
-            background: rgba(0,0,0,0.85);
+            background: rgba(0,0,0,0.8);
             backdrop-filter: blur(10px);
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 30px;
             font-size: 0.75rem;
             font-weight: 600;
             color: #25D366;
             white-space: nowrap;
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            animation: pulseText 1.5s ease-in-out infinite;
         }
 
-        @keyframes blink {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.08);
-            }
-        }
-
-        @keyframes pulseText {
-            0%, 100% {
-                opacity: 0.7;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
-
-        /* Modal */
+        /* Modals */
         .modal {
             position: fixed;
             top: 0;
@@ -678,21 +619,23 @@
             display: none;
             align-items: center;
             justify-content: center;
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
-            background: #12141a;
+            background: #1a1a2e;
             border-radius: 28px;
             max-width: 500px;
             width: 90%;
             padding: 2rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(168,85,247,0.3);
         }
 
+        /* Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.8s ease;
         }
 
         .reveal.active {
@@ -713,7 +656,7 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background: #0a0c10;
+                background: #0f0c1f;
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1.5rem;
@@ -734,19 +677,13 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            .nav-actions {
-                gap: 0.5rem;
-            }
-            .whatsapp-text {
-                font-size: 0.65rem;
-                padding: 4px 10px;
-            }
         }
     </style>
 </head>
 <body>
 
-<div class="gradient-bg"></div>
+<div class="animated-bg"></div>
+<div class="particles" id="particles"></div>
 
 <nav class="navbar" id="navbar">
     <div class="container nav-container">
@@ -754,23 +691,18 @@
             <img src="Docs/logo.png" alt="Logo" class="nav-logo" onerror="this.src='https://placehold.co/50x50'">
             <div class="brand-text">
                 <h1>Digital Hub Online</h1>
-                <p class="tagline">Raman Bhandari</p>
+                <p class="tagline">by Raman Bhandari</p>
             </div>
         </a>
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="#home" class="nav-link" data-key-nav="home">Home</a></li>
-            <li><a href="#about" class="nav-link" data-key-nav="about">About</a></li>
-            <li><a href="#services" class="nav-link" data-key-nav="services">Services</a></li>
-            <li><a href="#testimonials" class="nav-link" data-key-nav="reviews">Reviews</a></li>
-            <li><a href="#contact" class="nav-link" data-key-nav="contact">Contact</a></li>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-actions">
-            <button id="lang-toggle" class="btn-lang-toggle">
-                <i class="fas fa-globe"></i> <span id="lang-text">नेपाली</span>
-            </button>
-            <a href="tel:+9779810430546" class="btn-call">
-                <i class="fas fa-phone"></i> Call Now
-            </a>
+            <a href="tel:+9779810430546" class="btn-call"><i class="fas fa-phone"></i> Call Now</a>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </div>
@@ -781,64 +713,117 @@
 <header class="hero" id="home">
     <div class="container">
         <div class="hero-content reveal">
-            <div class="badge"><span class="dot"></span> <span data-key="badge">24/7 Instant Service</span></div>
-            <h1 data-key="headline">Digital Solutions<br>That Actually Work</h1>
-            <p class="hero-desc" data-key="desc">Flight tickets • SSF Registration • Shram Approval • Licenses • Websites.<br>10+ years of trusted experience.</p>
+            <div class="hero-badge"><span class="dot"></span> <i class="fas fa-bolt"></i> Nepal's Most Trusted</div>
+            <h1>Digital Solutions<br>That Actually Work</h1>
+            <p class="hero-desc">Flight tickets • SSF Registration • Shram Approval • Licenses • Websites. 10+ years of trusted experience.</p>
             <div class="btn-group">
-                <a href="#services" class="btn-primary" data-key="exploreBtn"><i class="fas fa-rocket"></i> Explore Services</a>
-                <a href="#about" class="btn-outline" data-key="meetBtn">Meet Raman <i class="fas fa-arrow-right"></i></a>
+                <a href="#services" class="btn-primary"><i class="fas fa-rocket"></i> Explore Services</a>
+                <a href="#contact" class="btn-outline">Contact Raman <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="stats">
-                <div class="stat"><span class="stat-number">5000+</span><span style="font-size:0.8rem; color:#888;" data-key="clients">Happy Clients</span></div>
-                <div class="stat"><span class="stat-number">24/7</span><span style="font-size:0.8rem; color:#888;" data-key="support">Support</span></div>
-                <div class="stat"><span class="stat-number">100%</span><span style="font-size:0.8rem; color:#888;" data-key="guaranteed">Guaranteed</span></div>
+                <div class="stat"><h3>5000+</h3><p>Happy Clients</p></div>
+                <div class="stat"><h3>24/7</h3><p>Support</p></div>
+                <div class="stat"><h3>100%</h3><p>Guaranteed</p></div>
             </div>
         </div>
         <div class="hero-image reveal">
-            <img src="Docs/main.png" alt="Services" onerror="this.src='https://placehold.co/600x400'">
+            <img src="Docs/main.png" alt="Digital Hub Online Nepal" onerror="this.src='https://placehold.co/600x400?text=Digital+Hub'">
         </div>
     </div>
 </header>
 
 <section id="about">
     <div class="container">
-        <div class="section-header reveal">
-            <h2 data-key="aboutTitle">Meet Your Digital Partner</h2>
-            <div class="glow-line"></div>
-            <p data-key="aboutSub">Your trusted expert in digital services across Nepal</p>
-        </div>
         <div class="about-grid">
             <div class="about-image reveal">
                 <img src="Docs/Pro.png" alt="Raman Bhandari" onerror="this.src='https://placehold.co/400x400'">
-                <div class="verified"><i class="fas fa-check-circle" style="color:#0d6efd;"></i> <span data-key="verified">Verified Expert</span></div>
+                <div class="verified-badge"><i class="fas fa-check-circle" style="color:#a855f7;"></i> Verified Expert</div>
             </div>
             <div class="about-content reveal">
-                <h3>Raman Bhandari</h3>
-                <p class="quote" data-key="proVoice">"I make digital services simple, fast, and affordable for every Nepali."</p>
+                <h2 style="font-size: 2rem;">Meet Raman Bhandari</h2>
+                <p style="font-size: 1.2rem; color: #a855f7; margin: 0.5rem 0 1rem;">"Making digital services simple for every Nepali"</p>
+                <p>With over 8+ years of international experience at Al Baker Group, Qatar, Raman founded Digital Hub Online Nepal to provide fast, reliable, and affordable digital solutions.</p>
                 <div class="exp-list">
-                    <div class="exp-item"><i class="fas fa-briefcase" style="color:#0d6efd;"></i> <span data-key="exp1">Al Baker Group, Qatar (8+ years)</span></div>
-                    <div class="exp-item"><i class="fas fa-database" style="color:#0d6efd;"></i> <span data-key="exp2">Al Baironi Trading, Qatar (Data Specialist)</span></div>
+                    <div class="exp-item"><i class="fas fa-briefcase" style="color:#a855f7;"></i> Al Baker Group, Qatar (8+ years)</div>
+                    <div class="exp-item"><i class="fas fa-database" style="color:#a855f7;"></i> Al Baironi Trading, Qatar (Data Specialist)</div>
                 </div>
-                <button class="btn-primary" onclick="openProfileModal()" style="border:none; cursor:pointer;" data-key="readStory">Read Full Story <i class="fas fa-arrow-right"></i></button>
+                <button class="btn-primary" onclick="openProfileModal()">Read Full Story <i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
     </div>
 </section>
 
-<section id="services" style="background: rgba(13,110,253,0.02);">
+<section id="services" style="background: rgba(0,0,0,0.2);">
     <div class="container">
         <div class="section-header reveal">
-            <h2 data-key="servicesTitle">Our Core Services</h2>
-            <div class="glow-line"></div>
-            <p data-key="servicesSub">Fast • Reliable • Government Approved</p>
+            <h2>Our Core Services</h2>
+            <div class="gradient-line"></div>
+            <p>Fast • Reliable • Government Approved</p>
         </div>
         <div class="services-grid">
-            <div class="service-card reveal"><div class="service-icon"><i class="fas fa-plane"></i></div><h4 data-key="service1Title">Flight Booking</h4><p data-key="service1Desc">Domestic & International at lowest rates</p><div class="price">Best Rate</div><a href="#" class="service-link" onclick="openServiceModal('Flight Booking', 'Best Rate'); return false;" data-key="bookNow">Book Now →</a></div>
-            <div class="service-card reveal"><div class="service-icon"><i class="fas fa-file-contract"></i></div><h4 data-key="service2Title">Shram Approval</h4><p data-key="service2Desc">Online Labor Permit (Re-entry)</p><div class="price">Rs. 1500</div><a href="#" class="service-link" onclick="openServiceModal('Shram Approval', 'Rs. 1500'); return false;" data-key="applyNow">Apply Now →</a></div>
-            <div class="service-card reveal"><div class="service-icon"><i class="fas fa-shield-alt"></i></div><h4 data-key="service3Title">SSF Registration</h4><p data-key="service3Desc">Social Security Fund Enrollment</p><div class="price">Rs. 1500</div><a href="#" class="service-link" onclick="openServiceModal('SSF Registration', 'Rs. 1500'); return false;" data-key="register">Register →</a></div>
-            <div class="service-card reveal"><div class="service-icon"><i class="fas fa-car"></i></div><h4 data-key="service4Title">Driving License</h4><p data-key="service4Desc">Form filling & exam booking</p><div class="price">Rs. 500</div><a href="#" class="service-link" onclick="openServiceModal('Driving License', 'Rs. 500'); return false;" data-key="bookSlot">Book Slot →</a></div>
-            <div class="service-card reveal"><div class="service-icon"><i class="fas fa-calendar-check"></i></div><h4 data-key="service5Title">VFS Appointment</h4><p data-key="service5Desc">Visa appointment slots</p><div class="price">Service Fee</div><a href="#" class="service-link" onclick="openServiceModal('VFS Appointment', 'Service Fee'); return false;" data-key="bookDate">Book Date →</a></div>
-            <div class="service-card reveal"><div class="service-icon"><i class="fas fa-user-tie"></i></div><h4 data-key="service6Title">Professional CV</h4><p data-key="service6Desc">ATS-friendly Europass resumes</p><div class="price">Rs. 1000</div><a href="#" class="service-link" onclick="openServiceModal('Professional CV', 'Rs. 1000'); return false;" data-key="orderNow">Order Now →</a></div>
+            <div class="service-card reveal" onclick="openServiceModal('Flight Booking', 'Best Rate', 'Domestic & International flights at lowest rates with instant confirmation')">
+                <div class="service-icon"><i class="fas fa-plane"></i></div>
+                <h3>Flight Booking</h3>
+                <p>Domestic & International flights at lowest rates</p>
+                <div class="service-price">Best Rate</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('Flight Booking','Best Rate','Domestic & International flights')">Book Now →</a>
+            </div>
+            <div class="service-card reveal" onclick="openServiceModal('Shram Approval', 'Rs. 1500', 'Online Labor Permit (Re-entry) for Nepali workers')">
+                <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                <h3>Shram Approval</h3>
+                <p>Online Labor Permit (Re-entry) for Nepali workers</p>
+                <div class="service-price">Rs. 1500</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('Shram Approval','Rs. 1500','Online Labor Permit')">Apply Now →</a>
+            </div>
+            <div class="service-card reveal" onclick="openServiceModal('SSF Registration', 'Rs. 1500', 'Social Security Fund enrollment with KYC')">
+                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>SSF Registration</h3>
+                <p>Social Security Fund enrollment with KYC verification</p>
+                <div class="service-price">Rs. 1500</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('SSF Registration','Rs. 1500','Social Security Fund')">Register →</a>
+            </div>
+            <div class="service-card reveal" onclick="openServiceModal('Driving License', 'Rs. 500', 'Form filling & exam booking assistance')">
+                <div class="service-icon"><i class="fas fa-car"></i></div>
+                <h3>Driving License</h3>
+                <p>Form filling, document preparation & exam booking</p>
+                <div class="service-price">Rs. 500</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('Driving License','Rs. 500','License assistance')">Book Slot →</a>
+            </div>
+            <div class="service-card reveal" onclick="openServiceModal('VFS Appointment', 'Service Fee', 'Visa appointment booking for various countries')">
+                <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>VFS Appointment</h3>
+                <p>Visa appointment booking for various countries</p>
+                <div class="service-price">Service Fee</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('VFS Appointment','Service Fee','Visa appointment')">Book Date →</a>
+            </div>
+            <div class="service-card reveal" onclick="openServiceModal('Professional CV', 'Rs. 1000', 'ATS-friendly Europass formatted resumes')">
+                <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                <h3>Professional CV</h3>
+                <p>ATS-friendly Europass formatted professional resumes</p>
+                <div class="service-price">Rs. 1000</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('Professional CV','Rs. 1000','Professional CV writing')">Order Now →</a>
+            </div>
+            <div class="service-card reveal" onclick="openServiceModal('International Driving Permit', 'Rs. 2000', 'Get your IDP approved for driving abroad')">
+                <div class="service-icon"><i class="fas fa-id-card"></i></div>
+                <h3>International Driving Permit</h3>
+                <p>Get your IDP approved for driving abroad</p>
+                <div class="service-price">Rs. 2000</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('International Driving Permit','Rs. 2000','IDP for abroad')">Apply →</a>
+            </div>
+            <div class="service-card reveal" onclick="openServiceModal('Police Clearance', 'Rs. 1500', 'PCC certificate for visa and employment')">
+                <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                <h3>Police Clearance Report</h3>
+                <p>PCC certificate for visa and employment purposes</p>
+                <div class="service-price">Rs. 1500</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('Police Clearance','Rs. 1500','Police Clearance Certificate')">Apply →</a>
+            </div>
+            <div class="service-card reveal" onclick="openServiceModal('Urgent License Printing', 'Rs. 500', 'Expedited driving license printing')">
+                <div class="service-icon"><i class="fas fa-print"></i></div>
+                <h3>Urgent License Printing</h3>
+                <p>Expedited driving license printing service</p>
+                <div class="service-price">Rs. 500</div>
+                <a href="#" class="service-link" onclick="event.stopPropagation();openServiceModal('Urgent License Printing','Rs. 500','Urgent license printing')">Order →</a>
+            </div>
         </div>
     </div>
 </section>
@@ -846,32 +831,56 @@
 <section id="testimonials">
     <div class="container">
         <div class="section-header reveal">
-            <h2 data-key="testimonialsTitle">5000+ Happy Clients</h2>
-            <div class="glow-line"></div>
-            <p data-key="testimonialsSub">What our customers say about us</p>
+            <h2>5000+ Happy Clients</h2>
+            <div class="gradient-line"></div>
+            <p>What our customers say about us</p>
         </div>
         <div class="testimonials-grid">
-            <div class="testimonial-card reveal"><div class="stars">★★★★★</div><p data-key="test1">"Shram approval in 2 days! Raman handled everything perfectly. Highly recommended!"</p><div class="client-info"><img src="Docs/Chhitij.png" alt="client" onerror="this.src='https://placehold.co/50x50'"><div><strong>Chhitij Chamlagai</strong><br><span style="font-size:0.8rem; color:#888;">Doha, Qatar</span></div></div></div>
-            <div class="testimonial-card reveal"><div class="stars">★★★★★</div><p data-key="test2">"Professional service, got my SSF done within hours. Best digital service provider in Nepal."</p><div class="client-info"><img src="Docs/avatar2.png" alt="client" onerror="this.src='https://placehold.co/50x50'"><div><strong>Anjali Thapa</strong><br><span style="font-size:0.8rem; color:#888;">Kathmandu</span></div></div></div>
-            <div class="testimonial-card reveal"><div class="stars">★★★★★</div><p data-key="test3">"Fast flight bookings, cheapest rates, and amazing support. Raman is the go-to person!"</p><div class="client-info"><img src="Docs/avatar3.png" alt="client" onerror="this.src='https://placehold.co/50x50'"><div><strong>Sushil Basnet</strong><br><span style="font-size:0.8rem; color:#888;">Australia</span></div></div></div>
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div>
+                <p>"Shram approval in 2 days! Raman handled everything perfectly. Highly recommended!"</p>
+                <div class="client-info">
+                    <img src="Docs/Chhitij.png" alt="client" onerror="this.src='https://placehold.co/50x50'">
+                    <div><strong>Chhitij Chamlagai</strong><br>Doha, Qatar</div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div>
+                <p>"Professional service, got my SSF done within hours. Best digital service provider in Nepal."</p>
+                <div class="client-info">
+                    <img src="Docs/avatar2.png" alt="client" onerror="this.src='https://placehold.co/50x50'">
+                    <div><strong>Anjali Thapa</strong><br>Kathmandu, Nepal</div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div>
+                <p>"Fast flight bookings, cheapest rates, and amazing support. Raman is the go-to person!"</p>
+                <div class="client-info">
+                    <img src="Docs/avatar3.png" alt="client" onerror="this.src='https://placehold.co/50x50'">
+                    <div><strong>Sushil Basnet</strong><br>Sydney, Australia</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="contact" style="background: rgba(13,110,253,0.02);">
+<section id="contact" style="background: rgba(0,0,0,0.2);">
     <div class="container">
         <div class="contact-grid">
             <div class="contact-card reveal">
-                <h3 style="margin-bottom:1.5rem;" data-key="contactTitle">Get In Touch</h3>
-                <div class="contact-item"><i class="fas fa-phone"></i><div><strong data-key="callAnytime">Call Anytime</strong><br><a href="tel:+9779810430546" style="color:#0d6efd; text-decoration:none;">+977 9810430546</a></div></div>
-                <div class="contact-item"><i class="fas fa-envelope"></i><div><strong data-key="emailUs">Email Us</strong><br><a href="mailto:digitalhubonline2025@gmail.com" style="color:#a0a0a0;">digitalhubonline2025@gmail.com</a></div></div>
-                <div class="contact-item"><i class="fab fa-whatsapp"></i><div><strong data-key="whatsapp">WhatsApp</strong><br><a href="https://wa.me/9779810430546" style="color:#25D366;" data-key="chatNow">Chat Now</a></div></div>
+                <h3>Get In Touch</h3>
+                <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Call Anytime</strong><br><a href="tel:+9779810430546" style="color:#a855f7;">+977 9810430546</a></div></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email Us</strong><br><a href="mailto:digitalhubonline2025@gmail.com" style="color:#a855f7;">digitalhubonline2025@gmail.com</a></div></div>
+                <div class="contact-item"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><br><a href="https://wa.me/9779810430546" style="color:#25D366;">Chat on WhatsApp</a></div></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><br>Kathmandu, Nepal</div></div>
             </div>
             <div class="contact-card reveal">
-                <h3 style="margin-bottom:1.5rem;" data-key="callbackTitle">Request Callback</h3>
+                <h3>Send a Message</h3>
                 <form id="contactForm">
-                    <div class="form-group"><input type="tel" placeholder="Your Phone Number" id="phoneInput"></div>
-                    <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;" data-key="sendBtn"><i class="fab fa-whatsapp"></i> Send Request</button>
+                    <div class="form-group"><input type="text" placeholder="Your Name" id="nameInput"></div>
+                    <div class="form-group"><input type="tel" placeholder="Phone Number" id="phoneInput" required></div>
+                    <div class="form-group"><textarea placeholder="Your Message" rows="4" id="msgInput"></textarea></div>
+                    <button type="submit" class="btn-primary" style="width:100%;"><i class="fab fa-whatsapp"></i> Send Message</button>
                 </form>
             </div>
         </div>
@@ -881,144 +890,141 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
-            <div><img src="Docs/logo.png" alt="Logo" style="height:45px;" onerror="this.style.display='none'"><p style="margin-top:1rem; color:#888;" data-key="footerText">Your trusted digital partner in Nepal</p></div>
-            <div><h4 data-key="quickLinks">Quick Links</h4><div class="footer-links"><a href="#services" data-key="servicesLink">Services</a><a href="#about" data-key="aboutLink">About</a><a href="#contact" data-key="contactLink">Contact</a></div></div>
-            <div><h4 data-key="followUs">Follow Us</h4><div class="social-links"><a href="https://www.facebook.com/profile.php?id=61576059702352" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.linkedin.com/in/raman-bhandari-942554247/" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="https://www.tiktok.com/@ramanbhandari007" target="_blank"><i class="fab fa-tiktok"></i></a></div></div>
+            <div>
+                <img src="Docs/logo.png" alt="Logo" style="height:45px;" onerror="this.style.display='none'">
+                <p style="margin-top: 1rem;">Your trusted digital partner in Nepal</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <div class="footer-links">
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61576059702352" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/raman-bhandari-942554247/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.tiktok.com/@ramanbhandari007" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
         </div>
-        <div style="text-align:center; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); color:#666;">&copy; <span id="currentYear"></span> Digital Hub Online Nepal. All rights reserved | Raman Bhandari</div>
+        <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            &copy; 2024 Digital Hub Online Nepal. All rights reserved | Raman Bhandari
+        </div>
     </div>
 </footer>
 
-<!-- WhatsApp Float Button with Blinking and Text -->
 <div class="whatsapp-float">
     <a href="https://wa.me/9779810430546" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <div class="whatsapp-text">
-        <i class="fas fa-hand-point-right"></i> Click here to chat!
+    <div class="whatsapp-text"><i class="fas fa-hand-point-right"></i> Click to chat!</div>
+</div>
+
+<div id="serviceModal" class="modal">
+    <div class="modal-content">
+        <h3 id="modalTitle" style="margin-bottom:1rem;">Service</h3>
+        <p id="modalDesc"></p>
+        <div style="margin:1.5rem 0;"><strong>Amount:</strong> <span id="modalPrice"></span></div>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <button class="btn-outline" onclick="copyNumber()"><i class="fas fa-wallet"></i> eSewa/Khalti</button>
+            <a href="https://wa.me/9779810430546" class="btn-primary" style="text-decoration:none;">Send Payment Proof →</a>
+        </div>
+        <button onclick="closeModal()" style="margin-top:1.5rem; background:none; border:none; color:#aaa; cursor:pointer;">Close</button>
     </div>
 </div>
 
-<div id="serviceModal" class="modal"><div class="modal-content"><h3 id="modalTitle" style="margin-bottom:1rem;">Service</h3><p id="modalDesc"></p><div style="margin:1.5rem 0;"><strong data-key="amountLabel">Amount:</strong> <span id="modalPrice"></span></div><div style="display:flex; gap:1rem; flex-wrap:wrap;"><button class="btn-outline" onclick="copyNumber()"><i class="fas fa-wallet"></i> eSewa/Khalti</button><a href="https://wa.me/9779810430546" class="btn-primary" style="text-decoration:none;" data-key="sendProof">Send Payment Proof</a></div><button onclick="closeModal()" style="margin-top:1.5rem; background:transparent; border:none; color:#666; cursor:pointer;" data-key="closeBtn">Close</button></div></div>
-
-<div id="profileModal" class="modal"><div class="modal-content"><h3>Raman Bhandari</h3><img src="Docs/Pro.png" style="width:100px; border-radius:50%; margin:1rem 0;" onerror="this.style.display='none'"><p id="profileText">Founder of Digital Hub Online Nepal with 8+ years international experience at Al Baker Group (Qatar). Dedicated to making digital services accessible for all Nepalis.</p><button onclick="closeProfileModal()" class="btn-primary" style="margin-top:1rem;" data-key="closeBtn">Close</button></div></div>
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <h3>Raman Bhandari</h3>
+        <img src="Docs/Pro.png" style="width:100px; border-radius:50%; margin:1rem 0;" onerror="this.style.display='none'">
+        <p><strong>Founder, Digital Hub Online Nepal</strong></p>
+        <p style="margin-top:1rem;">With over 8+ years of international experience at Al Baker Group (Qatar) and Al Baironi Trading as a Data Specialist, Raman founded Digital Hub Online Nepal with a mission to make digital services accessible, fast, and affordable for every Nepali citizen.</p>
+        <p style="margin-top:1rem;">Under his leadership, the company has successfully served 5000+ happy clients across Nepal and worldwide.</p>
+        <button onclick="closeProfileModal()" class="btn-primary" style="margin-top:1rem;">Close</button>
+    </div>
+</div>
 
 <script>
-    // Language Translations
-    const translations = {
-        en: {
-            langBtn: "नेपाली", badge: "24/7 Instant Service", headline: "Digital Solutions<br>That Actually Work",
-            desc: "Flight tickets • SSF Registration • Shram Approval • Licenses • Websites.<br>10+ years of trusted experience.",
-            exploreBtn: "Explore Services", meetBtn: "Meet Raman →", clients: "Happy Clients", support: "Support", guaranteed: "Guaranteed",
-            aboutTitle: "Meet Your Digital Partner", aboutSub: "Your trusted expert in digital services across Nepal",
-            verified: "Verified Expert", proVoice: '"I make digital services simple, fast, and affordable for every Nepali."',
-            exp1: "Al Baker Group, Qatar (8+ years)", exp2: "Al Baironi Trading, Qatar (Data Specialist)", readStory: "Read Full Story →",
-            servicesTitle: "Our Core Services", servicesSub: "Fast • Reliable • Government Approved",
-            service1Title: "Flight Booking", service1Desc: "Domestic & International at lowest rates",
-            service2Title: "Shram Approval", service2Desc: "Online Labor Permit (Re-entry)",
-            service3Title: "SSF Registration", service3Desc: "Social Security Fund Enrollment",
-            service4Title: "Driving License", service4Desc: "Form filling & exam booking",
-            service5Title: "VFS Appointment", service5Desc: "Visa appointment slots",
-            service6Title: "Professional CV", service6Desc: "ATS-friendly Europass resumes",
-            bookNow: "Book Now →", applyNow: "Apply Now →", register: "Register →", bookSlot: "Book Slot →", bookDate: "Book Date →", orderNow: "Order Now →",
-            testimonialsTitle: "5000+ Happy Clients", testimonialsSub: "What our customers say about us",
-            test1: '"Shram approval in 2 days! Raman handled everything perfectly. Highly recommended!"',
-            test2: '"Professional service, got my SSF done within hours. Best digital service provider in Nepal."',
-            test3: '"Fast flight bookings, cheapest rates, and amazing support. Raman is the go-to person!"',
-            contactTitle: "Get In Touch", callAnytime: "Call Anytime", emailUs: "Email Us", whatsapp: "WhatsApp", chatNow: "Chat Now",
-            callbackTitle: "Request Callback", sendBtn: "Send Request", footerText: "Your trusted digital partner in Nepal",
-            quickLinks: "Quick Links", servicesLink: "Services", aboutLink: "About", contactLink: "Contact", followUs: "Follow Us",
-            amountLabel: "Amount:", sendProof: "Send Payment Proof", closeBtn: "Close", profileText: "Founder of Digital Hub Online Nepal with 8+ years international experience at Al Baker Group (Qatar). Dedicated to making digital services accessible for all Nepalis.",
-            home: "Home", about: "About", services: "Services", reviews: "Reviews", contact: "Contact"
-        },
-        ne: {
-            langBtn: "English", badge: "२४/७ तत्काल सेवा", headline: "डिजिटल समाधान<br>जसले वास्तवमा काम गर्छ",
-            desc: "फ्लाइट टिकट • SSF दर्ता • श्रम स्वीकृति • लाइसेन्स • वेबसाइटहरू。<br>१०+ वर्षको भरपर्दो अनुभव।",
-            exploreBtn: "सेवाहरू हेर्नुहोस्", meetBtn: "रमणलाई भेट्नुहोस् →", clients: "खुसी ग्राहक", support: "सहायता", guaranteed: "ग्यारेन्टी",
-            aboutTitle: "तपाईंको डिजिटल साझेदार", aboutSub: "नेपालभर डिजिटल सेवामा तपाईंको भरपर्दो विशेषज्ञ",
-            verified: "प्रमाणित विशेषज्ञ", proVoice: '"म हरेक नेपालीको लागि डिजिटल सेवा सरल, छिटो र किफायती बनाउँछु।"',
-            exp1: "अल बेकर ग्रुप, कतार (८+ वर्ष)", exp2: "अल बैरोनी ट्रेडिङ, कतार (डाटा विशेषज्ञ)", readStory: "पूरा कथा पढ्नुहोस् →",
-            servicesTitle: "हाम्रा मुख्य सेवाहरू", servicesSub: "छिटो • भरपर्दो • सरकार स्वीकृत",
-            service1Title: "उडान टिकट बुकिङ", service1Desc: "घरेलु र अन्तर्राष्ट्रिय कम दरमा",
-            service2Title: "श्रम स्वीकृति", service2Desc: "अनलाइन श्रम अनुमति (पुन: प्रवेश)",
-            service3Title: "एसएसएफ दर्ता", service3Desc: "सामाजिक सुरक्षा कोष दर्ता",
-            service4Title: "ड्राइभिङ लाइसेन्स", service4Desc: "फारम भर्ने र परीक्षा बुकिङ",
-            service5Title: "भिएफएस अपोइन्टमेन्ट", service5Desc: "भिसा अपोइन्टमेन्ट स्लटहरू",
-            service6Title: "व्यावसायिक सिभी", service6Desc: "एटीएस-मैत्री यूरोपास रेज्युमे",
-            bookNow: "बुक गर्नुहोस् →", applyNow: "आवेदन दिनुहोस् →", register: "दर्ता गर्नुहोस् →", bookSlot: "स्लट बुक गर्नुहोस् →", bookDate: "मिति बुक गर्नुहोस् →", orderNow: "अर्डर गर्नुहोस् →",
-            testimonialsTitle: "५०००+ खुसी ग्राहकहरू", testimonialsSub: "हाम्रा ग्राहकहरूले हाम्रो बारेमा के भन्छन्",
-            test1: '"श्रम स्वीकृति २ दिनमा! रमणले सबै काम सही गरे। अत्यधिक सिफारिस!"',
-            test2: '"व्यावसायिक सेवा, मेरो SSF केही घण्टामै भयो। नेपालको उत्कृष्ट डिजिटल सेवा प्रदायक।"',
-            test3: '"छिटो उडान बुकिङ, सस्तो दर, र अद्भुत सहायता। रमण नै भरपर्दो व्यक्ति हुन्!"',
-            contactTitle: "सम्पर्क गर्नुहोस्", callAnytime: "जुनसुकै बेला कल गर्नुहोस्", emailUs: "इमेल गर्नुहोस्", whatsapp: "व्हाट्सएप", chatNow: "कुराकानी गर्नुहोस्",
-            callbackTitle: "कलब्याक अनुरोध गर्नुहोस्", sendBtn: "अनुरोध पठाउनुहोस्", footerText: "नेपालमा तपाईंको भरपर्दो डिजिटल साझेदार",
-            quickLinks: "द्रुत लिङ्कहरू", servicesLink: "सेवाहरू", aboutLink: "बारेमा", contactLink: "सम्पर्क", followUs: "हामीलाई पछ्याउनुहोस्",
-            amountLabel: "रकम:", sendProof: "भुक्तानी प्रमाण पठाउनुहोस्", closeBtn: "बन्द गर्नुहोस्", profileText: "डिजिटल हब अनलाइन नेपालका संस्थापक रमण भण्डारी, कतारको अल बेकर ग्रुपमा ८+ वर्षको अन्तर्राष्ट्रिय अनुभव। सबै नेपालीको लागि डिजिटल सेवा पहुँचयोग्य बनाउन समर्पित।",
-            home: "गृह", about: "बारेमा", services: "सेवाहरू", reviews: "समीक्षाहरू", contact: "सम्पर्क"
-        }
-    };
-
-    let currentLang = 'en';
-
-    function updateLanguage() {
-        const t = translations[currentLang];
-        document.querySelectorAll('[data-key]').forEach(el => {
-            const key = el.getAttribute('data-key');
-            if (t[key]) el.innerHTML = t[key];
-        });
-        document.getElementById('lang-text').innerHTML = t.langBtn;
-        document.getElementById('profileText').innerHTML = t.profileText;
+    // Particles generation
+    for(let i = 0; i < 50; i++) {
+        let particle = document.createElement('div');
+        particle.classList.add('particle');
+        let size = Math.random() * 5 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = Math.random() * 20 + 10 + 's';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        document.getElementById('particles').appendChild(particle);
     }
 
-    document.getElementById('lang-toggle').addEventListener('click', () => {
-        currentLang = currentLang === 'en' ? 'ne' : 'en';
-        updateLanguage();
-    });
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+    document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('active')));
 
-    // Navbar scroll & mobile menu
-    document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('nav-menu').classList.toggle('active');
-    });
+    // Navbar scroll
     window.addEventListener('scroll', () => {
         if(window.scrollY > 50) document.getElementById('navbar').classList.add('scrolled');
         else document.getElementById('navbar').classList.remove('scrolled');
     });
-    
+
     // Reveal animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    
+
     // Contact form
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
+        let name = document.getElementById('nameInput').value;
         let phone = document.getElementById('phoneInput').value;
-        if(phone) window.open(`https://wa.me/9779810430546?text=Callback%20Request:%20${phone}`, '_blank');
+        let msg = document.getElementById('msgInput').value;
+        let whatsappMsg = `Hello Raman,%0A%0AName: ${name}%0APhone: ${phone}%0AMessage: ${msg}`;
+        window.open(`https://wa.me/9779810430546?text=${whatsappMsg}`, '_blank');
         this.reset();
     });
-    document.getElementById('currentYear').innerHTML = new Date().getFullYear();
-    
+
     // Modals
-    function openServiceModal(service, price) {
-        document.getElementById('modalTitle').innerText = service;
-        document.getElementById('modalDesc').innerHTML = `Service: ${service}`;
+    function openServiceModal(title, price, desc) {
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalDesc').innerHTML = desc;
         document.getElementById('modalPrice').innerText = price;
         document.getElementById('serviceModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     }
-    function copyNumber() { navigator.clipboard.writeText('9810430546'); alert('Number copied: 9810430546'); }
-    function closeModal() { document.getElementById('serviceModal').style.display = 'none'; }
-    function openProfileModal() { document.getElementById('profileModal').style.display = 'flex'; }
-    function closeProfileModal() { document.getElementById('profileModal').style.display = 'none'; }
-    window.onclick = function(e) { if(e.target.classList.contains('modal')) { e.target.style.display = 'none'; } }
-    
+    function closeModal() { 
+        document.getElementById('serviceModal').style.display = 'none';
+        document.getElementById('profileModal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    function openProfileModal() { 
+        document.getElementById('profileModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeProfileModal() { 
+        document.getElementById('profileModal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    function copyNumber() { 
+        navigator.clipboard.writeText('9810430546'); 
+        alert('✅ Number copied: 9810430546'); 
+    }
+    window.onclick = function(e) { if(e.target.classList.contains('modal')) { e.target.style.display = 'none'; document.body.style.overflow = ''; } }
+
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             let target = document.querySelector(this.getAttribute('href'));
             if(target) target.scrollIntoView({ behavior: 'smooth' });
-            if(window.innerWidth < 768) document.getElementById('nav-menu').classList.remove('active');
+            if(window.innerWidth < 768) navMenu.classList.remove('active');
         });
     });
 </script>
