@@ -36,7 +36,7 @@
   <link rel="icon" type="image/x-icon" href="Docs/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 
   <style>
@@ -68,8 +68,8 @@
       --radius-xl:    48px;
       --transition:   all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      --font-display: 'Syne', sans-serif;
-      --font-body:    'DM Sans', sans-serif;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body:    'Plus Jakarta Sans', sans-serif;
     }
 
     /* ─── RESET & BASE ──────────────────────────────────────── */
@@ -149,6 +149,7 @@
       transition: var(--transition);
     }
     .navbar-inner {
+      position: relative;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0.9rem 1.5rem;
       background: rgba(7,7,15,0.6);
@@ -252,22 +253,22 @@
     .hero {
       min-height: 100vh;
       display: flex; align-items: center;
-      padding: 100px 0 60px;
+      padding: 110px 0 70px;
       position: relative;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2.5rem; align-items: center;
+      gap: 4rem; align-items: center;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(99,102,241,0.1);
-      border: 1px solid rgba(99,102,241,0.25);
-      padding: 0.35rem 0.9rem; border-radius: 50px;
-      font-size: 0.75rem; font-weight: 600; color: #a5b4fc;
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.02em;
+      background: rgba(99,102,241,0.12);
+      border: 1px solid rgba(99,102,241,0.3);
+      padding: 0.4rem 1rem; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 600; color: #a5b4fc;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.03em;
     }
     .hero-badge .dot {
       width: 6px; height: 6px; border-radius: 50%;
@@ -280,22 +281,22 @@
     }
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(1.9rem, 3.2vw, 3rem);
-      font-weight: 800; line-height: 1.15;
-      letter-spacing: -0.02em;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.03em;
       margin-bottom: 1.2rem;
     }
     .hero h1 .line1 { display: block; color: var(--text); }
     .hero h1 .line2 {
       display: block;
-      background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+      background: linear-gradient(135deg, #a5b4fc, #67e8f9, #c4b5fd);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
     .hero-desc {
-      font-size: 0.92rem; color: var(--text2); line-height: 1.75;
-      margin-bottom: 1.8rem; max-width: 440px;
+      font-size: 1rem; color: var(--text2); line-height: 1.7;
+      margin-bottom: 2rem; max-width: 480px;
     }
-    .btn-group { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2.2rem; }
+    .btn-group { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 3rem; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: var(--grad-primary);
@@ -318,21 +319,20 @@
     .btn-outline:hover { background: rgba(99,102,241,0.1); border-color: var(--accent); }
 
     .hero-stats {
-      display: flex; gap: 2rem; flex-wrap: wrap;
+      display: flex; gap: 2.5rem; flex-wrap: wrap;
     }
     .stat-item { }
     .stat-item h3 {
       font-family: var(--font-display);
-      font-size: 1.8rem; font-weight: 800;
+      font-size: 2.2rem; font-weight: 800;
       background: var(--grad-gold);
       -webkit-background-clip: text; background-clip: text; color: transparent;
       line-height: 1;
     }
-    .stat-item p { font-size: 0.75rem; color: var(--text3); margin-top: 0.2rem; letter-spacing: 0.02em; }
+    .stat-item p { font-size: 0.8rem; color: var(--text3); margin-top: 0.2rem; letter-spacing: 0.03em; }
 
     .hero-visual {
       position: relative;
-      padding-bottom: 20px;
     }
     .hero-img-wrap {
       position: relative; border-radius: var(--radius-lg);
@@ -349,15 +349,14 @@
     }
     .hero-float-badge {
       position: absolute;
-      bottom: -14px; left: 12px;
-      background: rgba(7,7,15,0.92);
+      bottom: -18px; left: -18px;
+      background: rgba(7,7,15,0.9);
       backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border-accent);
       border-radius: var(--radius-md);
-      padding: 0.75rem 1rem;
-      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.9rem 1.2rem;
+      display: flex; align-items: center; gap: 0.8rem;
       box-shadow: var(--shadow-card);
-      max-width: calc(100% - 24px);
     }
     .hero-float-badge .icon {
       width: 40px; height: 40px; border-radius: var(--radius-sm);
@@ -393,7 +392,9 @@
     /* ─── ABOUT ─────────────────────────────────────────────── */
     #about { background: var(--bg2); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .about-img-col { position: relative; }
+    .about-img-col {
+      position: relative;
+    }
     .about-img-frame {
       position: relative; border-radius: var(--radius-lg);
       overflow: hidden; max-width: 380px; margin: 0 auto;
@@ -460,13 +461,13 @@
       cursor: pointer;
       transition: var(--transition);
       position: relative; overflow: hidden;
-      group: true;
     }
     .service-card::after {
       content: '';
       position: absolute; inset: 0;
       background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent);
-      opacity: 0; transition: var(--transition);
+      opacity: 0;
+      transition: opacity 0.3s ease;
       pointer-events: none;
     }
     .service-card:hover { transform: translateY(-6px); border-color: var(--border-accent); box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(99,102,241,0.2); }
@@ -709,7 +710,6 @@
       .container { padding: 0 1rem; }
       section { padding: 60px 0; }
 
-      /* Navbar mobile */
       .nav-menu {
         display: none;
         position: absolute; top: 100%; left: 0; right: 0;
@@ -725,34 +725,23 @@
       .brand-text .tagline { display: none; }
       .btn-call .call-text { display: none; }
 
-      /* Hero */
       .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
       .hero-visual { display: none; }
-      .hero { padding: 85px 0 45px; min-height: auto; }
-      .hero h1 { font-size: clamp(1.8rem, 6.5vw, 2.6rem); }
-      .hero-stats { gap: 1.2rem; }
-      .stat-item h3 { font-size: 1.6rem; }
+      .hero { padding: 90px 0 50px; min-height: auto; }
+      .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
+      .hero-stats { gap: 1.5rem; }
+      .stat-item h3 { font-size: 1.8rem; }
 
-      /* About */
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .about-img-col { order: -1; }
       .about-badge { right: 8px; bottom: -10px; }
 
-      /* Services */
       .services-grid { grid-template-columns: 1fr; }
-
-      /* Testimonials */
       .testimonials-grid { grid-template-columns: 1fr; }
-
-      /* Contact */
       .contact-grid { grid-template-columns: 1fr; }
-
-      /* Footer */
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-brand { grid-column: auto; }
       .footer-bottom { flex-direction: column; text-align: center; }
-
-      /* Hero float badge */
       .hero-float-badge { display: none; }
     }
 
@@ -767,11 +756,9 @@
 </head>
 <body>
 
-  <!-- Background -->
   <div class="bg-canvas"></div>
   <div class="particles" id="particles"></div>
 
-  <!-- ── NAVBAR ─────────────────────────────────────────────── -->
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
       <a href="#home" class="brand">
@@ -810,7 +797,6 @@
     </div>
   </nav>
 
-  <!-- ── HERO ───────────────────────────────────────────────── -->
   <header class="hero" id="home">
     <div class="container">
       <div class="hero-grid">
@@ -870,7 +856,6 @@
     </div>
   </header>
 
-  <!-- ── ABOUT ──────────────────────────────────────────────── -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
@@ -890,7 +875,6 @@
           <p class="eyebrow" data-en="Founder & CEO" data-ne="संस्थापक र सीईओ">Founder & CEO</p>
           <h2 data-en="Meet Raman Bhandari" data-ne="रमन भण्डारीसँग भेट्नुहोस्">Meet Raman Bhandari</h2>
           <p class="tagline-text" data-en='"Making digital services simple for every Nepali"' data-ne='"प्रत्येक नेपालीको लागि डिजिटल सेवा सरल बनाउँदै"'>"Making digital services simple for every Nepali"</p>
-
           <p class="bio" data-en="I started helping people with digital services long before I came back to Nepal — even while I was working in Qatar at Al Baker Group and Al Baironi Trading, people would reach out and I would find a way to help. That's when I realized this was more than just a side thing. After 8+ years abroad, I came back to Kathmandu and built Digital Hub Online Nepal properly." data-ne="नेपाल फर्किनु अगाडि नै मैले मानिसहरूलाई डिजिटल सेवाहरूमा सहयोग गर्न थालेको थिएँ — कतारमा काम गर्दा पनि मानिसहरू सम्पर्क गर्थे र म सहयोग गर्ने तरिका खोज्थेँ।">
             I started helping people with digital services long before I came back to Nepal — even while I was working in Qatar at Al Baker Group and Al Baironi Trading, people would reach out and I would find a way to help. That's when I realized this was more than just a side thing. After 8+ years abroad, I came back to Kathmandu and built Digital Hub Online Nepal properly.
           </p>
@@ -915,7 +899,6 @@
     </div>
   </section>
 
-  <!-- ── SERVICES ───────────────────────────────────────────── -->
   <section id="services">
     <div class="container">
       <div class="section-header reveal">
@@ -1001,7 +984,6 @@
     </div>
   </section>
 
-  <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
   <section id="testimonials">
     <div class="container">
       <div class="section-header reveal">
@@ -1054,7 +1036,6 @@
     </div>
   </section>
 
-  <!-- ── CONTACT ────────────────────────────────────────────── -->
   <section id="contact">
     <div class="container">
       <div class="section-header reveal">
@@ -1116,7 +1097,6 @@
     </div>
   </section>
 
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1152,14 +1132,12 @@
     </div>
   </footer>
 
-  <!-- ── WHATSAPP FLOAT ─────────────────────────────────────── -->
   <div class="wa-float">
     <a href="https://wa.me/9779810430546" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
 
-  <!-- ── SERVICE MODAL ──────────────────────────────────────── -->
   <div id="serviceModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="svcTitle">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal('serviceModal')" aria-label="Close">&times;</button>
@@ -1176,7 +1154,6 @@
     </div>
   </div>
 
-  <!-- ── PROFILE MODAL ──────────────────────────────────────── -->
   <div id="profileModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal('profileModal')" aria-label="Close">&times;</button>
@@ -1206,12 +1183,10 @@
     </div>
   </div>
 
-  <!-- ── SCRIPTS ────────────────────────────────────────────── -->
   <script>
   (function () {
     'use strict';
 
-    /* ── Cache DOM ─────────────────────────────────────── */
     const particlesEl  = document.getElementById('particles');
     const hamburger    = document.getElementById('hamburger');
     const navMenu      = document.getElementById('nav-menu');
@@ -1225,7 +1200,6 @@
     const btnEn        = document.getElementById('btnEn');
     const btnNe        = document.getElementById('btnNe');
 
-    /* ── Particles (fewer on mobile) ──────────────────── */
     const count    = window.innerWidth < 768 ? 15 : 30;
     const fragment = document.createDocumentFragment();
     for (let i = 0; i < count; i++) {
@@ -1243,12 +1217,10 @@
     }
     particlesEl.appendChild(fragment);
 
-    /* ── Navbar scroll ─────────────────────────────────── */
     window.addEventListener('scroll', function () {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
 
-    /* ── Hamburger ─────────────────────────────────────── */
     function closeNav() {
       navMenu.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
@@ -1264,7 +1236,6 @@
       if (!navbar.contains(e.target)) closeNav();
     });
 
-    /* ── Reveal on scroll ──────────────────────────────── */
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -1277,7 +1248,6 @@
       observer.observe(el);
     });
 
-    /* ── Language toggle ───────────────────────────────── */
     function setLanguage(lang) {
       document.querySelectorAll('[data-en]').forEach(function (el) {
         const val = el.getAttribute(lang === 'en' ? 'data-en' : 'data-ne');
@@ -1291,7 +1261,6 @@
     btnNe.addEventListener('click', function () { setLanguage('ne'); });
     setLanguage('en');
 
-    /* ── Smooth scroll ─────────────────────────────────── */
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       a.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -1302,7 +1271,6 @@
       });
     });
 
-    /* ── Contact form ──────────────────────────────────── */
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const honey = this.querySelector('input[name="_honey"]');
@@ -1318,7 +1286,6 @@
       this.reset();
     });
 
-    /* ── Modals ────────────────────────────────────────── */
     function openModal(id) {
       const m = document.getElementById(id);
       m.classList.add('active');
@@ -1339,14 +1306,12 @@
       document.getElementById(id).classList.remove('active');
     };
 
-    /* Close on backdrop click */
     [serviceModal, profileModal].forEach(function (m) {
       m.addEventListener('click', function (e) {
         if (e.target === m) m.classList.remove('active');
       });
     });
 
-    /* Close on Escape */
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         serviceModal.classList.remove('active');
@@ -1354,7 +1319,6 @@
       }
     });
 
-    /* ── Copy number ───────────────────────────────────── */
     window.copyNumber = function () {
       const num = '9810430546';
       if (navigator.clipboard && window.isSecureContext) {
@@ -1379,7 +1343,6 @@
       document.body.removeChild(ta);
     }
 
-    /* ── WhatsApp helper ───────────────────────────────── */
     window.openWhatsApp = function (msg) {
       window.open('https://wa.me/9779810430546?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
     };
