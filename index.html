@@ -142,7 +142,7 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
     section { padding: 90px 0; }
 
-    /* ─── NAVBAR (increased item sizes for readability & touch) ─ */
+    /* ─── NAVBAR (brand & links now larger) ───────────────── */
     .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       padding: 0;
@@ -176,7 +176,7 @@
     .brand-text { line-height: 1.15; }
     .brand-text h1 {
       font-family: var(--font-display);
-      font-size: 1.05rem;   /* slightly larger for brand */
+      font-size: 1.2rem;       /* increased for better visibility */
       font-weight: 800;
       background: linear-gradient(135deg, #fff 30%, #a5b4fc, #67e8f9);
       -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -184,7 +184,7 @@
       letter-spacing: -0.01em;
     }
     .brand-text .tagline {
-      font-size: 0.65rem;
+      font-size: 0.75rem;      /* larger tagline */
       color: var(--text3);
       letter-spacing: 0.02em;
     }
@@ -195,10 +195,10 @@
     }
     .nav-link {
       font-family: var(--font-display);
-      font-size: 0.9rem;     /* increased from 0.82rem */
+      font-size: 1rem;         /* increased from 0.9rem */
       font-weight: 600;
       color: var(--text2);
-      padding: 0.55rem 0.95rem;  /* more tap area */
+      padding: 0.65rem 1.1rem; /* larger touch area */
       border-radius: 50px;
       transition: var(--transition);
       letter-spacing: 0.01em;
@@ -229,7 +229,7 @@
       display: inline-flex; align-items: center; gap: 0.4rem;
       background: var(--grad-primary);
       color: #fff; font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
-      padding: 0.6rem 1.2rem;   /* increased tap area */
+      padding: 0.6rem 1.2rem;
       border-radius: 50px;
       transition: var(--transition);
       white-space: nowrap;
@@ -721,7 +721,7 @@
         gap: 0.25rem;
       }
       .nav-menu.active { display: flex; }
-      .nav-link { padding: 0.65rem 1rem; border-radius: var(--radius-sm); }
+      .nav-link { padding: 0.75rem 1rem; border-radius: var(--radius-sm); } /* mobile touch area */
       .hamburger { display: flex; }
       .brand-text .tagline { display: none; }
       .btn-call .call-text { display: none; }
